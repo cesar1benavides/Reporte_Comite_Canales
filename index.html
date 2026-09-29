@@ -65,6 +65,20 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .section-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-500);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
 .subgroup-label{font-size:.82rem;font-weight:700;color:var(--primary);margin:1.4rem 0 .5rem;padding:.4rem .7rem;background:var(--gray-50);border-left:3px solid var(--primary);border-radius:4px}
 .subgroup-label:first-of-type{margin-top:.4rem}
+/* KPIs por canal */
+.kpi-cat{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);margin:1.1rem 0 .5rem}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem}
+.kpi-card{border:1px solid var(--gray-200);border-radius:8px;padding:.8rem .9rem;background:var(--white)}
+.kpi-card .k-name{font-size:.78rem;font-weight:600;color:var(--gray-800);margin-bottom:.5rem;min-height:2.3em}
+.kpi-card .k-values{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.5rem}
+.kpi-card .k-real{font-size:1.5rem;font-weight:700}
+.kpi-card .k-meta{font-size:.75rem;color:var(--gray-500)}
+.kpi-card .k-real.ok{color:var(--success)}
+.kpi-card .k-real.warn{color:var(--warning)}
+.kpi-card .k-real.crit{color:var(--danger)}
+.k-bar{height:5px;background:var(--gray-200);border-radius:4px;overflow:hidden}
+.k-fill{height:100%;border-radius:4px}
+.kpi-meta-note{font-size:.7rem;color:var(--gray-500);margin-top:.9rem}
 .fecha-ok{color:var(--success);font-size:.75rem}
 .fecha-ajustada{color:var(--warning);font-weight:600}
 /* Tabla de funcionalidades */
@@ -141,6 +155,86 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="url">Zona pública · adquisición y autogestión</div>
     </div>
     <div class="channel-body">
+      <div class="section-label">📊 KPIs de segurosbolivar.com</div>
+
+      <div class="kpi-cat">🛡️ Confiabilidad</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Confiabilidad del servicio</div>
+          <div class="k-values"><span class="k-real crit">68.4%</span><span class="k-meta">/ meta 99.9%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:68%;background:var(--danger)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-values"><span class="k-real warn">3.88</span><span class="k-meta">/ meta ≤ 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Incidentes críticos</div>
+          <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico / Sesiones (mes)</div>
+          <div class="k-values"><span class="k-real warn">721.228</span><span class="k-meta">/ meta 1.200.000</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:60%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tasa de rebote</div>
+          <div class="k-values"><span class="k-real warn">25.83%</span><span class="k-meta">/ meta ≤ 20%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-values"><span class="k-real ok">6</span><span class="k-meta">/ meta 4</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-values"><span class="k-real crit">-17.41%</span><span class="k-meta">/ meta 20%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:8%;background:var(--danger)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Clicks en funciones priorizadas vs. tráfico</div>
+          <div class="k-values"><span class="k-real warn">8</span><span class="k-meta">/ meta 12</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:67%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico Páginas de Productos</div>
+          <div class="k-values"><span class="k-real ok">84.972</span><span class="k-meta">/ meta 80.000</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name"># Leads</div>
+          <div class="k-values"><span class="k-real warn">3.166</span><span class="k-meta">/ meta 5.553</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:57%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">% Ventas</div>
+          <div class="k-values"><span class="k-real ok">6.54%</span><span class="k-meta">/ meta 5.7%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Authority Score</div>
+          <div class="k-values"><span class="k-real warn">46</span><span class="k-meta">/ meta 55</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Market Share</div>
+          <div class="k-values"><span class="k-real warn">10.84%</span><span class="k-meta">/ meta 14%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+      <div class="kpi-meta-note">Meta anual definida 1/01/2026 · valor mostrado = último real medido. Fuentes: Confiabilidad (César Benavides) · UX y Negocio-Leads/Ventas (Juan Manuel Galvis) · Authority Score y Market Share (Miguel Ángel Murcia).</div>
+
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
