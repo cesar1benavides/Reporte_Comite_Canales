@@ -59,8 +59,28 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .avance-marker{position:absolute;top:-3px;bottom:-3px;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
 .avance-marker::after{content:"esperado";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;opacity:.9}
 .avance-note{font-size:.72rem;opacity:.8;margin-top:.5rem}
-/* Tarjeta de canal */
-.channel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);margin-bottom:2.5rem;overflow:hidden}
+/* Acordeón de activos */
+.channel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);margin-bottom:1.2rem;overflow:hidden}
+details.channel>summary{list-style:none;cursor:pointer}
+details.channel>summary::-webkit-details-marker{display:none}
+.acc-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.6rem;color:var(--white)}
+.acc-head.pub{background:linear-gradient(120deg,#00695c,#00897b)}
+.acc-head.priv{background:linear-gradient(120deg,#4527a0,#5e35b1)}
+.acc-head.app{background:linear-gradient(120deg,#bf360c,#e65100)}
+.acc-head h2{font-size:1.35rem;font-weight:700;display:flex;align-items:center;gap:.55rem}
+.acc-head .icon{font-size:1.5rem}
+.acc-right{display:flex;align-items:center;gap:1rem}
+.acc-mini{font-size:.8rem;font-weight:600;opacity:.95;white-space:nowrap}
+.acc-chevron{font-size:1.1rem;transition:transform .2s;opacity:.9}
+details.channel[open] .acc-chevron{transform:rotate(180deg)}
+/* Mini-acordeón de detalle por ítem */
+details.item-acc{margin-top:.4rem}
+details.item-acc>summary{list-style:none;cursor:pointer;font-size:.72rem;font-weight:700;color:var(--info);display:inline-flex;align-items:center;gap:.3rem}
+details.item-acc>summary::-webkit-details-marker{display:none}
+details.item-acc>summary::before{content:"▸";display:inline-block;transition:transform .2s}
+details.item-acc[open]>summary::before{transform:rotate(90deg)}
+details.item-acc .item-detail{margin-top:.4rem}
+/* Tarjeta de canal (contenido interno) */
 .channel-head{padding:1.6rem 1.8rem;color:var(--white);position:relative}
 .channel-head.pub{background:linear-gradient(120deg,#00695c,#00897b)}
 .channel-head.priv{background:linear-gradient(120deg,#4527a0,#5e35b1)}
@@ -183,9 +203,14 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
     </div>
   </section>
   <!-- ============ WEB — segurosbolivar.com ============ -->
-  <section class="channel" id="web">
+  <details class="channel" id="web">
+    <summary>
+      <div class="acc-head pub">
+        <h2><span class="icon">🌐</span> Zona Pública</h2>
+        <div class="acc-right"><span class="acc-mini">🟢 3 · 🟡 3 · ⏸️ 1</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
     <div class="channel-head pub">
-      <h2><span class="icon">🌐</span> Zona Pública</h2>
       <div class="prop-tag">🎯 Propósito</div>
       <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
       <div class="prop-pillars">
@@ -219,26 +244,32 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
     <div class="channel-body">
       <div class="section-label">📊 KPIs de segurosbolivar.com</div>
 
-      <div class="kpi-cat">🛡️ Confiabilidad</div>
+      <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
-          <div class="k-windows">
-            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">73</span></div>
-            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val warn">70</span></div>
-          </div>
-          <div class="k-bar"><div class="k-fill" style="width:88%;background:var(--warning)"></div></div>
-          <div class="k-trend down">▼ Ha bajado</div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Tiempo de respuesta (s)</div>
-          <div class="k-values"><span class="k-real warn">3.88</span><span class="k-meta">/ meta ≤ 3</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Incidentes críticos</div>
-          <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0</span></div>
+          <div class="k-name">Tráfico Páginas de Productos</div>
+          <div class="k-values"><span class="k-real ok">84.972</span><span class="k-meta">/ meta 80.000</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name"># Leads</div>
+          <div class="k-values"><span class="k-real warn">3.166</span><span class="k-meta">/ meta 5.553</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:57%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">% Ventas</div>
+          <div class="k-values"><span class="k-real ok">6.54%</span><span class="k-meta">/ meta 5.7%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Authority Score</div>
+          <div class="k-values"><span class="k-real warn">46</span><span class="k-meta">/ meta 55</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Market Share</div>
+          <div class="k-values"><span class="k-real warn">10.84%</span><span class="k-meta">/ meta 14%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
         </div>
       </div>
 
@@ -271,32 +302,26 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
         </div>
       </div>
 
-      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Tráfico Páginas de Productos</div>
-          <div class="k-values"><span class="k-real ok">84.972</span><span class="k-meta">/ meta 80.000</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-windows">
+            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">73</span></div>
+            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val warn">70</span></div>
+          </div>
+          <div class="k-bar"><div class="k-fill" style="width:88%;background:var(--warning)"></div></div>
+          <div class="k-trend down">▼ Ha bajado</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name"># Leads</div>
-          <div class="k-values"><span class="k-real warn">3.166</span><span class="k-meta">/ meta 5.553</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:57%;background:var(--warning)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">% Ventas</div>
-          <div class="k-values"><span class="k-real ok">6.54%</span><span class="k-meta">/ meta 5.7%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Authority Score</div>
-          <div class="k-values"><span class="k-real warn">46</span><span class="k-meta">/ meta 55</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Market Share</div>
-          <div class="k-values"><span class="k-real warn">10.84%</span><span class="k-meta">/ meta 14%</span></div>
+          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-values"><span class="k-real warn">3.88</span><span class="k-meta">/ meta ≤ 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Incidentes críticos</div>
+          <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
       </div>
 
@@ -307,11 +332,13 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
         <tbody>
           <tr>
             <td>
-              <div class="tag-line">Descripción</div>
               <div class="func-name"><span class="func-num">1.</span>Certificaciones Olivia</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
+              <div class="tag-line">Descripción</div>
               <div class="func-desc">Olivia entregará directamente el certificado de renta 2025, a petición del cliente.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">La asertividad de Olivia aumentó del <strong>30% al 50%</strong> en efectividad. Se sigue revisando.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Facilitar: resuelve el trámite de certificados en autogestión, sin fricción.</div></td>
@@ -322,7 +349,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">2.</span>Banner certificaciones</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Activar el banner de certificaciones en la zona privada cuando el cliente es redirigido desde la zona pública.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Facilitar: guía al cliente hacia el trámite reduciendo fricción.</div></td>
@@ -333,7 +362,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">3.</span>Arreglar contenido: diccionario</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Diccionario de términos — lenguaje común para términos de seguros. Lo lidera Camilo Gálvez.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Inspirar y Facilitar: lenguaje claro para "hacer fácil entender" los productos.</div></td>
@@ -344,9 +375,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">4.</span>Proyectiva – SOAT</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Venta de SOAT en la zona pública con Proyectiva.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Congelado. Se está definiendo cómo disponibilizar esta experiencia en la zona pública.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Transformar y Oportunidad de venta: venta y renovación de SOAT = leads/ventas.</div></td>
@@ -364,11 +397,13 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
         <tbody>
           <tr>
             <td>
-              <div class="tag-line">Descripción</div>
               <div class="func-name"><span class="func-num">5.</span>Integración de páginas de Salesforce al dominio segurosbolivar.com</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
+              <div class="tag-line">Descripción</div>
               <div class="func-desc">Servir las páginas de Salesforce bajo el dominio segurosbolivar.com para mejorar el posicionamiento SEO, garantizar la autogestión y conservar la velocidad que mantiene el equipo de Salesforce.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Ya se hicieron el desarrollo y las pruebas el 25 de septiembre; el concepto de Daniel González fue favorable. Hay sesión mañana para validar si WordPress puede usar la red externa; el despliegue a producción se hará el 1 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Transformar: SEO atrae tráfico calificado y sostiene autogestión y velocidad.</div></td>
@@ -378,11 +413,13 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           </tr>
           <tr>
             <td>
-              <div class="tag-line">Descripción</div>
               <div class="func-name"><span class="func-num">6.</span>Carrusel del banner — Zona Pública</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
+              <div class="tag-line">Descripción</div>
               <div class="func-desc">Convertir el banner principal en un carrusel para publicar más contenido.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se hizo el despliegue, pero no pasó el sanity check por un tema de nivelación de ambiente. Ya se está resolviendo; se espera liberar con corrección el 2 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Tráfico Páginas de Productos</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Oportunidad de venta: más contenido genera interés y tráfico a compra.</div></td>
@@ -393,7 +430,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">7.</span>Incidentes por vencimiento de certificados del antivirus</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Atención de incidentes generados por el vencimiento de certificados del antivirus.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span></td>
             <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">No responde directamente al propósito (conectar/inspirar/vender); es mantenimiento técnico. Habilita el propósito de forma indirecta: sin disponibilidad no hay autogestión ni venta.</div></td>
@@ -405,37 +444,38 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       </table>
       </div>
     </div>
-  </section>
+  </details>
   <!-- ============ ZONA PRIVADA — Acceso a Clientes ============ -->
-  <section class="channel" id="privada">
+  <details class="channel" id="privada">
+    <summary>
+      <div class="acc-head priv">
+        <h2><span class="icon">🔐</span> Zona Privada</h2>
+        <div class="acc-right"><span class="acc-mini">🟢 5 · 🟡 6</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
     <div class="channel-head priv">
-      <h2><span class="icon">🔐</span> Zona Privada</h2>
       <div class="prop-tag">🎯 Propósito</div>
       <div class="url">Espacio para la gestión administrativa de los seguros, donde los clientes consultan, actualizan y utilizan sus pólizas de manera autónoma.</div>
     </div>
     <div class="channel-body">
       <div class="section-label">📊 KPIs de Acceso a Clientes</div>
 
-      <div class="kpi-cat">🛡️ Confiabilidad</div>
+      <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
-          <div class="k-windows">
-            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">76</span></div>
-            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val ok">81</span></div>
-          </div>
+          <div class="k-name">Cobertura</div>
+          <div class="k-values"><span class="k-real ok">2%</span><span class="k-meta">/ meta 1%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
-          <div class="k-trend up">▲ Está subiendo</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo de respuesta (s)</div>
-          <div class="k-values"><span class="k-real ok">—</span><span class="k-meta">/ meta ≤ 3</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:0%;background:var(--gray-400)"></div></div>
+          <div class="k-name">Autogestión</div>
+          <div class="k-values"><span class="k-real ok">95%</span><span class="k-meta">/ meta 90%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Incidentes críticos</div>
-          <div class="k-values"><span class="k-real warn">1</span><span class="k-meta">/ meta 0</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--warning)"></div></div>
+          <div class="k-name">Adopción</div>
+          <div class="k-values"><span class="k-real warn">43%</span><span class="k-meta">/ meta 50%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--warning)"></div></div>
         </div>
       </div>
 
@@ -463,22 +503,26 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
         </div>
       </div>
 
-      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Cobertura</div>
-          <div class="k-values"><span class="k-real ok">2%</span><span class="k-meta">/ meta 1%</span></div>
+          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-windows">
+            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">76</span></div>
+            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val ok">81</span></div>
+          </div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+          <div class="k-trend up">▲ Está subiendo</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Autogestión</div>
-          <div class="k-values"><span class="k-real ok">95%</span><span class="k-meta">/ meta 90%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-values"><span class="k-real ok">—</span><span class="k-meta">/ meta ≤ 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:0%;background:var(--gray-400)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Adopción</div>
-          <div class="k-values"><span class="k-real warn">43%</span><span class="k-meta">/ meta 50%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--warning)"></div></div>
+          <div class="k-name">Incidentes críticos</div>
+          <div class="k-values"><span class="k-real warn">1</span><span class="k-meta">/ meta 0</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--warning)"></div></div>
         </div>
       </div>
 
@@ -490,7 +534,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">1.</span>Botón certificaciones</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Al redirigir de Zona Pública a Zona Privada se activa el modal/drawer de certificaciones (se trabaja en solventar latencia, se entrega 18 sep).</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Autogestión: el cliente utiliza sus pólizas descargando certificados de forma autónoma.</div></td>
@@ -501,7 +547,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">2.</span>Certificación menú</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Tener en "Mis certificaciones" una opción que centralice todos los certificados de declaración de renta.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Gestión administrativa: centraliza y facilita consultar/usar los certificados.</div></td>
@@ -512,9 +560,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">3.</span>Nueva versión AC</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Nueva versión de diseño de Zona Privada (home + ver detalle).</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Mejora la gestión y consulta autónoma de pólizas (home + detalle).</div></td>
@@ -525,9 +575,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">4.</span>Nuevas funcionalidades de negocio</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Entregar con IA las coberturas del cliente (funcionalidad de WhatsApp en AC).</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Consulta autónoma: el cliente entiende sus coberturas sin intermediación.</div></td>
@@ -538,9 +590,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">5.</span>Versión mobile AC</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Nueva versión mobile de Acceso a Clientes.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Habilita la autogestión de pólizas desde el móvil.</div></td>
@@ -551,7 +605,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">6.</span>Trámites de salud / Directorio / Usos</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Salud a su Medida — redireccionar al directorio médico con filtro tipo plan + coberturas por tipo de plan.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: consulta autónoma del directorio y coberturas por plan.</div></td>
@@ -570,9 +626,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">7.</span>Descarga masiva de documentos</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">El cliente puede seleccionar y descargar de una sola vez todos sus documentos de declaración de renta.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">En despliegue.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Adopción</span><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Autogestión: el cliente obtiene sus documentos de forma autónoma y ágil.</div></td>
@@ -583,9 +641,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">8.</span>Tracking de siniestros de movilidad (Bolívar 360)</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Conexión con el portal de Bolívar 360 para el seguimiento de siniestros de movilidad.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se han evidenciado <strong>50 redirecciones</strong> a este portal desde Acceso a Clientes.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: el cliente hace seguimiento autónomo de su siniestro.</div></td>
@@ -596,7 +656,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">9.</span>War room · atención del servicio de certificaciones</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Sala de trabajo dedicada para solventar la latencia en el servicio de certificaciones.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">No es una funcionalidad de gestión; sostiene la disponibilidad para que la autogestión de certificados sea posible.</div></td>
@@ -607,9 +669,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">10.</span>Mejoras de servicios por observabilidad</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Mejora de velocidad y reducción de errores de los servicios para elevar el score de confiabilidad.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Con entregas periódicas.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span></td>
             <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">Mantenimiento técnico; habilita una autogestión confiable pero no es funcionalidad de cara al cliente.</div></td>
@@ -620,7 +684,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">11.</span>Imán de la nevera</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">El equipo de Camilo Gálvez está trabajando con la línea de negocio de salud para planear la estrategia de abordaje del plan.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: promueve el uso de coberturas de salud del cliente.</div></td>
@@ -632,16 +698,59 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       </table>
       </div>
     </div>
-  </section>
+  </details>
   <!-- ============ BC — Bolívar Conmigo ============ -->
-  <section class="channel" id="app">
+  <details class="channel" id="app">
+    <summary>
+      <div class="acc-head app">
+        <h2><span class="icon">📱</span> App Bolívar</h2>
+        <div class="acc-right"><span class="acc-mini">🟡 3</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
     <div class="channel-head app">
-      <h2><span class="icon">📱</span> App Bolívar</h2>
       <div class="prop-tag">🎯 Propósito</div>
       <div class="url">Nuestra aplicación móvil es la herramienta integral para que los clientes gestionen su póliza de forma ágil y segura. Permite consultar información detallada del seguro, realizar transacciones, gestionar trámites y acceder a servicios adicionales.</div>
     </div>
     <div class="channel-body">
       <div class="section-label">📊 KPIs de App Bolívar</div>
+
+      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Cobertura</div>
+          <div class="k-values"><span class="k-real ok">1%</span><span class="k-meta">/ meta 1%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Autogestión</div>
+          <div class="k-values"><span class="k-real warn">9%</span><span class="k-meta">/ meta 90%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:10%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Adopción</div>
+          <div class="k-values"><span class="k-real ok">5%</span><span class="k-meta">/ meta 5%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico / Sesiones</div>
+          <div class="k-values"><span class="k-real warn">102.000</span><span class="k-meta">/ meta 163.039</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:63%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-values"><span class="k-real ok">3</span><span class="k-meta">/ meta 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-values"><span class="k-real warn">58%</span><span class="k-meta">/ meta 75%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:79%;background:var(--warning)"></div></div>
+        </div>
+      </div>
 
       <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
@@ -666,44 +775,6 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
         </div>
       </div>
 
-      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="k-name">Tráfico / Sesiones</div>
-          <div class="k-values"><span class="k-real warn">102.000</span><span class="k-meta">/ meta 163.039</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:63%;background:var(--warning)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Tiempo en sitio (min)</div>
-          <div class="k-values"><span class="k-real ok">3</span><span class="k-meta">/ meta 3</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Satisfacción del usuario (INS)</div>
-          <div class="k-values"><span class="k-real warn">58%</span><span class="k-meta">/ meta 75%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:79%;background:var(--warning)"></div></div>
-        </div>
-      </div>
-
-      <div class="kpi-cat">💼 Negocio</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="k-name">Cobertura</div>
-          <div class="k-values"><span class="k-real ok">1%</span><span class="k-meta">/ meta 1%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Autogestión</div>
-          <div class="k-values"><span class="k-real warn">9%</span><span class="k-meta">/ meta 90%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:10%;background:var(--warning)"></div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="k-name">Adopción</div>
-          <div class="k-values"><span class="k-real ok">5%</span><span class="k-meta">/ meta 5%</span></div>
-          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
-        </div>
-      </div>
-
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
@@ -712,9 +783,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">1.</span>Compra interna</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Compra de seguros en el home transversal.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Ya se cargó a tiendas; hoy no dieron el OK para publicarlo.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Realizar transacciones: habilita la compra de seguros dentro de la app.</div></td>
@@ -725,9 +798,11 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">2.</span>Pagos en línea</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Versión móvil de pagos en línea integrada en el App Bolívar.</div>
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Ya nos hicieron la entrega el 25 de septiembre. Se espera tener la integración con pagos al 12 de octubre.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Realizar transacciones: pagar la póliza de forma ágil y segura desde la app.</div></td>
@@ -738,7 +813,9 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
           <tr>
             <td>
               <div class="func-name"><span class="func-num">3.</span>Arreglar experiencia</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
               <div class="func-desc">Mejora de experiencia / vitrina de seguros.</div>
+              </div></details>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Gestión integral: mejora la experiencia para consultar y adquirir seguros.</div></td>
@@ -750,7 +827,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       </table>
       </div>
     </div>
-  </section>
+  </details>
   <div class="footer">
     <p><strong>Estatus de Canales Digitales</strong> · Seguros Bolívar</p>
     <p style="margin-top:.4rem">Consolidado con base en la hoja de seguimiento y lo entregado, incluyendo el estado de cada punto priorizado el 4 de septiembre de 2026.</p>
