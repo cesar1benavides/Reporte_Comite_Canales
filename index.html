@@ -113,6 +113,11 @@ details.item-acc .item-detail{margin-top:.4rem}
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem}
 .kpi-card{border:1px solid var(--gray-200);border-radius:8px;padding:.8rem .9rem;background:var(--white)}
 .kpi-card .k-name{font-size:.78rem;font-weight:600;color:var(--gray-800);margin-bottom:.5rem;min-height:2.3em}
+.info-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--gray-400);color:var(--white);font-size:.62rem;font-weight:700;font-style:normal;margin-left:.3rem;cursor:help;position:relative;vertical-align:middle}
+.info-i:hover{background:var(--info)}
+.info-i .tip{visibility:hidden;opacity:0;position:absolute;bottom:135%;left:50%;transform:translateX(-50%);background:var(--gray-800);color:var(--white);padding:.5rem .65rem;border-radius:6px;font-size:.72rem;font-weight:400;line-height:1.35;width:210px;z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .15s;text-transform:none;letter-spacing:0}
+.info-i .tip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--gray-800)}
+.info-i:hover .tip{visibility:visible;opacity:1}
 .kpi-card .k-values{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.5rem}
 .kpi-card .k-real{font-size:1.5rem;font-weight:700}
 .kpi-card .k-meta{font-size:.75rem;color:var(--gray-500)}
@@ -250,27 +255,27 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Tráfico Páginas de Productos</div>
+          <div class="k-name">Tráfico Páginas de Productos<i class="info-i">i<span class="tip">Número de visitas a las páginas de productos.</span></i></div>
           <div class="k-values"><span class="k-real ok">84.972</span><span class="k-meta">/ meta 80.000</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name"># Leads</div>
+          <div class="k-name"># Leads<i class="info-i">i<span class="tip">Cantidad de prospectos (leads) generados en el periodo.</span></i></div>
           <div class="k-values"><span class="k-real warn">3.166</span><span class="k-meta">/ meta 5.553</span></div>
           <div class="k-bar"><div class="k-fill" style="width:57%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">% Ventas</div>
+          <div class="k-name">% Ventas<i class="info-i">i<span class="tip">Porcentaje de conversión a ventas.</span></i></div>
           <div class="k-values"><span class="k-real ok">6.54%</span><span class="k-meta">/ meta 5.7%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Authority Score</div>
+          <div class="k-name">Authority Score<i class="info-i">i<span class="tip">Puntaje de autoridad de dominio (SEO), medido de 0 a 100.</span></i></div>
           <div class="k-values"><span class="k-real warn">46</span><span class="k-meta">/ meta 55</span></div>
           <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Market Share</div>
+          <div class="k-name">Market Share<i class="info-i">i<span class="tip">Participación de mercado estimada frente a la competencia.</span></i></div>
           <div class="k-values"><span class="k-real warn">10.84%</span><span class="k-meta">/ meta 14%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
         </div>
@@ -279,27 +284,27 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Tráfico / Sesiones (mes)</div>
+          <div class="k-name">Tráfico / Sesiones (mes)<i class="info-i">i<span class="tip">Total de sesiones de usuarios en el sitio durante el mes.</span></i></div>
           <div class="k-values"><span class="k-real warn">721.228</span><span class="k-meta">/ meta 1.200.000</span></div>
           <div class="k-bar"><div class="k-fill" style="width:60%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tasa de rebote</div>
+          <div class="k-name">Tasa de rebote<i class="info-i">i<span class="tip">Porcentaje de visitas que abandonan sin interactuar. Meta: 20% o menos.</span></i></div>
           <div class="k-values"><span class="k-real warn">25.83%</span><span class="k-meta">/ meta ≤ 20%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-name">Tiempo en sitio (min)<i class="info-i">i<span class="tip">Tiempo promedio que el usuario permanece en el sitio, en minutos.</span></i></div>
           <div class="k-values"><span class="k-real ok">6</span><span class="k-meta">/ meta 4</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-name">Satisfacción del usuario (INS)<i class="info-i">i<span class="tip">Índice Neto de Satisfacción: % promotores menos % detractores según la encuesta.</span></i></div>
           <div class="k-values"><span class="k-real warn">-5.4%</span><span class="k-meta">/ meta 20%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:47%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Clicks en funciones priorizadas vs. tráfico</div>
+          <div class="k-name">Clicks en funciones priorizadas vs. tráfico<i class="info-i">i<span class="tip">Relación entre clics en las funciones priorizadas y el tráfico total.</span></i></div>
           <div class="k-values"><span class="k-real warn">8</span><span class="k-meta">/ meta 12</span></div>
           <div class="k-bar"><div class="k-fill" style="width:67%;background:var(--warning)"></div></div>
         </div>
@@ -308,7 +313,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span><i class="info-i">i<span class="tip">Porcentaje de disponibilidad y estabilidad del servicio. Meta: mantenerse por encima de 80.</span></i></div>
           <div class="k-windows">
             <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">73</span></div>
             <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val warn">70</span></div>
@@ -317,12 +322,12 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-trend down">▼ Ha bajado</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-name">Tiempo de respuesta (s)<i class="info-i">i<span class="tip">Tiempo promedio que tarda el servicio en responder una petición. Meta: 3 segundos o menos.</span></i></div>
           <div class="k-values"><span class="k-real warn">3.88</span><span class="k-meta">/ meta ≤ 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:77%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Incidentes críticos</div>
+          <div class="k-name">Incidentes críticos<i class="info-i">i<span class="tip">Número de incidentes críticos registrados en el periodo. Meta: 0.</span></i></div>
           <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
@@ -467,17 +472,17 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Cobertura</div>
+          <div class="k-name">Cobertura<i class="info-i">i<span class="tip">Porcentaje de cobertura de usuarios/productos sobre el total.</span></i></div>
           <div class="k-values"><span class="k-real ok">2%</span><span class="k-meta">/ meta 1%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Autogestión</div>
+          <div class="k-name">Autogestión<i class="info-i">i<span class="tip">Cantidad de usuarios únicos del portal vs. cantidad de usuarios con acceso.</span></i></div>
           <div class="k-values"><span class="k-real ok">95%</span><span class="k-meta">/ meta 90%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Adopción</div>
+          <div class="k-name">Adopción<i class="info-i">i<span class="tip">Adopción entendida por la cantidad de transacciones realizadas por el portal vs. otros canales (correo).</span></i></div>
           <div class="k-values"><span class="k-real warn">43%</span><span class="k-meta">/ meta 50%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--warning)"></div></div>
         </div>
@@ -486,22 +491,22 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Tráfico / Sesiones</div>
+          <div class="k-name">Tráfico / Sesiones<i class="info-i">i<span class="tip">Total de sesiones de usuarios en el periodo.</span></i></div>
           <div class="k-values"><span class="k-real ok">68.677</span><span class="k-meta">/ meta 69.520</span></div>
           <div class="k-bar"><div class="k-fill" style="width:99%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tasa de rebote</div>
+          <div class="k-name">Tasa de rebote<i class="info-i">i<span class="tip">Porcentaje de visitas que abandonan sin interactuar. Meta: 20% o menos.</span></i></div>
           <div class="k-values"><span class="k-real ok">11.99%</span><span class="k-meta">/ meta ≤ 20%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-name">Tiempo en sitio (min)<i class="info-i">i<span class="tip">Tiempo promedio que el usuario permanece en el sitio, en minutos.</span></i></div>
           <div class="k-values"><span class="k-real ok">5</span><span class="k-meta">/ meta 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-name">Satisfacción del usuario (INS)<i class="info-i">i<span class="tip">Índice Neto de Satisfacción: % promotores menos % detractores según la encuesta.</span></i></div>
           <div class="k-values"><span class="k-real warn">23.8%</span><span class="k-meta">/ meta 50%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:62%;background:var(--warning)"></div></div>
         </div>
@@ -510,7 +515,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span><i class="info-i">i<span class="tip">Porcentaje de disponibilidad y estabilidad del servicio. Meta: mantenerse por encima de 80.</span></i></div>
           <div class="k-windows">
             <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">76</span></div>
             <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val ok">81</span></div>
@@ -519,12 +524,12 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-trend up">▲ Está subiendo</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-name">Tiempo de respuesta (s)<i class="info-i">i<span class="tip">Tiempo promedio que tarda el servicio en responder una petición. Meta: 3 segundos o menos.</span></i></div>
           <div class="k-values"><span class="k-real ok">—</span><span class="k-meta">/ meta ≤ 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:0%;background:var(--gray-400)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Incidentes críticos</div>
+          <div class="k-name">Incidentes críticos<i class="info-i">i<span class="tip">Número de incidentes críticos registrados en el periodo. Meta: 0.</span></i></div>
           <div class="k-values"><span class="k-real warn">1</span><span class="k-meta">/ meta 0</span></div>
           <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--warning)"></div></div>
         </div>
@@ -736,17 +741,17 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Cobertura</div>
+          <div class="k-name">Cobertura<i class="info-i">i<span class="tip">Porcentaje de cobertura de usuarios/productos sobre el total.</span></i></div>
           <div class="k-values"><span class="k-real ok">1%</span><span class="k-meta">/ meta 1%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Autogestión</div>
+          <div class="k-name">Autogestión<i class="info-i">i<span class="tip">Cantidad de usuarios únicos del portal vs. cantidad de usuarios con acceso.</span></i></div>
           <div class="k-values"><span class="k-real warn">9%</span><span class="k-meta">/ meta 90%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:10%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Adopción</div>
+          <div class="k-name">Adopción<i class="info-i">i<span class="tip">Adopción entendida por la cantidad de transacciones realizadas por el portal vs. otros canales (correo).</span></i></div>
           <div class="k-values"><span class="k-real ok">5%</span><span class="k-meta">/ meta 5%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
@@ -755,17 +760,17 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Tráfico / Sesiones</div>
+          <div class="k-name">Tráfico / Sesiones<i class="info-i">i<span class="tip">Total de sesiones de usuarios en el periodo.</span></i></div>
           <div class="k-values"><span class="k-real warn">102.000</span><span class="k-meta">/ meta 163.039</span></div>
           <div class="k-bar"><div class="k-fill" style="width:63%;background:var(--warning)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-name">Tiempo en sitio (min)<i class="info-i">i<span class="tip">Tiempo promedio que el usuario permanece en el sitio, en minutos.</span></i></div>
           <div class="k-values"><span class="k-real ok">3</span><span class="k-meta">/ meta 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-name">Satisfacción del usuario (INS)<i class="info-i">i<span class="tip">Índice Neto de Satisfacción: % promotores menos % detractores según la encuesta.</span></i></div>
           <div class="k-values"><span class="k-real warn">58%</span><span class="k-meta">/ meta 75%</span></div>
           <div class="k-bar"><div class="k-fill" style="width:79%;background:var(--warning)"></div></div>
         </div>
@@ -774,7 +779,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="kpi-cat">🛡️ Confiabilidad</div>
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-name">Confiabilidad del servicio <span class="k-meta">/ meta &gt; 80</span><i class="info-i">i<span class="tip">Porcentaje de disponibilidad y estabilidad del servicio. Meta: mantenerse por encima de 80.</span></i></div>
           <div class="k-windows">
             <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val ok">85</span></div>
             <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val ok">84.6</span></div>
@@ -783,12 +788,12 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-trend flat">▬ Estable</div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-name">Tiempo de respuesta (s)<i class="info-i">i<span class="tip">Tiempo promedio que tarda el servicio en responder una petición. Meta: 3 segundos o menos.</span></i></div>
           <div class="k-values"><span class="k-real ok">2.98</span><span class="k-meta">/ meta ≤ 3</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
         <div class="kpi-card">
-          <div class="k-name">Incidentes críticos</div>
+          <div class="k-name">Incidentes críticos<i class="info-i">i<span class="tip">Número de incidentes críticos registrados en el periodo. Meta: 0.</span></i></div>
           <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0</span></div>
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
