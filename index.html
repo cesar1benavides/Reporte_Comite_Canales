@@ -50,6 +50,13 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .kpi-mini.ok .v{color:var(--success)}
 .kpi-mini.warn .v{color:var(--warning)}
 .kpi-mini.info .v{color:var(--info)}
+.avance-box{margin-top:1.2rem;padding:1.1rem 1.3rem;background:linear-gradient(120deg,var(--primary-dark),var(--primary));border-radius:8px;color:var(--white)}
+.avance-box .a-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
+.avance-box .a-label{font-size:.85rem;font-weight:600;opacity:.95}
+.avance-box .a-pct{font-size:1.9rem;font-weight:700;line-height:1}
+.avance-bar{height:10px;background:rgba(255,255,255,.22);border-radius:6px;overflow:hidden}
+.avance-fill{height:100%;background:#7cb342;border-radius:6px}
+.avance-note{font-size:.72rem;opacity:.8;margin-top:.5rem}
 /* Tarjeta de canal */
 .channel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);margin-bottom:2.5rem;overflow:hidden}
 .channel-head{padding:1.6rem 1.8rem;color:var(--white);position:relative}
@@ -135,7 +142,17 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="kpi-mini ok"><div class="v">🟢 6</div><div class="l">Entregado</div></div>
       <div class="kpi-mini warn"><div class="v">🟡 11</div><div class="l">En curso</div></div>
       <div class="kpi-mini"><div class="v">⏸️ 1</div><div class="l">Congelado</div></div>
-      <div class="kpi-mini"><div class="v">18</div><div class="l">Puntos en seguimiento</div></div>
+      <div class="kpi-mini"><div class="v">13</div><div class="l">Priorizados en comité</div></div>
+      <div class="kpi-mini"><div class="v">5</div><div class="l">Otros temas</div></div>
+      <div class="kpi-mini"><div class="v">18</div><div class="l">Total en seguimiento</div></div>
+    </div>
+    <div class="avance-box">
+      <div class="a-top">
+        <span class="a-label">📈 Avance de compromisos priorizados en comité (4 de septiembre)</span>
+        <span class="a-pct">65%</span>
+      </div>
+      <div class="avance-bar"><div class="avance-fill" style="width:65%"></div></div>
+      <div class="avance-note">Base: 13 ítems priorizados · 🟢 5 entregados · 🟡 7 en curso · ⏸️ 1 congelado. No incluye los 5 "otros temas".</div>
     </div>
   </section>
   <!-- ============ WEB — segurosbolivar.com ============ -->
