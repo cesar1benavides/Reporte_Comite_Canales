@@ -99,6 +99,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .tag-line{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--gray-500);margin-top:.55rem;margin-bottom:.15rem}
 .tag-line.seg{color:var(--info)}
 .seguimiento{font-size:.8rem;color:var(--gray-800);background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.4rem .6rem;margin-top:.15rem}
+.kpi-tag{display:inline-block;padding:.22rem .55rem;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--primary);color:var(--white);white-space:nowrap;margin:.1rem .15rem .1rem 0}
 .fecha{font-size:.8rem;color:var(--gray-800);white-space:nowrap}
 .fecha.tbd{color:var(--gray-500);font-style:italic}
 .sub-list{list-style:none;font-size:.8rem;margin-top:.3rem}
@@ -227,7 +228,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -237,6 +238,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">La asertividad de Olivia aumentó del <strong>30% al 50%</strong> en efectividad. Se sigue revisando.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-hecho">🟢 Entregado (en monitoreo)</span></td>
             <td><span class="fecha">9 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -246,6 +248,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-name"><span class="func-num">2.</span>Banner certificaciones</div>
               <div class="func-desc">Activar el banner de certificaciones en la zona privada cuando el cliente es redirigido desde la zona pública.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -255,6 +258,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-name"><span class="func-num">3.</span>Arreglar contenido: diccionario</div>
               <div class="func-desc">Diccionario de términos — lenguaje común para términos de seguros. Lo lidera Camilo Gálvez.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -266,6 +270,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Congelado. Se está definiendo cómo disponibilizar esta experiencia en la zona pública.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-congelado">⏸️ Congelado</span></td>
             <td><span class="fecha tbd">Congelado</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -276,7 +281,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -286,6 +291,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Ya se hicieron el desarrollo y las pruebas el 25 de septiembre; el concepto de Daniel González fue favorable. Hay sesión mañana para validar si WordPress puede usar la red externa; el despliegue a producción se hará el 1 de octubre.</div>
             </td>
+            <td><span class="kpi-tag">Leads</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">5 oct</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -298,6 +304,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="tag-line seg">Seguimiento</div>
               <div class="seguimiento">Se hizo el despliegue, pero no pasó el sanity check por un tema de nivelación de ambiente. Ya se está resolviendo; se espera liberar con corrección el 2 de octubre.</div>
             </td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Tráfico Páginas de Productos</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">23 sep</span></td>
             <td><span class="fecha-ajustada">2 oct</span></td>
