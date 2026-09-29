@@ -69,6 +69,16 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .channel-head .icon{font-size:1.6rem}
 .channel-head .url{font-size:.85rem;opacity:.9;margin-top:.35rem;line-height:1.4}
 .channel-head .prop-tag{display:inline-block;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;background:rgba(255,255,255,.2);padding:.2rem .6rem;border-radius:10px;margin-top:.5rem}
+.prop-main{font-size:.9rem;font-weight:600;opacity:.95;margin-top:.4rem;line-height:1.45}
+.prop-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem;margin-top:.8rem}
+.prop-pillar{background:rgba(255,255,255,.12);border-radius:8px;padding:.6rem .75rem}
+.prop-pillar .p-verb{font-size:.8rem;font-weight:700;display:block;margin-bottom:.15rem}
+.prop-pillar .p-def{font-size:.74rem;opacity:.88;line-height:1.35}
+.prop-pillar .p-res{font-size:.74rem;font-weight:600;margin-top:.35rem;display:block}
+.badge-alineada{background:var(--success-bg);color:var(--success)}
+.badge-parcial{background:var(--warning-bg);color:var(--warning)}
+.badge-noalineada{background:var(--danger-bg);color:var(--danger)}
+.alin-why{font-size:.72rem;color:var(--gray-600);margin-top:.25rem;line-height:1.35}
 .channel-body{padding:1.8rem}
 .section-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-500);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
 .subgroup-label{font-size:.82rem;font-weight:700;color:var(--primary);margin:1.4rem 0 .5rem;padding:.4rem .7rem;background:var(--gray-50);border-left:3px solid var(--primary);border-radius:4px}
@@ -172,7 +182,34 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
     <div class="channel-head pub">
       <h2><span class="icon">🌐</span> Zona Pública</h2>
       <div class="prop-tag">🎯 Propósito</div>
-      <div class="url">Ser el corazón digital de la compañía: el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador, transformando cada visita en una oportunidad de informar, asesorar y vender de forma ágil, transparente y confiable.</div>
+      <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
+      <div class="prop-pillars">
+        <div class="prop-pillar">
+          <span class="p-verb">🤝 Conectar</span>
+          <span class="p-def">Crear una relación emocional y funcional con cada cliente.</span>
+          <span class="p-res">💚 Atraer tráfico calificado</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">✨ Inspirar</span>
+          <span class="p-def">Motivar a los usuarios a proteger lo que más valoran a través de nuestros productos.</span>
+          <span class="p-res">✨ Generar interés y deseo</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">✅ Facilitar</span>
+          <span class="p-def">Simplificar todo el proceso de información, cotización, compra y autogestión.</span>
+          <span class="p-res">✅ Hacer fácil entender, usar, cotizar y comprar</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🚀 Transformar</span>
+          <span class="p-def">No solo vender, sino elevar la experiencia de seguros en digital.</span>
+          <span class="p-res">🚀 Lograr leads, ventas, autogestión</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🫶 Oportunidad de venta</span>
+          <span class="p-def">Cada visita debe tener posibilidad real de convertirse en un lead o una venta asistida.</span>
+          <span class="p-res">❤️ Crear satisfacción y recurrencia</span>
+        </div>
+      </div>
     </div>
     <div class="channel-body">
       <div class="section-label">📊 KPIs de segurosbolivar.com</div>
@@ -261,7 +298,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -272,6 +309,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">La asertividad de Olivia aumentó del <strong>30% al 50%</strong> en efectividad. Se sigue revisando.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Facilitar: resuelve el trámite de certificados en autogestión, sin fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado (en monitoreo)</span></td>
             <td><span class="fecha">9 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -282,6 +320,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Activar el banner de certificaciones en la zona privada cuando el cliente es redirigido desde la zona pública.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Facilitar: guía al cliente hacia el trámite reduciendo fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -292,6 +331,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Diccionario de términos — lenguaje común para términos de seguros. Lo lidera Camilo Gálvez.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Inspirar y Facilitar: lenguaje claro para "hacer fácil entender" los productos.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -304,6 +344,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Congelado. Se está definiendo cómo disponibilizar esta experiencia en la zona pública.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Transformar y Oportunidad de venta: venta y renovación de SOAT = leads/ventas.</div></td>
             <td><span class="badge badge-congelado">⏸️ Congelado</span></td>
             <td><span class="fecha tbd">Congelado</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -314,7 +355,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -325,6 +366,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Ya se hicieron el desarrollo y las pruebas el 25 de septiembre; el concepto de Daniel González fue favorable. Hay sesión mañana para validar si WordPress puede usar la red externa; el despliegue a producción se hará el 1 de octubre.</div>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Transformar: SEO atrae tráfico calificado y sostiene autogestión y velocidad.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">5 oct</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -338,6 +380,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Se hizo el despliegue, pero no pasó el sanity check por un tema de nivelación de ambiente. Ya se está resolviendo; se espera liberar con corrección el 2 de octubre.</div>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Tráfico Páginas de Productos</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Oportunidad de venta: más contenido genera interés y tráfico a compra.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">23 sep</span></td>
             <td><span class="fecha-ajustada">2 oct</span></td>
@@ -348,6 +391,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Atención de incidentes generados por el vencimiento de certificados del antivirus.</div>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span></td>
+            <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">No responde directamente al propósito (conectar/inspirar/vender); es mantenimiento técnico. Habilita el propósito de forma indirecta: sin disponibilidad no hay autogestión ni venta.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">29 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
