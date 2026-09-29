@@ -321,66 +321,140 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="url">Acceso a Clientes · autogestión autenticada de pólizas y servicios</div>
     </div>
     <div class="channel-body">
+      <div class="section-label">📊 KPIs de Acceso a Clientes</div>
+
+      <div class="kpi-cat">🛡️ Confiabilidad</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Confiabilidad del servicio</div>
+          <div class="k-values"><span class="k-real warn">81.6%</span><span class="k-meta">/ meta 99.9%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:82%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo de respuesta (s)</div>
+          <div class="k-values"><span class="k-real ok">—</span><span class="k-meta">/ meta ≤ 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:0%;background:var(--gray-400)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Incidentes críticos</div>
+          <div class="k-values"><span class="k-real warn">1</span><span class="k-meta">/ meta 0</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico / Sesiones</div>
+          <div class="k-values"><span class="k-real ok">68.677</span><span class="k-meta">/ meta 69.520</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:99%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tasa de rebote</div>
+          <div class="k-values"><span class="k-real ok">11.99%</span><span class="k-meta">/ meta ≤ 20%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo en sitio (min)</div>
+          <div class="k-values"><span class="k-real ok">5</span><span class="k-meta">/ meta 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Satisfacción del usuario (INS)</div>
+          <div class="k-values"><span class="k-real crit">25%</span><span class="k-meta">/ meta 50%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--danger)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Cobertura</div>
+          <div class="k-values"><span class="k-real ok">2%</span><span class="k-meta">/ meta 1%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Autogestión</div>
+          <div class="k-values"><span class="k-real ok">95%</span><span class="k-meta">/ meta 90%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Adopción</div>
+          <div class="k-values"><span class="k-real crit">43%</span><span class="k-meta">/ meta 50%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--danger)"></div></div>
+        </div>
+      </div>
+
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>Estado</th><th>Fecha de salida</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">5.</span>Botón certificaciones</div>
+              <div class="func-name"><span class="func-num">1.</span>Botón certificaciones</div>
               <div class="func-desc">Al redirigir de Zona Pública a Zona Privada se activa el modal/drawer de certificaciones (se trabaja en solventar latencia, se entrega 18 sep).</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
+            <td><span class="fecha-ok">✓ A tiempo</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">6.</span>Certificación menú</div>
+              <div class="func-name"><span class="func-num">2.</span>Certificación menú</div>
               <div class="func-desc">Tener en "Mis certificaciones" una opción que centralice todos los certificados de declaración de renta.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">14 sep</span></td>
+            <td><span class="fecha-ok">✓ A tiempo</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">7.</span>Nueva versión AC</div>
+              <div class="func-name"><span class="func-num">3.</span>Nueva versión AC</div>
               <div class="func-desc">Nueva versión de diseño de Zona Privada (home + ver detalle).</div>
+              <div class="tag-line seg">Seguimiento</div>
+              <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
+            <td><span class="fecha-ajustada">8 oct</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">8.</span>Nuevas funcionalidades de negocio</div>
-              <ul class="sub-list">
-                <li><span class="badge badge-backlog">🔵 Backlog</span> Modificación de servicios</li>
-                <li><span class="badge badge-backlog">🔵 Backlog</span> Mejora del proceso de cancelación de póliza</li>
-                <li><span class="badge badge-progreso">🟡 En curso · 1 oct</span> Entregar con IA las coberturas del cliente (WhatsApp en AC)</li>
-              </ul>
+              <div class="func-name"><span class="func-num">4.</span>Nuevas funcionalidades de negocio</div>
+              <div class="func-desc">Entregar con IA las coberturas del cliente (funcionalidad de WhatsApp en AC).</div>
+              <div class="tag-line seg">Seguimiento</div>
+              <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
-            <td><span class="badge badge-progreso">🟡 Mixto</span></td>
-            <td><span class="fecha">Ver detalle</span></td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
+            <td><span class="badge badge-progreso">🟡 En curso</span></td>
+            <td><span class="fecha">1 oct</span></td>
+            <td><span class="fecha-ajustada">8 oct</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">9.</span>Versión mobile AC</div>
+              <div class="func-name"><span class="func-num">5.</span>Versión mobile AC</div>
               <div class="func-desc">Nueva versión mobile de Acceso a Clientes.</div>
+              <div class="tag-line seg">Seguimiento</div>
+              <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
+            <td><span class="fecha-ajustada">8 oct</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">10.</span>Trámites de salud / Directorio / Usos</div>
-              <div class="func-desc">Salud a su Medida — redireccionar al directorio médico con filtro tipo plan + coberturas por tipo de plan. Usos: en el marco de "Imán de la nevera" (lidera Camilo Gálvez; enviarán reporte periódico).</div>
-              <ul class="sub-list">
-                <li><span class="badge badge-hecho">🟢 Entregado</span> Directorio médico con filtro de plan y coberturas</li>
-                <li><span class="badge badge-progreso">🟡 En curso</span> Usos — Imán de la nevera</li>
-              </ul>
+              <div class="func-name"><span class="func-num">6.</span>Trámites de salud / Directorio / Usos</div>
+              <div class="func-desc">Salud a su Medida — redireccionar al directorio médico con filtro tipo plan + coberturas por tipo de plan.</div>
             </td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">Directorio: 9 sep · Coberturas: 16 sep</span></td>
+            <td><span class="fecha-ok">✓ A tiempo</span></td>
           </tr>
         </tbody>
       </table>
@@ -388,31 +462,42 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">11.</span>Descarga masiva de documentos</div>
+              <div class="func-name"><span class="func-num">7.</span>Descarga masiva de documentos</div>
               <div class="func-desc">El cliente puede seleccionar y descargar de una sola vez todos sus documentos de declaración de renta.</div>
             </td>
+            <td><span class="kpi-tag">Autogestión</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">25 sep</span></td>
             <td><span class="fecha tbd">—</span></td>
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">12.</span>Tracking de siniestros de movilidad (Bolívar 360)</div>
+              <div class="func-name"><span class="func-num">8.</span>Tracking de siniestros de movilidad (Bolívar 360)</div>
               <div class="func-desc">Conexión con el portal de Bolívar 360 para el seguimiento de siniestros de movilidad.</div>
             </td>
+            <td><span class="kpi-tag">Autogestión</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">18 sep</span></td>
             <td><span class="fecha tbd">—</span></td>
           </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="subgroup-label">🧲 Imán de la nevera</div>
+      <div class="tw">
+      <table class="func-table">
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <tbody>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">13.</span>Imán de la nevera</div>
+              <div class="func-name"><span class="func-num">9.</span>Imán de la nevera</div>
               <div class="func-desc">El equipo de Camilo Gálvez está trabajando con la línea de negocio de salud para planear la estrategia de abordaje del plan.</div>
             </td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha tbd">Por confirmar</span></td>
             <td><span class="fecha tbd">—</span></td>
