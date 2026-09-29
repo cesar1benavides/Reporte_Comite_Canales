@@ -54,8 +54,10 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .avance-box .a-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
 .avance-box .a-label{font-size:.85rem;font-weight:600;opacity:.95}
 .avance-box .a-pct{font-size:1.9rem;font-weight:700;line-height:1}
-.avance-bar{height:10px;background:rgba(255,255,255,.22);border-radius:6px;overflow:hidden}
+.avance-bar{position:relative;height:10px;background:rgba(255,255,255,.22);border-radius:6px}
 .avance-fill{height:100%;background:#7cb342;border-radius:6px}
+.avance-marker{position:absolute;top:-3px;bottom:-3px;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.avance-marker::after{content:"esperado";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;opacity:.9}
 .avance-note{font-size:.72rem;opacity:.8;margin-top:.5rem}
 /* Tarjeta de canal */
 .channel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);margin-bottom:2.5rem;overflow:hidden}
@@ -148,7 +150,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
   <h1>Estatus de Canales Digitales</h1>
   <div class="sub">Comité de Canales · Seguros Bolívar · Vicepresidencia de Mercadeo y Relacionamiento</div>
   <div class="date">Corte: 25 de septiembre de 2026</div>
-  <div class="badge-comite">Versión 1.3 · Actualizado: 29 de septiembre de 2026</div>
+  <div class="badge-comite">Versión 1.4 · Actualizado: 29 de septiembre de 2026</div>
 </header>
 <div class="container">
   <!-- Navegación entre canales -->
@@ -171,10 +173,13 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
     <div class="avance-box">
       <div class="a-top">
         <span class="a-label">📈 Avance de compromisos (todos los frentes)</span>
-        <span class="a-pct">66.7% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 100% esperado</span></span>
+        <span class="a-pct">66.7% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 47.6% esperado</span></span>
       </div>
-      <div class="avance-bar"><div class="avance-fill" style="width:66.7%"></div></div>
-      <div class="avance-note">Base: 21 ítems · 🟢 8 entregados · 🟡 12 en curso · ⏸️ 1 congelado. Ponderación: entregado 100%, en curso 50%, congelado 0%. Esperado a la fecha de corte: 100%.</div>
+      <div class="avance-bar">
+        <div class="avance-fill" style="width:66.7%"></div>
+        <div class="avance-marker" style="left:47.6%"></div>
+      </div>
+      <div class="avance-note">Real vs. esperado a la fecha de corte (29 sep), según fechas inicialmente pactadas. Base: 21 ítems · 🟢 8 entregados · 🟡 12 en curso · ⏸️ 1 congelado. <strong>Vamos por encima de lo esperado.</strong> De 10 ítems que ya debían entregarse, 8 se cumplieron (80% en fecha).</div>
     </div>
   </section>
   <!-- ============ WEB — segurosbolivar.com ============ -->
@@ -480,7 +485,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -488,6 +493,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Al redirigir de Zona Pública a Zona Privada se activa el modal/drawer de certificaciones (se trabaja en solventar latencia, se entrega 18 sep).</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Autogestión: el cliente utiliza sus pólizas descargando certificados de forma autónoma.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -498,6 +504,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Tener en "Mis certificaciones" una opción que centralice todos los certificados de declaración de renta.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Gestión administrativa: centraliza y facilita consultar/usar los certificados.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">14 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -510,6 +517,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Mejora la gestión y consulta autónoma de pólizas (home + detalle).</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha-ajustada">8 oct</span></td>
@@ -522,6 +530,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Consulta autónoma: el cliente entiende sus coberturas sin intermediación.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha-ajustada">8 oct</span></td>
@@ -534,6 +543,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Habilita la autogestión de pólizas desde el móvil.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha-ajustada">8 oct</span></td>
@@ -544,6 +554,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Salud a su Medida — redireccionar al directorio médico con filtro tipo plan + coberturas por tipo de plan.</div>
             </td>
             <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: consulta autónoma del directorio y coberturas por plan.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">Directorio: 9 sep · Coberturas: 16 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -554,7 +565,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -564,6 +575,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">En despliegue.</div>
             </td>
             <td><span class="kpi-tag">Adopción</span><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Autogestión: el cliente obtiene sus documentos de forma autónoma y ágil.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">30 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -576,6 +588,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Se han evidenciado <strong>50 redirecciones</strong> a este portal desde Acceso a Clientes.</div>
             </td>
             <td><span class="kpi-tag">Adopción</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: el cliente hace seguimiento autónomo de su siniestro.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">18 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -586,6 +599,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Sala de trabajo dedicada para solventar la latencia en el servicio de certificaciones.</div>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">No es una funcionalidad de gestión; sostiene la disponibilidad para que la autogestión de certificados sea posible.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">25 sep</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -598,6 +612,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Con entregas periódicas.</div>
             </td>
             <td><span class="kpi-tag">Confiabilidad</span></td>
+            <td><span class="badge badge-parcial">◐ Habilitador</span><div class="alin-why">Mantenimiento técnico; habilita una autogestión confiable pero no es funcionalidad de cara al cliente.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">15 oct</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -608,6 +623,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">El equipo de Camilo Gálvez está trabajando con la línea de negocio de salud para planear la estrategia de abordaje del plan.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: promueve el uso de coberturas de salud del cliente.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha tbd">Por confirmar</span></td>
             <td><span class="fecha tbd">—</span></td>
@@ -691,7 +707,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
       <table class="func-table">
-        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
         <tbody>
           <tr>
             <td>
@@ -701,6 +717,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Ya se cargó a tiendas; hoy no dieron el OK para publicarlo.</div>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Realizar transacciones: habilita la compra de seguros dentro de la app.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">25 sep</span></td>
             <td><span class="fecha-ajustada">29 sep</span></td>
@@ -713,6 +730,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="seguimiento">Ya nos hicieron la entrega el 25 de septiembre. Se espera tener la integración con pagos al 12 de octubre.</div>
             </td>
             <td><span class="kpi-tag">INS</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Realizar transacciones: pagar la póliza de forma ágil y segura desde la app.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">12 oct</span></td>
             <td><span class="fecha-ok">✓ A tiempo</span></td>
@@ -723,6 +741,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
               <div class="func-desc">Mejora de experiencia / vitrina de seguros.</div>
             </td>
             <td><span class="kpi-tag">Leads</span></td>
+            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Gestión integral: mejora la experiencia para consultar y adquirir seguros.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">19 oct</span></td>
             <td><span class="fecha tbd">—</span></td>
