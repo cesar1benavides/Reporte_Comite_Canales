@@ -159,11 +159,11 @@ details.item-acc .item-detail{margin-top:.4rem}
 .tag-line.seg{color:var(--info)}
 .seguimiento{font-size:.8rem;color:var(--gray-800);background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.4rem .6rem;margin-top:.15rem}
 .kpi-tag{display:inline-block;padding:.22rem .55rem;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--primary);color:var(--white);white-space:nowrap;margin:.1rem .15rem .1rem 0}
-.impact-tag{display:inline-flex;align-items:center;gap:.25rem;padding:.2rem .5rem;border-radius:6px;font-size:.7rem;font-weight:700;background:var(--success-bg,#e6f6ec);color:var(--success,#1b8a4b);white-space:normal;line-height:1.2;margin:.3rem 0 0;position:relative;cursor:help}
+.impact-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .6rem;border-radius:6px;font-size:.7rem;font-weight:700;background:var(--success-bg,#e6f6ec);color:var(--success,#1b8a4b);white-space:normal;line-height:1.3;margin:.3rem 0 0;position:relative;cursor:help}
 .impact-tag .tip{visibility:hidden;opacity:0;position:absolute;top:135%;right:0;background:var(--gray-800);color:var(--white);padding:.45rem .55rem;border-radius:6px;font-size:.64rem;font-weight:400;line-height:1.3;width:180px;max-width:min(180px,60vw);z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .15s;text-transform:none;letter-spacing:0;white-space:normal;overflow-wrap:break-word;word-break:break-word}
 .impact-tag .tip::after{content:"";position:absolute;bottom:100%;right:12px;border:5px solid transparent;border-bottom-color:var(--gray-800)}
 .impact-tag:hover .tip{visibility:visible;opacity:1}
-.impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--success,#1b8a4b);color:var(--white);font-size:.58rem;font-weight:700}
+.impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;min-width:14px;flex:0 0 14px;border-radius:50%;background:var(--success,#1b8a4b);color:var(--white);font-size:.6rem;font-weight:700}
 .measured-tag{background:var(--warning-bg,#fff4e0);color:var(--warning,#9a6700)}
 .measured-tag .impact-i{background:var(--warning,#9a6700)}
 .impact-note{font-size:.72rem;color:var(--gray-600);background:var(--success-bg,#e6f6ec);border-radius:6px;padding:.45rem .7rem;margin:.5rem 0 .2rem}
@@ -583,7 +583,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="func-desc">Salud a su Medida — redireccionar al directorio médico con filtro tipo plan + coberturas por tipo de plan.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −3/mes<span class="tip">7 clientes nos dijeron que tuvieron problemas con la información de coberturas, beneficios y asistencias de su seguro, más otros que no encontraban el directorio médico. Al mostrar el directorio y las coberturas filtradas por tipo de plan, esperamos que al menos 3 dejen de calificar mal por este motivo cada mes.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: consulta autónoma del directorio y coberturas por plan.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">Directorio: 9 sep · Coberturas: 16 sep</span></td>
@@ -598,7 +598,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −9/mes<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 72 se quejaron porque no encontraban las cosas o la información no era clara. Con un nuevo diseño que agrupa todo en un solo lugar y hace más fácil encontrar, esperamos que al menos 9 dejen de calificar mal por este motivo cada mes.</span></span></td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −9/mes<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 72 se quejaron porque no encontraban las cosas o la información no era clara. Con un nuevo diseño que agrupa todo en un solo lugar y hace más fácil encontrar, esperamos que al menos 9 dejen de calificar mal por este motivo cada mes.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Mejora la gestión y consulta autónoma de pólizas (home + detalle).</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
@@ -613,7 +613,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −6/mes<span class="tip">Olivia recibió 536 consultas de clientes preguntando qué cubre su seguro en el mes. Al entregarles las coberturas con IA directo en el portal, resolvemos esa duda sin que tengan que preguntar, y esperamos que al menos 6 dejen de calificar mal por no entender su cobertura cada mes.</span></span></td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −6/mes<span class="tip">Olivia recibió 536 consultas de clientes preguntando qué cubre su seguro en el mes. Al entregarles las coberturas con IA directo en el portal, resolvemos esa duda sin que tengan que preguntar, y esperamos que al menos 6 dejen de calificar mal por no entender su cobertura cada mes.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Consulta autónoma: el cliente entiende sus coberturas sin intermediación.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
@@ -628,7 +628,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">Se presenta un retraso: se realizará una <strong>pruebatón</strong> antes de liberar. Nueva entrega el 8 de octubre.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Autogestión</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −8 a −13/mes<span class="tip">Hoy quien entra desde el móvil califica mucho peor que desde computador (653 respuestas móviles en el mes, con bastantes más quejas que en escritorio). Si la nueva versión móvil cierra la mitad de esa brecha, esperamos que entre 8 y 13 clientes dejen de calificar mal desde el móvil cada mes.</span></span></td>
+            <td><span class="kpi-tag">INS</span><span class="kpi-tag">Adopción</span><span class="impact-tag"><span class="impact-i">i</span>Reduce calificaciones negativas · meta −8 a −13/mes<span class="tip">Hoy quien entra desde el móvil califica mucho peor que desde computador (653 respuestas móviles en el mes, con bastantes más quejas que en escritorio). Si la nueva versión móvil cierra la mitad de esa brecha, esperamos que entre 8 y 13 clientes dejen de calificar mal desde el móvil cada mes.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Habilita la autogestión de pólizas desde el móvil.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
