@@ -178,6 +178,23 @@ details.item-acc .item-detail{margin-top:.4rem}
   .header h1{font-size:1.4rem}
   .kpi-strip{grid-template-columns:repeat(2,1fr)}
   .channel-head h2{font-size:1.2rem}
+
+  /* ── Tablas → tarjetas apiladas en móvil ── */
+  .tw{overflow-x:visible}
+  .func-table{font-size:.9rem}
+  .func-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .func-table tr{display:block;margin-bottom:1rem;border:1px solid var(--gray-200);border-radius:10px;padding:.6rem .8rem;box-shadow:var(--shadow);background:var(--white)}
+  .func-table td{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;padding:.4rem 0;border:0;border-bottom:1px solid var(--gray-100);text-align:right}
+  .func-table td:last-child{border-bottom:0}
+  .func-table td::before{content:attr(data-label);font-weight:600;color:var(--gray-600);font-size:.72rem;text-align:left;flex:0 0 38%;white-space:normal}
+  /* la primera celda (nombre del punto) va a lo ancho, sin etiqueta */
+  .func-table td:first-child{display:block;text-align:left;border-bottom:2px solid var(--gray-200);padding-bottom:.5rem;margin-bottom:.3rem}
+  .func-table td:first-child::before{display:none}
+  .func-table td .alin-why{text-align:right}
+  /* el tooltip se centra y no se corta en móvil */
+  .impact-tag{white-space:normal}
+  .impact-tag .tip{right:auto;left:50%;transform:translateX(-50%);width:min(220px,80vw);max-width:80vw}
+  .impact-tag .tip::after{right:auto;left:50%;transform:translateX(-50%)}
 }
 </style>
 </head>
@@ -864,5 +881,18 @@ details.item-acc .item-detail{margin-top:.4rem}
     <p style="margin-top:.4rem;color:var(--gray-400)">Leyenda de estados: <span class="badge badge-hecho">🟢 Entregado</span> <span class="badge badge-progreso">🟡 En curso</span> <span class="badge badge-congelado">⏸️ Congelado</span> <span class="badge badge-backlog">🔵 Backlog</span></p>
   </div>
 </div>
+<script>
+/* Rellena data-label en cada celda con el título de su columna, para la vista de tarjetas en móvil */
+(function(){
+  document.querySelectorAll('table.func-table').forEach(function(tabla){
+    var ths = Array.prototype.map.call(tabla.querySelectorAll('thead th'), function(th){return th.textContent.trim();});
+    tabla.querySelectorAll('tbody tr').forEach(function(tr){
+      Array.prototype.forEach.call(tr.children, function(td, i){
+        if (ths[i]) td.setAttribute('data-label', ths[i]);
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
