@@ -159,6 +159,10 @@ details.item-acc .item-detail{margin-top:.4rem}
 .tag-line.seg{color:var(--info)}
 .seguimiento{font-size:.8rem;color:var(--gray-800);background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.4rem .6rem;margin-top:.15rem}
 .kpi-tag{display:inline-block;padding:.22rem .55rem;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--primary);color:var(--white);white-space:nowrap;margin:.1rem .15rem .1rem 0}
+.impact-tag{display:inline-flex;align-items:center;gap:.25rem;padding:.2rem .5rem;border-radius:6px;font-size:.72rem;font-weight:700;background:var(--success-bg,#e6f6ec);color:var(--success,#1b8a4b);white-space:nowrap;margin:.3rem 0 0;position:relative;cursor:help}
+.impact-tag .tip{visibility:hidden;opacity:0;position:absolute;bottom:140%;left:0;background:var(--gray-800);color:var(--white);padding:.55rem .7rem;border-radius:6px;font-size:.7rem;font-weight:400;line-height:1.4;width:260px;z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .15s;text-transform:none;letter-spacing:0}
+.impact-tag:hover .tip{visibility:visible;opacity:1}
+.impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--success,#1b8a4b);color:var(--white);font-size:.58rem;font-weight:700}
 .fecha{font-size:.8rem;color:var(--gray-800);white-space:nowrap}
 .fecha.tbd{color:var(--gray-500);font-style:italic}
 .sub-list{list-style:none;font-size:.8rem;margin-top:.3rem}
@@ -348,7 +352,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">La asertividad de Olivia aumentó del <strong>30% al 50%</strong> en efectividad. Se sigue revisando.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>INS +0.8 a +1.3pp<span class="tip">Impacto estimado sobre el INS de segurosbolivar.com. Pool: 42 detractores de septiembre con dolor de certificados (23 por verbatim + 25 por intención en Olivia, únicos). Captura asumida 40–65% porque Olivia entrega el certificado directo en el chat, sin fricción web (asertividad ya subió 30%→50%). Base: 1 punto de INS ≈ 21 detractores reconvertidos sobre 2.059 respuestas. Estimación del equipo, no medida pre/post.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Facilitar: resuelve el trámite de certificados en autogestión, sin fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado (en monitoreo)</span></td>
             <td><span class="fecha">9 sep</span></td>
@@ -361,7 +365,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="func-desc">Activar el banner de certificaciones en la zona privada cuando el cliente es redirigido desde la zona pública.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>INS +0.2 a +0.4pp<span class="tip">Impacto estimado sobre el INS de segurosbolivar.com. Mismo pool de certificados (42 detractores) que Certificaciones Olivia, pero captura menor 10–20%: el banner solo mejora el hallazgo del trámite al redirigir de zona pública a privada, no resuelve el trámite en sí. Base: 1 punto de INS ≈ 21 detractores sobre 2.059 respuestas. Estimación del equipo, no medida pre/post.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Facilitar: guía al cliente hacia el trámite reduciendo fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
@@ -374,7 +378,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="func-desc">Diccionario de términos — lenguaje común para términos de seguros. Lo lidera Camilo Gálvez.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>INS +0.1 a +0.3pp<span class="tip">Impacto estimado sobre el INS de segurosbolivar.com. Pool: 44 detractores con dolor de "información no clara / contenido confuso". Captura baja 5–15%: el lenguaje claro ayuda a comprender productos pero no resuelve trámites ni fallos técnicos, que son el grueso del dolor. Base: 1 punto de INS ≈ 21 detractores sobre 2.059 respuestas. Estimación del equipo, no medida pre/post.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Inspirar y Facilitar: lenguaje claro para "hacer fácil entender" los productos.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
@@ -389,7 +393,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">Cambió el enfoque: ahora se hará una <strong>redirección directa a Proyectiva</strong>, para que desde allá se realice la validación del lead y se genere el link de pago.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>INS +0.5 a +1.2pp<span class="tip">Impacto estimado sobre el INS de segurosbolivar.com. Pool: 132 detractores con dolor SOAT (comprar + descargar + cotizar). Captura 8–18%: la redirección a Proyectiva destraba la compra/renovación, pero parte del dolor es descarga de SOAT ya comprado, que no cubre. Base: 1 punto de INS ≈ 21 detractores sobre 2.059 respuestas. Estimación del equipo, no medida pre/post.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Transformar y Oportunidad de venta: venta y renovación de SOAT = leads/ventas.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">8 oct</span></td>
