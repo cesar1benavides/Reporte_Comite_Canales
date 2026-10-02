@@ -164,6 +164,8 @@ details.item-acc .item-detail{margin-top:.4rem}
 .impact-tag .tip::after{content:"";position:absolute;bottom:100%;right:12px;border:5px solid transparent;border-bottom-color:var(--gray-800)}
 .impact-tag:hover .tip{visibility:visible;opacity:1}
 .impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--success,#1b8a4b);color:var(--white);font-size:.58rem;font-weight:700}
+.measured-tag{background:var(--warning-bg,#fff4e0);color:var(--warning,#9a6700)}
+.measured-tag .impact-i{background:var(--warning,#9a6700)}
 .impact-note{font-size:.72rem;color:var(--gray-600);background:var(--success-bg,#e6f6ec);border-radius:6px;padding:.45rem .7rem;margin:.5rem 0 .2rem}
 .fecha{font-size:.8rem;color:var(--gray-800);white-space:nowrap}
 .fecha.tbd{color:var(--gray-500);font-style:italic}
@@ -354,7 +356,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">La asertividad de Olivia aumentó del <strong>30% al 50%</strong> en efectividad. Se sigue revisando.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado +0.8 a +1.3pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 42 se quejaron por no lograr su certificado. Como ahora se les entrega directo en el chat, esperamos recuperar como mínimo 17 de ellos.</span></span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado +0.8 a +1.3pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 42 se quejaron por no lograr su certificado. Como ahora se les entrega directo en el chat, esperamos recuperar como mínimo 17 de ellos.</span></span><span class="impact-tag measured-tag"><span class="impact-i">i</span>Impacto medido: sin cambio<span class="tip">Comparando 8 días antes (1–8 sep) vs. 8 días después (10–17 sep, sin el día del despliegue): las quejas por certificado se mantuvieron (12 → 13). No se observa aún la reducción esperada. Base pequeña: no concluyente.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Facilitar: resuelve el trámite de certificados en autogestión, sin fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado (en monitoreo)</span></td>
             <td><span class="fecha">9 sep</span></td>
@@ -367,7 +369,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="func-desc">Activar el banner de certificaciones en la zona privada cuando el cliente es redirigido desde la zona pública.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado +0.2 a +0.4pp<span class="tip">Afecta a esos mismos 42 clientes que se quejaron por el certificado. El banner les ayuda a encontrar el trámite, por eso esperamos recuperar como mínimo 4 de ellos.</span></span></td>
+            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado +0.2 a +0.4pp<span class="tip">Afecta a esos mismos 42 clientes que se quejaron por el certificado. El banner les ayuda a encontrar el trámite, por eso esperamos recuperar como mínimo 4 de ellos.</span></span><span class="impact-tag measured-tag"><span class="impact-i">i</span>Impacto medido: sin cambio<span class="tip">Mismo dolor de certificados que no varió entre las ventanas de 8 días antes/después del despliegue. Base pequeña: no concluyente.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Facilitar: guía al cliente hacia el trámite reduciendo fricción.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">7 sep</span></td>
@@ -405,6 +407,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       </table>
       </div>
       <div class="impact-note">💡 <strong>Cómo leer el impacto esperado:</strong> en septiembre respondieron 2.059 clientes la encuesta. Cada 21 clientes que pasan de calificar mal a bien suben el INS en 1 punto. Los rangos (ej. +0.8 a +1.3pp) son la mejora esperada en el INS por cada iniciativa.</div>
+      <div class="impact-note">📏 <strong>Cómo medimos el impacto real:</strong> para cada iniciativa ya en producción comparamos el dolor que debía resolver en una ventana de días iguales antes vs. después del despliegue (excluyendo el día de salida). El badge ámbar <em>"Impacto medido"</em> muestra el resultado observado. Con bases pequeñas el dato es indicativo, no concluyente.</div>
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
