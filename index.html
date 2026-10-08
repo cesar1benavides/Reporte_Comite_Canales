@@ -73,6 +73,21 @@ details.channel>summary::-webkit-details-marker{display:none}
 .acc-mini{font-size:.8rem;font-weight:600;opacity:.95;white-space:nowrap}
 .acc-chevron{font-size:1.1rem;transition:transform .2s;opacity:.9}
 details.channel[open] .acc-chevron{transform:rotate(180deg)}
+/* Badges de estado tipo pill (encabezado) */
+.status-badges{display:inline-flex;gap:.5rem;flex-wrap:wrap}
+.status-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);padding:.25rem .7rem;border-radius:14px;font-size:.76rem;font-weight:600;color:var(--white);white-space:nowrap}
+.status-badge .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.status-badge .dot.fin{background:#8bc34a}
+.status-badge .dot.cur{background:#ffd54f}
+.prop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+/* KPIs colapsables (Ver KPIs) */
+details.kpi-collapse{border:1px solid var(--info-bg);border-radius:var(--radius);background:var(--info-bg);margin-bottom:1rem}
+details.kpi-collapse>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;font-size:.9rem;font-weight:700;color:var(--info)}
+details.kpi-collapse>summary::-webkit-details-marker{display:none}
+details.kpi-collapse>summary .kpi-toggle{background:var(--info);color:var(--white);padding:.4rem .9rem;border-radius:16px;font-size:.78rem;font-weight:700;white-space:nowrap}
+details.kpi-collapse>summary .kpi-toggle::after{content:" ▾"}
+details.kpi-collapse[open]>summary .kpi-toggle::after{content:" ▴"}
+details.kpi-collapse .kpi-inner{padding:0 1.2rem 1.2rem}
 /* Mini-acordeón de detalle por ítem */
 details.item-acc{margin-top:.4rem}
 details.item-acc>summary{list-style:none;cursor:pointer;font-size:.72rem;font-weight:700;color:var(--info);display:inline-flex;align-items:center;gap:.3rem}
@@ -468,39 +483,19 @@ details.item-acc .item-detail{margin-top:.4rem}
       </div>
     </summary>
     <div class="channel-head pub">
-      <div class="prop-tag">🎯 Propósito</div>
-      <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
-      <div class="prop-pillars">
-        <div class="prop-pillar">
-          <span class="p-verb">🤝 Conectar</span>
-          <span class="p-def">Crear una relación emocional y funcional con cada cliente.</span>
-          <span class="p-res">💚 Atraer tráfico calificado</span>
-        </div>
-        <div class="prop-pillar">
-          <span class="p-verb">✨ Inspirar</span>
-          <span class="p-def">Motivar a los usuarios a proteger lo que más valoran a través de nuestros productos.</span>
-          <span class="p-res">✨ Generar interés y deseo</span>
-        </div>
-        <div class="prop-pillar">
-          <span class="p-verb">✅ Facilitar</span>
-          <span class="p-def">Simplificar todo el proceso de información, cotización, compra y autogestión.</span>
-          <span class="p-res">✅ Hacer fácil entender, usar, cotizar y comprar</span>
-        </div>
-        <div class="prop-pillar">
-          <span class="p-verb">🚀 Transformar</span>
-          <span class="p-def">No solo vender, sino elevar la experiencia de seguros en digital.</span>
-          <span class="p-res">🚀 Lograr leads, ventas, autogestión</span>
-        </div>
-        <div class="prop-pillar">
-          <span class="p-verb">🫶 Oportunidad de venta</span>
-          <span class="p-def">Cada visita debe tener posibilidad real de convertirse en un lead o una venta asistida.</span>
-          <span class="p-res">❤️ Crear satisfacción y recurrencia</span>
+      <div class="prop-head">
+        <div><span class="prop-tag">🎯 Propósito</span></div>
+        <div class="status-badges">
+          <span class="status-badge"><span class="dot fin"></span>4 entregadas</span>
+          <span class="status-badge"><span class="dot cur"></span>3 en curso</span>
         </div>
       </div>
+      <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
     </div>
     <div class="channel-body">
-      <div class="section-label">📊 KPIs de segurosbolivar.com <span style="font-weight:400;font-size:.8rem;color:var(--gray-600)">· corte a septiembre</span></div>
-
+      <details class="kpi-collapse">
+        <summary><span>📊 KPIs de segurosbolivar.com · corte a septiembre</span><span class="kpi-toggle">Ver KPIs</span></summary>
+        <div class="kpi-inner">
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
@@ -581,6 +576,8 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
       </div>
+        </div>
+      </details>
 
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
@@ -714,12 +711,19 @@ details.item-acc .item-detail{margin-top:.4rem}
       </div>
     </summary>
     <div class="channel-head priv">
-      <div class="prop-tag">🎯 Propósito</div>
-      <div class="url">Espacio para la gestión administrativa de los seguros, donde los clientes consultan, actualizan y utilizan sus pólizas de manera autónoma.</div>
+      <div class="prop-head">
+        <div><span class="prop-tag">🎯 Propósito</span></div>
+        <div class="status-badges">
+          <span class="status-badge"><span class="dot fin"></span>6 entregadas</span>
+          <span class="status-badge"><span class="dot cur"></span>6 en curso</span>
+        </div>
+      </div>
+      <div class="prop-main">Espacio para la gestión administrativa de los seguros, donde los clientes consultan, actualizan y utilizan sus pólizas de manera autónoma.</div>
     </div>
     <div class="channel-body">
-      <div class="section-label">📊 KPIs de Acceso a Clientes <span style="font-weight:400;font-size:.8rem;color:var(--gray-600)">· corte a septiembre</span></div>
-
+      <details class="kpi-collapse">
+        <summary><span>📊 KPIs de Acceso a Clientes · corte a septiembre</span><span class="kpi-toggle">Ver KPIs</span></summary>
+        <div class="kpi-inner">
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
@@ -785,6 +789,8 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-bar"><div class="k-fill" style="width:50%;background:var(--warning)"></div></div>
         </div>
       </div>
+        </div>
+      </details>
 
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
@@ -981,12 +987,19 @@ details.item-acc .item-detail{margin-top:.4rem}
       </div>
     </summary>
     <div class="channel-head app">
-      <div class="prop-tag">🎯 Propósito</div>
-      <div class="url">Nuestra aplicación móvil es la herramienta integral para que los clientes gestionen su póliza de forma ágil y segura. Permite consultar información detallada del seguro, realizar transacciones, gestionar trámites y acceder a servicios adicionales.</div>
+      <div class="prop-head">
+        <div><span class="prop-tag">🎯 Propósito</span></div>
+        <div class="status-badges">
+          <span class="status-badge"><span class="dot fin"></span>1 entregada</span>
+          <span class="status-badge"><span class="dot cur"></span>2 en curso</span>
+        </div>
+      </div>
+      <div class="prop-main">Nuestra aplicación móvil es la herramienta integral para que los clientes gestionen su póliza de forma ágil y segura. Permite consultar información detallada del seguro, realizar transacciones, gestionar trámites y acceder a servicios adicionales.</div>
     </div>
     <div class="channel-body">
-      <div class="section-label">📊 KPIs de App Bolívar <span style="font-weight:400;font-size:.8rem;color:var(--gray-600)">· corte a septiembre</span></div>
-
+      <details class="kpi-collapse">
+        <summary><span>📊 KPIs de App Bolívar · corte a septiembre</span><span class="kpi-toggle">Ver KPIs</span></summary>
+        <div class="kpi-inner">
       <div class="kpi-cat">💼 Negocio</div>
       <div class="kpi-grid">
         <div class="kpi-card">
@@ -1046,6 +1059,8 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
         </div>
       </div>
+        </div>
+      </details>
 
       <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
       <div class="tw">
