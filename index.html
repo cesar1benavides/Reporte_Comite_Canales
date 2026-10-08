@@ -104,6 +104,7 @@ details.item-acc .item-detail{margin-top:.4rem}
 .channel-head.priv{background:linear-gradient(120deg,#4527a0,#5e35b1)}
 .channel-head.app{background:linear-gradient(120deg,#bf360c,#e65100)}
 .channel-head.otros{background:linear-gradient(120deg,#0d47a1,#1565c0)}
+.acc-head.otros{background:linear-gradient(120deg,#0d47a1,#1565c0)}
 .channel-head.iman{background:linear-gradient(120deg,#4e342e,#6d4c41)}
 .channel-head h2{font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:.6rem}
 .channel-head .icon{font-size:1.6rem}
@@ -249,6 +250,7 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-cell.fin{background:var(--success)}
 .rm-cell.cur{background:var(--warning)}
 .rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
+.rm-cell.bl{background:var(--info)}
 .rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
 .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
 .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
@@ -294,12 +296,20 @@ details.item-acc .item-detail{margin-top:.4rem}
     </div>
   </section>
   <!-- ============ ROADMAP 2026 ============ -->
-  <section class="roadmap" id="roadmap">
-    <h2>🗺️ Roadmap del proyecto · Canales Digitales</h2>
+  <details class="channel" id="roadmap">
+    <summary>
+      <div class="acc-head otros">
+        <h2><span class="icon">🗺️</span> Roadmap 2026</h2>
+        <div class="acc-right"><span class="acc-mini">36 iniciativas · click para ver</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
+    <div class="roadmap" style="box-shadow:none;margin-bottom:0">
+    <h2 style="margin-top:.2rem">🗺️ Roadmap del proyecto · Canales Digitales</h2>
     <div class="rm-sub">Iniciativas priorizadas en comité (4 sep) y otros frentes, por activo. Fuente: seguimiento del Comité de Canales. Corte: 8 de octubre de 2026.</div>
     <div class="rm-legend">
       <span><i class="rm-fin"></i> Finalizado</span>
       <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
       <span><i class="rm-tbd"></i> Por definir (TBD)</span>
       <span>🚀 Paso a producción</span>
     </div>
@@ -342,11 +352,11 @@ details.item-acc .item-detail{margin-top:.4rem}
 
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">19.</span>SOAT (modal 2 redirecciones)<span class="rm-dates">entrega tentativa 17 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:12.5%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">20.</span>Unificación de marcas – ARL<span class="rm-dates">entrega tentativa 31 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:31.25%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">21.</span>SEO<span class="rm-dates">transversal · continuo</span></div>
@@ -393,39 +403,39 @@ details.item-acc .item-detail{margin-top:.4rem}
 
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">22.</span>Cambio UX Mi Perfil<span class="rm-dates">entrega tentativa 15 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:6.25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:6.25%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">23.</span>Precargue de copias de póliza<span class="rm-dates">entrega tentativa 17 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:12.5%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">24.</span>Unif. check tratamiento datos + comercial<span class="rm-dates">entrega tentativa 24 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">25.</span>Coberturas IA<span class="rm-dates">entrega tentativa 27 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">26.</span>Servicios programados<span class="rm-dates">entrega tentativa 10 nov</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:31.25%;width:25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:25%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">27.</span>Cancelación (medios y experiencia)<span class="rm-dates">entrega tentativa 26 nov</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:50%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">28.</span>Conozca cómo usar su seguro (home)<span class="rm-dates">entrega tentativa 4 dic</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:56.25%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">29.</span>Revocar autorización fines comerciales<span class="rm-dates">entrega tentativa 4 dic</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:50%;width:25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:25%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">30.</span>Evolucionar Ver Detalle (banner y accesos)<span class="rm-dates">entrega tentativa 5 dic</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:56.25%;width:25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:25%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">31.</span>Solicitudes de servicios<span class="rm-dates">se corre a Q1 2026</span></div>
@@ -451,19 +461,19 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">33.</span>Valkey (reemplazo de caché)<span class="rm-dates">entrega tentativa 16 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:6.25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:6.25%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">34.</span>Cambio de marca<span class="rm-dates">entrega tentativa 30 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:18.75%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">35.</span>Unificación de marcas<span class="rm-dates">entrega tentativa 7 nov</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:37.5%;width:12.5%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:37.5%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">36.</span>Hanru (cambio proveedor de bienestar)<span class="rm-dates">entrega tentativa 16 dic</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:31.25%;width:56.25%">En curso</div></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:56.25%">Backlog</div></div>
         </div>
 
         <div class="rm-row" style="border-bottom:0;min-height:8px">
@@ -472,8 +482,10 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
       </div>
     </div>
-    <div class="rm-note">11 iniciativas entregadas y en producción (varias en monitoreo de impacto). Se incorpora la planeación Q4 2026 (ítems 19–36) con fechas tentativas de entrega que incluyen desarrollo, pruebas y despliegue. Dos iniciativas de mayor esfuerzo (Solicitudes de servicios y Botón de redirección de movilidad) se corren a Q1 2026 por capacidad del equipo en el trimestre.</div>
-  </section>
+    <div class="rm-note">11 iniciativas entregadas y en producción (varias en monitoreo de impacto). Se incorpora la planeación Q4 2026 (ítems 19–36, en Backlog) con fechas tentativas de entrega que incluyen desarrollo, pruebas y despliegue. Dos iniciativas de mayor esfuerzo (Solicitudes de servicios y Botón de redirección de movilidad) se corren a Q1 2026 por capacidad del equipo en el trimestre.</div>
+    </div>
+    <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
+  </details>
   <!-- ============ WEB — segurosbolivar.com ============ -->
   <details class="channel" id="web">
     <summary>
