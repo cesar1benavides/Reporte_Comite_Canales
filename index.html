@@ -200,7 +200,44 @@ details.item-acc .item-detail{margin-top:.4rem}
   .impact-tag{white-space:normal}
   .impact-tag .tip{right:auto;left:50%;transform:translateX(-50%);width:min(220px,80vw);max-width:80vw}
   .impact-tag .tip::after{right:auto;left:50%;transform:translateX(-50%)}
+  .rm-years{grid-template-columns:120px 1fr}
+  .rm-months,.rm-row{grid-template-columns:120px repeat(4,1fr)}
 }
+/* ===== Roadmap (Gantt 2026) ===== */
+.roadmap{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-bottom:2rem}
+.roadmap h2{font-size:1.15rem;color:var(--primary);margin-bottom:.3rem}
+.roadmap .rm-sub{font-size:.8rem;color:var(--gray-600);margin-bottom:1.1rem}
+.rm-legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem;font-size:.72rem;color:var(--gray-600)}
+.rm-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.rm-legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+.rm-fin{background:var(--success)}.rm-cur{background:var(--warning)}.rm-tbd{background:var(--gray-400)}
+.rm-scroll{overflow-x:auto}
+.rm-grid{min-width:760px}
+.rm-years{display:grid;grid-template-columns:220px 1fr;gap:0;font-size:.74rem;font-weight:700;color:var(--white)}
+.rm-years .rm-corner{background:transparent}
+.rm-years .rm-y{text-align:center;padding:.35rem 0;background:var(--primary-dark);border-left:2px solid var(--white)}
+.rm-months{display:grid;grid-template-columns:220px repeat(4,1fr);gap:0;font-size:.56rem;font-weight:700;color:var(--gray-600);border-bottom:1px solid var(--gray-200)}
+.rm-months .rm-corner{background:var(--gray-50)}
+.rm-months .rm-m{text-align:center;padding:.3rem 0;border-left:1px solid var(--gray-100)}
+.rm-months .rm-m.q{border-left:1px solid var(--gray-300)}
+.rm-phase{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--priv);background:var(--gray-50);padding:.35rem .6rem;border-left:3px solid var(--priv);margin:.6rem 0 .1rem}
+.rm-phase.pub{color:var(--pub);border-left-color:var(--pub)}
+.rm-phase.priv{color:var(--priv);border-left-color:var(--priv)}
+.rm-phase.app{color:var(--app);border-left-color:var(--app)}
+.rm-row{display:grid;grid-template-columns:220px repeat(4,1fr);gap:0;align-items:center;border-bottom:1px solid var(--gray-100);min-height:34px}
+.rm-row:hover{background:var(--gray-50)}
+.rm-label{font-size:.76rem;font-weight:600;color:var(--gray-800);padding:.3rem .5rem .3rem .7rem;line-height:1.25}
+.rm-label .rm-num{color:var(--gray-400);font-weight:700;margin-right:.3rem}
+.rm-label .rm-dates{display:block;font-size:.64rem;font-weight:400;color:var(--gray-500);margin-top:.1rem}
+.rm-track{grid-column:2 / span 4;position:relative;height:100%;display:flex;align-items:center}
+.rm-cell{position:absolute;top:50%;transform:translateY(-50%);height:14px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--white);white-space:nowrap;overflow:hidden;padding:0 .4rem;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.rm-cell.fin{background:var(--success)}
+.rm-cell.cur{background:var(--warning)}
+.rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
+.rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
+.rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
+.rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
+.rm-note{font-size:.72rem;color:var(--gray-600);margin-top:.9rem;background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.5rem .7rem}
 </style>
 </head>
 <body>
@@ -216,6 +253,7 @@ details.item-acc .item-detail{margin-top:.4rem}
     <a href="#web" class="pub">🌐 Zona Pública</a>
     <a href="#privada" class="priv">🔐 Zona Privada</a>
     <a href="#app" class="app">📱 App Bolívar</a>
+    <a href="#roadmap" class="otros">🗺️ Roadmap 2026</a>
   </nav>
   <!-- Resumen ejecutivo -->
   <section class="exec-summary">
@@ -239,6 +277,113 @@ details.item-acc .item-detail{margin-top:.4rem}
       </div>
       <div class="avance-note">Real vs. esperado a la fecha de corte (8 oct), según fechas inicialmente pactadas. Base: 22 ítems · 🟢 11 entregados · 🟡 11 en curso. <strong>Vamos ligeramente por debajo de lo esperado (~9 pp).</strong> El rezago se concentra en 3 iniciativas de Zona Privada (nuevo home, coberturas con IA y versión mobile) que se reprogramaron del 1 al 8 de octubre, más el diccionario. El resto de compromisos avanza al día.</div>
     </div>
+  </section>
+  <!-- ============ ROADMAP 2026 ============ -->
+  <section class="roadmap" id="roadmap">
+    <h2>🗺️ Roadmap del proyecto · Canales Digitales</h2>
+    <div class="rm-sub">Iniciativas priorizadas en comité (4 sep) y otros frentes, por activo. Fuente: seguimiento del Comité de Canales. Corte: 8 de octubre de 2026.</div>
+    <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+    <div class="rm-scroll">
+      <div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
+        </div>
+
+        <div class="rm-phase pub">🌐 Zona Pública · segurosbolivar.com</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">1.</span>Certificaciones Olivia<span class="rm-dates">🚀 9 sep · en monitoreo</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">2.</span>Banner certificaciones<span class="rm-dates">🚀 7 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">3.</span>Carrusel del banner<span class="rm-dates">🚀 2 oct</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:25%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">4.</span>Integración páginas Salesforce al dominio<span class="rm-dates">desarrollo sep · 🚀 ~5 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">5.</span>Diccionario de términos<span class="rm-dates">entrega 9 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">6.</span>Proyectiva – venta de SOAT<span class="rm-dates">entrega 8 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+
+        <div class="rm-phase priv">🔐 Zona Privada · Acceso a Clientes</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">7.</span>Botón / menú certificaciones<span class="rm-dates">🚀 7–14 sep · cumplido −11</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">8.</span>Trámites salud / Directorio / Coberturas<span class="rm-dates">🚀 9–16 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">9.</span>War room certificaciones<span class="rm-dates">🚀 25 sep · cumplido −5</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">10.</span>Descarga masiva de documentos<span class="rm-dates">🚀 30 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">11.</span>Nueva versión AC (home + detalle)<span class="rm-dates">entrega 8 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">12.</span>Coberturas con IA<span class="rm-dates">entrega 8 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">13.</span>Versión mobile AC<span class="rm-dates">entrega 8 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">14.</span>Pagos en línea mobile (AC)<span class="rm-dates">entrega 9 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">15.</span>Mejoras por observabilidad<span class="rm-dates">continuo · meta score &gt;80 · 15 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+
+        <div class="rm-phase app">📱 App Bolívar</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">16.</span>Compra interna (home transversal)<span class="rm-dates">🚀 29 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">17.</span>Pagos en línea<span class="rm-dates">integración pagos 12 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">18.</span>Arreglar experiencia / vitrina de seguros<span class="rm-dates">entrega 19 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+
+        <div class="rm-row" style="border-bottom:0;min-height:8px">
+          <div class="rm-label"></div>
+          <div class="rm-track"><div class="rm-today" style="left:30.6%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rm-note">11 iniciativas entregadas y en producción (varias en monitoreo de impacto). Las 3 iniciativas grandes de Zona Privada (nuevo home, coberturas con IA y versión mobile) se reprogramaron del 1 al 8 de octubre tras una pruebatón previa a liberar. Pagos en línea de App Bolívar queda sujeto a la integración de pagos del 12 de octubre.</div>
   </section>
   <!-- ============ WEB — segurosbolivar.com ============ -->
   <details class="channel" id="web">
