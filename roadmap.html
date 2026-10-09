@@ -1611,81 +1611,60 @@ details.item-acc .item-detail{margin-top:.4rem}
 (function(){
   var KPI={"COM-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,68.4],[2,74.0],[3,88.5],[4,90.0],[5,91.2],[6,96.5],[7,91.0],[8,84.8],[9,96.0],[10,73.1]]},"COM-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,3.88],[2,3.76],[3,3.76],[4,4.32],[5,4.32],[6,3.82],[7,3.42],[8,2.98],[9,3.12],[10,3.22]]},"COM-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,0.0],[2,0.0],[3,0.0],[4,0.0],[5,0.0],[6,0.0],[7,0.0],[8,1.0],[9,0.0],[10,0.0]]},"COM-UX-001":{"n":"Tráfico/Sesiones (Mes)","meta":1200000.0,"u":"","better":"up","s":[[1,721228.0],[2,763465.0],[3,721044.0],[4,736268.0],[5,868346.0],[6,846435.0],[7,972855.0],[8,987232.0],[9,980909.0]]},"COM-UX-002":{"n":"Tasa de rebote","meta":20.0,"u":"%","better":"down","s":[[1,25.83],[2,26.93],[3,33.6],[4,29.9],[5,30.4],[6,36.5],[7,35.2],[8,32.7],[9,32.6]]},"COM-UX-003":{"n":"Tiempo en sitio","meta":4.0,"u":"","better":"up","s":[[1,6.0],[2,6.0],[3,5.0],[4,5.0],[5,5.0],[6,5.0],[7,5.0],[8,5.0],[9,6.0]]},"COM-UX-004":{"n":"Satisfacción del usuario (INS)","meta":20.0,"u":"%","better":"up","s":[[1,-17.41],[2,-1.67],[3,-4.98],[4,2.7],[5,-5.0],[6,-7.1],[7,-7.6],[8,-14.3],[9,-6.7]]},"COM-UX-005":{"n":"Clicks en funciones priorizadas vs Trafico","meta":12.0,"u":"","better":"up","s":[[1,8.0],[2,8.0],[3,8.0],[4,8.0],[5,8.0],[6,8.0]]},"COM-NEG-001":{"n":"Tráfico Páginas de Productos","meta":80000.0,"u":"","better":"up","s":[[1,84972.0],[2,85936.0],[3,89833.0],[4,65834.0]]},"COM-NEG-002":{"n":"# Leads","meta":5553.0,"u":"","better":"up","s":[[1,3166.0],[2,3631.0],[3,5454.0],[4,5127.0]]},"COM-NEG-003":{"n":"% Ventas","meta":5.7,"u":"%","better":"up","s":[[1,6.54],[2,6.17],[3,5.43],[4,5.79]]},"COM-NEG-004":{"n":"Authority Score","meta":55.0,"u":"","better":"up","s":[[1,46.0],[2,46.0],[3,46.0],[4,46.0],[5,46.0],[6,46.0],[7,46.0],[8,46.0],[9,46.0]]},"COM-NEG-005":{"n":"Market Share","meta":14.0,"u":"%","better":"up","s":[[1,10.84],[2,10.84],[3,10.84],[4,10.84],[5,10.84],[6,10.84],[7,10.84],[8,10.84],[9,10.84]]},"ACC-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,81.6],[2,92.5],[3,82.7],[4,87.0],[5,86.9],[6,88.1],[7,62.4],[8,64.8],[9,59.4],[10,76.3]]},"ACC-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,3.0],[2,3.0],[3,4.9],[4,4.9],[5,4.67],[6,3.82],[7,4.39],[8,5.04],[9,4.19],[10,3.7]]},"ACC-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,1.0],[2,1.0],[3,1.0],[4,0.0],[5,1.0],[6,0.0],[7,1.0],[8,1.0],[9,2.0]]},"ACC-UX-001":{"n":"Tráfico/Sesiones","meta":69520.0,"u":"","better":"up","s":[[1,68677.0],[2,66996.0],[3,67232.0],[4,57049.0],[5,54627.0],[6,36366.0],[7,39642.0],[8,50448.0],[9,47329.0]]},"ACC-UX-002":{"n":"Tasa de rebote","meta":20.0,"u":"%","better":"down","s":[[1,11.99],[2,13.9],[3,22.9],[4,16.21],[5,13.16],[6,14.14],[7,1.46],[8,1.61],[9,2.35]]},"ACC-UX-003":{"n":"Tiempo en sitio","meta":3.0,"u":"","better":"up","s":[[1,5.0],[2,5.0],[3,5.0],[4,5.0],[5,3.18],[6,3.12],[7,3.0],[8,3.0],[9,3.0]]},"ACC-UX-004":{"n":"Satisfacción del usuario (INS)","meta":50.0,"u":"%","better":"up","s":[[1,25.0],[2,29.58],[3,35.57],[4,34.6],[5,18.0],[6,37.0],[7,25.0],[8,25.2],[9,24.07]]},"ACC-NEG-001":{"n":"Cobertura","meta":1.0,"u":"%","better":"up","s":[[1,2.0],[2,1.0],[3,1.0],[4,1.0],[5,2.0],[6,1.0],[7,1.0],[8,1.0],[9,1.0]]},"ACC-NEG-002":{"n":"Autogestión","meta":90.0,"u":"%","better":"up","s":[[1,95.0],[2,96.0],[3,98.0],[4,96.0],[5,96.0],[6,95.0],[7,94.0],[8,93.0],[9,86.0]]},"ACC-NEG-003":{"n":"Adopción","meta":50.0,"u":"%","better":"up","s":[[1,43.0],[2,44.0],[3,39.0],[4,43.0],[5,41.0],[6,41.0],[7,38.0],[8,53.0],[9,56.0]]},"APP-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,78.1],[2,85.8],[3,83.5],[4,76.0],[5,76.1],[6,92.5],[7,93.0],[8,73.0],[9,82.5],[10,85.0]]},"APP-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,2.98],[2,3.27],[3,3.22],[4,3.17],[5,3.12],[6,3.07],[7,2.76],[8,2.67],[9,3.22],[10,3.07]]},"APP-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,0.0],[2,0.0],[3,0.0],[4,0.0],[6,0.0],[7,0.0],[8,0.0],[9,0.0],[10,0.0]]},"APP-UX-001":{"n":"Tráfico/Sesiones","meta":163039.0,"u":"","better":"up","s":[[1,102000.0],[2,114000.0],[3,118000.0],[4,81000.0],[5,118000.0],[6,67000.0]]},"APP-UX-002":{"n":"Tiempo en sitio","meta":3.0,"u":"","better":"down","s":[[1,3.0],[2,3.0]]},"APP-UX-003":{"n":"Satisfacción del usuario (INS)","meta":75.0,"u":"%","better":"up","s":[[1,62.12],[2,64.67],[3,54.98],[4,59.15],[6,67.0]]},"APP-NEG-001":{"n":"Cobertura","meta":1.0,"u":"%","better":"up","s":[[1,1.0],[2,0.0],[3,0.0],[4,0.0],[5,1.0],[6,0.0],[7,0.0],[8,0.0],[9,1.0]]},"APP-NEG-002":{"n":"Autogestión","meta":90.0,"u":"%","better":"up","s":[[1,9.0],[2,10.0],[3,9.0],[4,8.14],[5,10.0],[6,11.0],[7,9.0],[8,8.0],[9,9.0]]},"APP-NEG-003":{"n":"Adopción","meta":5.0,"u":"%","better":"up","s":[[1,5.0],[2,30.0],[3,5.0],[4,5.0],[5,5.0],[6,4.0],[7,4.0],[8,4.0],[9,5.0]]}};
   var MES=["","Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-  // normaliza nombre para emparejar card <-> kpi
   function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();}
-  // prefijo por activo
   function prefFor(ch){var h=ch.querySelector(".acc-head h2,.channel-head h2");var tx=h?norm(h.textContent):"";
     if(tx.indexOf("publica")>=0||tx.indexOf("segurosbolivar")>=0)return "COM";
     if(tx.indexOf("privada")>=0||tx.indexOf("acceso")>=0)return "ACC";
     if(tx.indexOf("app")>=0||tx.indexOf("bolivar")>=0)return "APP";return null;}
+  function nameOf(card){var nm=card.querySelector(".k-name");if(!nm)return"";var s="";
+    for(var j=0;j<nm.childNodes.length;j++){var cn=nm.childNodes[j];
+      if(cn.nodeType===3){s+=cn.textContent;}else if(cn.nodeType===1&&cn.tagName!=="I"){s+=cn.textContent;}}
+    return s.trim();}
   function findId(pref,name){var n=norm(name);
-    for(var k in KPI){if(k.indexOf(pref)!==0)continue;var kn=norm(KPI[k].n);
-      if(kn===n||kn.indexOf(n)>=0||n.indexOf(kn)>=0)return k;}
-    // match flexible por palabras clave
-    var map=[["confiabilidad","CONF-001"],["tiempo de respuesta","CONF-002"],["incidentes","CONF-003"],
-      ["trafico","UX-001"],["sesiones","UX-001"],["rebote","UX-002"],["tiempo en sitio","UX-003"],
-      ["satisfaccion","UX-004"],["ins","UX-004"],["clicks","UX-005"],["productos","NEG-001"],
-      ["leads","NEG-002"],["ventas","NEG-003"],["authority","NEG-004"],["market","NEG-005"],
-      ["cobertura","NEG-001"],["autogestion","NEG-002"],["adopcion","NEG-003"]];
+    for(var k in KPI){if(k.indexOf(pref)!==0)continue;var kn=norm(KPI[k].n);if(kn===n||kn.indexOf(n)>=0||n.indexOf(kn)>=0)return k;}
+    var map=[["confiabilidad","CONF-001"],["tiempo de respuesta","CONF-002"],["incidentes","CONF-003"],["trafico paginas","NEG-001"],["paginas de productos","NEG-001"],["sesiones","UX-001"],["trafico","UX-001"],["rebote","UX-002"],["tiempo en sitio","UX-003"],["satisfaccion","UX-004"],["ins","UX-004"],["clicks","UX-005"],["leads","NEG-002"],["ventas","NEG-003"],["authority","NEG-004"],["market","NEG-005"],["cobertura","NEG-001"],["autogestion","NEG-002"],["adopcion","NEG-003"]];
     for(var i=0;i<map.length;i++){if(n.indexOf(map[i][0])>=0){var id=pref+"-"+map[i][1];if(KPI[id])return id;}}
     return null;}
-  function svg(kpi){
-    var s=kpi.s,W=560,H=240,pl=44,pr=16,pt=18,pb=28;
+  function svg(kpi){var s=kpi.s,W=560,H=240,pl=44,pr=16,pt=18,pb=28;
     var xs=s.map(function(p){return p[0];}),ys=s.map(function(p){return p[1];});
-    var vals=ys.slice();
-    var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
-    if(mn===mx){mn-=1;mx+=1;}var pad=(mx-mn)*0.12;mn-=pad;mx+=pad;
+    var mn=Math.min.apply(null,ys),mx=Math.max.apply(null,ys);if(mn===mx){mn-=1;mx+=1;}var pad=(mx-mn)*0.12;mn-=pad;mx+=pad;
     var x0=Math.min.apply(null,xs),x1=Math.max.apply(null,xs);if(x0===x1)x1=x0+1;
-    function X(m){return pl+(m-x0)/(x1-x0)*(W-pl-pr);}
-    function Y(v){return pt+(1-(v-mn)/(mx-mn))*(H-pt-pb);}
-    var g='';
-    // grid horizontal (4 lineas)
-    for(var i=0;i<=4;i++){var yy=pt+i/4*(H-pt-pb);var vv=(mx-(mx-mn)*i/4);
-      g+='<line x1="'+pl+'" y1="'+yy+'" x2="'+(W-pr)+'" y2="'+yy+'" stroke="#E2E8E4" stroke-width="1"/>';
-      g+='<text x="'+(pl-6)+'" y="'+(yy+3)+'" text-anchor="end" font-size="9" fill="#83908A">'+vv.toFixed(vv>=100?0:1)+'</text>';}
-    // linea serie
+    function X(m){return pl+(m-x0)/(x1-x0)*(W-pl-pr);}function Y(v){return pt+(1-(v-mn)/(mx-mn))*(H-pt-pb);}
+    var g='';for(var i=0;i<=4;i++){var yy=pt+i/4*(H-pt-pb);var vv=(mx-(mx-mn)*i/4);
+      g+='<line x1="'+pl+'" y1="'+yy+'" x2="'+(W-pr)+'" y2="'+yy+'" stroke="#E2E8E4"/><text x="'+(pl-6)+'" y="'+(yy+3)+'" text-anchor="end" font-size="9" fill="#83908A">'+vv.toFixed(vv>=100?0:1)+'</text>';}
     var d='';s.forEach(function(p,i){d+=(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)+' ';});
-    // area
     var area=d+'L'+X(s[s.length-1][0]).toFixed(1)+' '+(H-pb)+' L'+X(s[0][0]).toFixed(1)+' '+(H-pb)+' Z';
-    g+='<path d="'+area+'" fill="rgba(1,109,56,.08)"/>';
-    g+='<path d="'+d+'" fill="none" stroke="#016D38" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
-    // puntos + labels de mes
-    s.forEach(function(p){var cx=X(p[0]),cy=Y(p[1]);g+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="3.2" fill="#016D38"/>';
-      g+='<text x="'+cx.toFixed(1)+'" y="'+(H-pb+16)+'" text-anchor="middle" font-size="9" fill="#526158">'+MES[p[0]]+'</text>';});
-    // ultimo valor destacado
+    g+='<path d="'+area+'" fill="rgba(1,109,56,.08)"/><path d="'+d+'" fill="none" stroke="#016D38" stroke-width="2.5" stroke-linejoin="round"/>';
+    s.forEach(function(p){g+='<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3.2" fill="#016D38"/><text x="'+X(p[0]).toFixed(1)+'" y="'+(H-pb+16)+'" text-anchor="middle" font-size="9" fill="#526158">'+MES[p[0]]+'</text>';});
     var last=s[s.length-1];g+='<text x="'+X(last[0]).toFixed(1)+'" y="'+(Y(last[1])-8).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#016D38">'+last[1]+(kpi.u||'')+'</text>';
-    return '<svg class="km-chart" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
-  }
-  function open(id){var k=KPI[id];if(!k)return;
-    document.getElementById("kmTitle").textContent=k.n;
-    var last=k.s[k.s.length-1];
+    return '<svg class="km-chart" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';}
+  function openModal(id){var k=KPI[id];if(!k)return;var ov=document.getElementById("kpiOv");if(!ov)return;
+    document.getElementById("kmTitle").textContent=k.n;var last=k.s[k.s.length-1];
     document.getElementById("kmSub").textContent="Evolución mensual 2026 · "+(k.better==='up'?'mejor hacia arriba':'mejor hacia abajo');
     document.getElementById("kmChart").innerHTML=svg(k);
-    document.getElementById("kmFoot").textContent="Fuente: tablero de KPIs del Comité de Canales. Último dato "+MES[last[0]]+": "+last[1]+(k.u||'')+".";
-    document.getElementById("kpiOv").classList.add("open");
-  }
-  function close(){document.getElementById("kpiOv").classList.remove("open");}
-  function run(){
-    document.querySelectorAll(".channel").forEach(function(ch){var pref=prefFor(ch);if(!pref)return;
-      ch.querySelectorAll(".kpi-card").forEach(function(card){
-        var nm=card.querySelector(".k-name");if(!nm)return;
-        // tomar SOLO el texto del nombre (primer nodo de texto), sin el icono ni el tooltip
-        var name="";
-        for(var j=0;j<nm.childNodes.length;j++){var cn=nm.childNodes[j];
-          if(cn.nodeType===3){name+=cn.textContent;} else if(cn.nodeType===1 && cn.tagName!=="I"){name+=cn.textContent;}}
-        name=name.trim();
-        var id=findId(pref,name);if(!id||!KPI[id]||!KPI[id].s.length)return;
-        card.classList.add("has-trend");
-        var h=document.createElement("span");h.className="trend-hint";h.textContent="📈 tendencia";card.appendChild(h);
-        card.addEventListener("click",function(e){if(e.target.closest(".info-i"))return;open(id);});
-      });
-    });
-    document.getElementById("kmClose").addEventListener("click",close);
-    document.getElementById("kpiOv").addEventListener("click",function(e){if(e.target.id==="kpiOv")close();});
-    document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
-  }
-  if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);
+    document.getElementById("kmFoot").textContent="Fuente: tablero de KPIs del Comité. Último dato "+MES[last[0]]+": "+last[1]+(k.u||'')+".";
+    ov.classList.add("open");}
+  function closeModal(){var ov=document.getElementById("kpiOv");if(ov)ov.classList.remove("open");}
+  // marcar cards con hint y resolver su id (data-kpi)
+  function tag(){document.querySelectorAll(".channel").forEach(function(ch){var pref=prefFor(ch);if(!pref)return;
+    ch.querySelectorAll(".kpi-card").forEach(function(card){if(card.getAttribute("data-kpi"))return;
+      var id=findId(pref,nameOf(card));if(!id||!KPI[id]||!KPI[id].s.length)return;
+      card.setAttribute("data-kpi",id);card.classList.add("has-trend");
+      if(!card.querySelector(".trend-hint")){var h=document.createElement("span");h.className="trend-hint";h.textContent="📈 tendencia";card.appendChild(h);}
+    });});}
+  // DELEGACION: un solo listener en el documento
+  document.addEventListener("click",function(e){
+    var card=e.target.closest&&e.target.closest(".kpi-card[data-kpi]");
+    if(card){if(e.target.closest(".info-i"))return;openModal(card.getAttribute("data-kpi"));return;}
+    if(e.target.id==="kpiOv"||(e.target.closest&&e.target.closest("#kmClose"))){closeModal();}
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal();});
+  // re-taggear cuando se abran los <details> (por si acaso) y al cargar
+  document.addEventListener("toggle",function(){tag();},true);
+  function init(){tag();}
+  if(document.readyState!=="loading")init();else document.addEventListener("DOMContentLoaded",init);
 })();
+
 </script>
 </body>
 </html>
