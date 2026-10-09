@@ -172,6 +172,7 @@ details.item-acc .item-detail{margin-top:.4rem}
 .badge-hecho{background:var(--success-bg);color:var(--success)}
 .badge-progreso{background:var(--warning-bg);color:var(--warning)}
 .badge-alerta{background:var(--danger-bg);color:var(--danger)}
+.badge-cancelado{background:var(--gray-200);color:var(--gray-600);text-decoration:line-through}
 .badge-backlog{background:var(--info-bg);color:var(--info)}
 .badge-congelado{background:var(--neutral-bg);color:var(--neutral)}
 .tag-line{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--gray-500);margin-top:.55rem;margin-bottom:.15rem}
@@ -255,6 +256,7 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
 .rm-cell.bl{background:var(--info)}
 .rm-cell.alert{background:var(--danger)}
+.rm-cell.canc{background:var(--gray-500);text-decoration:line-through;opacity:.75}
 .rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
 .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
 .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
@@ -316,6 +318,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       <span><i class="rm-cur"></i> En curso</span>
       <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
       <span><i style="background:var(--danger)"></i> Alertado / bloqueado</span>
+      <span><i style="background:var(--gray-500)"></i> Cancelado</span>
       <span><i class="rm-tbd"></i> Por definir (TBD)</span>
       <span>🚀 Paso a producción</span>
     </div>
@@ -352,8 +355,8 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">6.</span>Disponibilizar link para venta de SOAT<span class="rm-dates">entrega 8 oct</span></div>
-          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+          <div class="rm-label"><span class="rm-num">6.</span>Venta de SOAT con Proyectiva<span class="rm-dates">⛔ cancelado · se evalúa Fasecolda (por confirmar)</span></div>
+          <div class="rm-track"><div class="rm-cell canc" style="left:25%;width:25%">Cancelado</div></div>
         </div>
 
         <div class="rm-row">
@@ -646,18 +649,18 @@ details.item-acc .item-detail{margin-top:.4rem}
           </tr>
           <tr>
             <td>
-              <div class="func-name"><span class="func-num">4.</span>Disponibilizar link para venta de SOAT</div>
+              <div class="func-name"><span class="func-num">4.</span>Venta de SOAT con Proyectiva</div>
               <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
-              <div class="func-desc">Disponibilizar el link para venta de SOAT en la zona pública.</div>
+              <div class="func-desc">Venta de SOAT en la zona pública con Proyectiva.</div>
               <div class="tag-line seg">Seguimiento</div>
-              <div class="seguimiento">Cambió el enfoque: ahora se hará una <strong>redirección directa a Proyectiva</strong>, para que desde allá se realice la validación del lead y se genere el link de pago.</div>
+              <div class="seguimiento">Cancelado. Se revisa enviar a los clientes a Fasecolda; experiencia por confirmar.</div>
               </div></details>
             </td>
             <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado en INS: +0.4 a +0.8pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 96 se quejaron por temas de SOAT. Con la venta de SOAT desde la página esperamos recuperar como mínimo 8 de ellos, lo que equivale a subir el INS entre 0.4 y 0.8 puntos.</span></span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Transformar y Oportunidad de venta: venta y renovación de SOAT = leads/ventas.</div></td>
-            <td><span class="badge badge-progreso">🟡 En curso</span></td>
-            <td><span class="fecha">8 oct</span></td>
+            <td><span class="badge badge-cancelado">⛔ Cancelado</span></td>
             <td><span class="fecha tbd">—</span></td>
+            <td><span class="fecha tbd">por confirmar</span></td>
           </tr>
         </tbody>
       </table>
