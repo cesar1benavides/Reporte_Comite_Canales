@@ -1669,7 +1669,11 @@ details.item-acc .item-detail{margin-top:.4rem}
     document.querySelectorAll(".channel").forEach(function(ch){var pref=prefFor(ch);if(!pref)return;
       ch.querySelectorAll(".kpi-card").forEach(function(card){
         var nm=card.querySelector(".k-name");if(!nm)return;
-        var name=nm.textContent.replace(/i\s*$/,'');
+        // tomar SOLO el texto del nombre (primer nodo de texto), sin el icono ni el tooltip
+        var name="";
+        for(var j=0;j<nm.childNodes.length;j++){var cn=nm.childNodes[j];
+          if(cn.nodeType===3){name+=cn.textContent;} else if(cn.nodeType===1 && cn.tagName!=="I"){name+=cn.textContent;}}
+        name=name.trim();
         var id=findId(pref,name);if(!id||!KPI[id]||!KPI[id].s.length)return;
         card.classList.add("has-trend");
         var h=document.createElement("span");h.className="trend-hint";h.textContent="📈 tendencia";card.appendChild(h);
