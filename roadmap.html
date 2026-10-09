@@ -245,7 +245,10 @@ details.item-acc .item-detail{margin-top:.4rem}
   .rm-cell{font-size:.54rem}
   .rm-group-phase>summary{padding:.5rem .4rem;font-size:.78rem;white-space:normal}
   .rm-group-state>summary{padding:.4rem .4rem;font-size:.7rem;white-space:normal}
-  .rm-scroll{-webkit-overflow-scrolling:touch}
+  .rm-scroll{-webkit-overflow-scrolling:touch;position:relative}
+  /* Pista de scroll: desvanecido en el borde derecho + etiqueta "desliza" */
+  .rm-scroll::after{content:"Desliza para ver el cronograma →";position:sticky;left:0;bottom:0;display:block;font-size:.66rem;font-weight:700;color:var(--primary);background:linear-gradient(90deg,transparent,var(--white) 30%);padding:.3rem .4rem;text-align:right;pointer-events:none}
+  .rm-scroll.scrolled::after{opacity:0;transition:opacity .4s}
   .info-i .tip{width:min(210px,78vw);max-width:78vw;left:50%;right:auto;transform:translateX(-50%)}
 }
 /* ===== Roadmap (Gantt 2026) ===== */
@@ -479,7 +482,7 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">AC-12</span>Servicios programados<span class="rm-dates">entrega 5 nov · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">AC-12</span>Servicios programados - Salud<span class="rm-dates">entrega 5 nov · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
@@ -1170,6 +1173,38 @@ details.item-acc .item-detail{margin-top:.4rem}
       });
     });
   });
+})();
+</script>
+<script>
+(function(){
+  function isMobile(){return window.matchMedia("(max-width:768px)").matches}
+  function peek(sc){
+    if(!sc||sc.scrollWidth<=sc.clientWidth+8)return;
+    var max=Math.min(90,sc.scrollWidth-sc.clientWidth);
+    var t0=null,dur=1400;
+    function step(ts){
+      if(!t0)t0=ts;var p=(ts-t0)/dur;
+      if(p>=1){sc.scrollLeft=0;return}
+      // ida y vuelta suave (seno)
+      sc.scrollLeft=max*Math.sin(p*Math.PI);
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function arm(sc){
+    sc.addEventListener("scroll",function(){sc.classList.add("scrolled")},{once:true,passive:true});
+  }
+  function run(){
+    if(!isMobile())return;
+    document.querySelectorAll(".rm-scroll").forEach(function(sc){
+      arm(sc);
+      if("IntersectionObserver" in window){
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){setTimeout(function(){peek(sc)},350);io.disconnect()}})},{threshold:.4});
+        io.observe(sc);
+      }else{setTimeout(function(){peek(sc)},600)}
+    });
+  }
+  if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);
 })();
 </script>
 </body>
