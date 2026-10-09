@@ -264,6 +264,12 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
 .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
 .rm-note{font-size:.72rem;color:var(--gray-600);margin-top:.9rem;background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.5rem .7rem}
+.rm-eng{display:inline-block;font-size:.6rem;font-weight:700;padding:.08rem .4rem;border-radius:8px;margin-left:.4rem;color:#fff;vertical-align:middle;letter-spacing:.2px}
+.rm-eng.brayan{background:#5e35b1}
+.rm-eng.andres{background:#00897b}
+.rm-eng.sergio{background:#e65100}
+.rm-eng.gerardo{background:#1565c0}
+.rm-eng.laura{background:#c2185b}
 </style>
 </head>
 <body>
@@ -324,6 +330,14 @@ details.item-acc .item-detail{margin-top:.4rem}
       <span><i class="rm-tbd"></i> Por definir (TBD)</span>
       <span>🚀 Paso a producción</span>
     </div>
+    <div class="rm-legend" style="margin-top:-.4rem">
+      <span style="font-weight:700;color:var(--gray-800)">Responsable:</span>
+      <span><span class="rm-eng brayan">Brayan</span></span>
+      <span><span class="rm-eng andres">Andres</span></span>
+      <span><span class="rm-eng gerardo">Gerardo</span></span>
+      <span><span class="rm-eng sergio">Sergio</span></span>
+      <span><span class="rm-eng laura">Laura</span></span>
+    </div>
     <div class="rm-scroll">
       <div class="rm-grid">
         <div class="rm-years">
@@ -362,23 +376,23 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
 
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">19.</span>SEO (fase 1)<span class="rm-dates">en curso desde 29 sep · dev 10d</span></div>
+          <div class="rm-label"><span class="rm-num">19.</span>SEO (fase 1)<span class="rm-eng laura">Laura</span><span class="rm-dates">en curso desde 29 sep · dev 10d</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:18.75%;width:12.5%">En curso</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">20.</span>Ajustar URLs rotas<span class="rm-dates">entrega tentativa 24 oct · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">20.</span>Ajustar URLs rotas<span class="rm-eng laura">Laura</span><span class="rm-dates">entrega tentativa 24 oct · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">21.</span>SOAT<span class="rm-dates">entrega tentativa 3 nov · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">21.</span>SOAT<span class="rm-eng laura">Laura</span><span class="rm-dates">entrega tentativa 3 nov · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">22.</span>Menú (mejorar el menú)<span class="rm-dates">entrega tentativa 18 nov · dev 10d</span></div>
+          <div class="rm-label"><span class="rm-num">22.</span>Menú (mejorar el menú)<span class="rm-eng laura">Laura</span><span class="rm-dates">entrega tentativa 18 nov · dev 10d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:37.5%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">23.</span>Check legal y comercial - Zona Pública<span class="rm-dates">entrega tentativa 10 dic · dev 5d (Andres)</span></div>
+          <div class="rm-label"><span class="rm-num">23.</span>Check legal y comercial - Zona Pública<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega tentativa 10 dic · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:62.5%;width:12.5%">Backlog</div></div>
         </div>
 
@@ -421,39 +435,39 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
 
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">24.</span>Coberturas IA<span class="rm-dates">entrega 28 oct · dev 10d (Brayan)</span></div>
+          <div class="rm-label"><span class="rm-num">24.</span>Coberturas IA<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 28 oct · dev 10d</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:43.75%">En curso</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">25.</span>Cambio UX Mi Perfil<span class="rm-dates">entrega 27 oct · dev 3d (Brayan)</span></div>
+          <div class="rm-label"><span class="rm-num">25.</span>Cambio UX Mi Perfil<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 27 oct · dev 3d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">26.</span>Servicios programados<span class="rm-dates">entrega 5 nov · dev 5d (Brayan)</span></div>
+          <div class="rm-label"><span class="rm-num">26.</span>Servicios programados<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 5 nov · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">27.</span>Evolucionar Ver Detalle – Salud<span class="rm-dates">entrega 12 nov · dev 5d (Brayan)</span></div>
+          <div class="rm-label"><span class="rm-num">27.</span>Evolucionar Ver Detalle – Salud<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 12 nov · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">28.</span>Conozca cómo usar su seguro (home)<span class="rm-dates">entrega 5 dic · dev 5d (Brayan)</span></div>
+          <div class="rm-label"><span class="rm-num">28.</span>Conozca cómo usar su seguro (home)<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 5 dic · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">29.</span>Precargue de copias de póliza<span class="rm-dates">entrega 23 oct · dev 5d (Andres)</span></div>
+          <div class="rm-label"><span class="rm-num">29.</span>Precargue de copias de póliza<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 23 oct · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">30.</span>Check legal y comercial - Zona Privada<span class="rm-dates">entrega 31 oct · dev 5d (Andres)</span></div>
+          <div class="rm-label"><span class="rm-num">30.</span>Check legal y comercial - Zona Privada<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 31 oct · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">31.</span>Revocar autorización fines comerciales<span class="rm-dates">entrega 23 dic · dev 8d (Andres)</span></div>
+          <div class="rm-label"><span class="rm-num">31.</span>Revocar autorización fines comerciales<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 23 dic · dev 8d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:68.75%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">32.</span>Solicitudes de servicios<span class="rm-dates">1 nov → entrega 23 dic · dev 30d (Gerardo)</span></div>
+          <div class="rm-label"><span class="rm-num">32.</span>Solicitudes de servicios<span class="rm-eng gerardo">Gerardo</span><span class="rm-dates">1 nov → entrega 23 dic · dev 30d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:43.75%">Backlog</div></div>
         </div>
 
@@ -471,15 +485,15 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">33.</span>Cambio de marca<span class="rm-dates">entrega 31 oct · dev 3d (Sergio)</span></div>
+          <div class="rm-label"><span class="rm-num">33.</span>Cambio de marca<span class="rm-eng sergio">Sergio</span><span class="rm-dates">entrega 31 oct · dev 3d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">34.</span>Check legal y comercial - App<span class="rm-dates">entrega 11 nov · dev 5d (Andres)</span></div>
+          <div class="rm-label"><span class="rm-num">34.</span>Check legal y comercial - App<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 11 nov · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">35.</span>Hannu (cambio proveedor de bienestar)<span class="rm-dates">entrega 18 dic · dev 30d (Sergio)</span></div>
+          <div class="rm-label"><span class="rm-num">35.</span>Hannu (cambio proveedor de bienestar)<span class="rm-eng sergio">Sergio</span><span class="rm-dates">entrega 18 dic · dev 30d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:31.25%">Backlog</div></div>
         </div>
 
