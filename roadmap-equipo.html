@@ -247,6 +247,14 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-phase.pub{color:var(--pub);border-left-color:var(--pub)}
 .rm-phase.priv{color:var(--priv);border-left-color:var(--priv)}
 .rm-phase.app{color:var(--app);border-left-color:var(--app)}
+.rm-group-phase{margin-bottom:.3rem}
+.rm-group-state{margin:.1rem 0}
+.rm-group-phase>summary,.rm-group-state>summary{list-style:none;cursor:pointer}
+.rm-group-phase>summary::-webkit-details-marker,.rm-group-state>summary::-webkit-details-marker{display:none}
+.rm-group-phase>summary::before{content:"▾ ";font-size:.7rem}
+.rm-group-phase:not([open])>summary::before{content:"▸ "}
+.rm-group-state>summary::before{content:"▾ ";font-size:.62rem;color:var(--gray-500)}
+.rm-group-state:not([open])>summary::before{content:"▸ "}
 .rm-substate{grid-column:1/-1;font-size:.66rem;font-weight:700;color:var(--gray-600);background:var(--white);padding:.3rem .6rem .1rem;margin-top:.2rem}
 .rm-row{display:grid;grid-template-columns:220px repeat(4,1fr);gap:0;align-items:center;border-bottom:1px solid var(--gray-100);min-height:34px}
 .rm-row:hover{background:var(--gray-50)}
@@ -350,8 +358,10 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
         </div>
 
-        <div class="rm-phase pub">🌐 Zona Pública · segurosbolivar.com</div>
-        <div class="rm-substate">🟢 Entregado</div>
+      <details class="rm-group-phase pub" open>
+        <summary class="rm-phase pub">🌐 Zona Pública · segurosbolivar.com</summary>
+        <details class="rm-group-state">
+          <summary class="rm-substate">🟢 Entregado</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">ZP-1</span>Certificaciones Olivia<span class="rm-dates">🚀 9 sep · en monitoreo</span></div>
           <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
@@ -368,7 +378,9 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-label"><span class="rm-num">ZP-4</span>Integración páginas Salesforce al dominio<span class="rm-dates">🚀 5 oct · entregado</span></div>
           <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:37.5%">Entregado</div></div>
         </div>
-        <div class="rm-substate">🟡 En curso</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🟡 En curso</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">ZP-5</span>Diccionario de términos<span class="rm-dates">entrega 9 oct (reprog. de 1 oct)</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
@@ -377,7 +389,9 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-label"><span class="rm-num">ZP-6</span>SEO (fase 1)<span class="rm-eng laura">Laura</span><span class="rm-dates">en curso desde 29 sep · dev 10d</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:18.75%;width:12.5%">En curso</div></div>
         </div>
-        <div class="rm-substate">🔵 Backlog</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🔵 Backlog</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">ZP-7</span>Ajustar URLs rotas<span class="rm-eng laura">Laura</span><span class="rm-dates">entrega tentativa 24 oct · dev 5d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
@@ -387,15 +401,19 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">ZP-9</span>Menú (mejorar el menú)<span class="rm-eng laura">Laura</span><span class="rm-dates">entrega tentativa 18 nov · dev 10d</span></div>
+          <div class="rm-label"><span class="rm-num">ZP-9</span>Menú (mejorar el menú)<span class="rm-eng laura">Laura</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 18 nov</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:37.5%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">ZP-10</span>Check legal y comercial - Zona Pública<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega tentativa 10 dic · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">ZP-10</span>Check legal y comercial - Zona Pública<span class="rm-eng andres">Andres</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 10 dic</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:62.5%;width:12.5%">Backlog</div></div>
         </div>
-        <div class="rm-phase priv">🔐 Zona Privada · Acceso a Clientes</div>
-        <div class="rm-substate">🟢 Entregado</div>
+        </details>
+      </details>
+      <details class="rm-group-phase priv" open>
+        <summary class="rm-phase priv">🔐 Zona Privada · Acceso a Clientes</summary>
+        <details class="rm-group-state">
+          <summary class="rm-substate">🟢 Entregado</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">AC-1</span>Botón / menú certificaciones<span class="rm-dates">🚀 7–14 sep · cumplido −11</span></div>
           <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
@@ -412,7 +430,9 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-label"><span class="rm-num">AC-4</span>Descarga masiva de documentos<span class="rm-dates">🚀 8 oct · entregado</span></div>
           <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:31.25%">Entregado</div></div>
         </div>
-        <div class="rm-substate">🟡 En curso</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🟡 En curso</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">AC-5</span>Nueva versión AC (home + detalle)<span class="rm-dates">1 oct → 8 oct → 13 oct · hallazgos pruebatón</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
@@ -437,7 +457,9 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-label"><span class="rm-num">AC-10</span>Coberturas IA (nueva)<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 28 oct · dev 10d</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:43.75%">En curso</div></div>
         </div>
-        <div class="rm-substate">🔵 Backlog</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🔵 Backlog</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">AC-11</span>Cambio UX Mi Perfil<span class="rm-eng brayan">Brayan</span><span class="rm-dates">entrega 27 oct · dev 3d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
@@ -459,24 +481,30 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">AC-16</span>Check legal y comercial - Zona Privada<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 31 oct · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">AC-16</span>Check legal y comercial - Zona Privada<span class="rm-eng andres">Andres</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 31 oct</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">AC-17</span>Revocar autorización fines comerciales<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 23 dic · dev 8d</span></div>
+          <div class="rm-label"><span class="rm-num">AC-17</span>Revocar autorización fines comerciales<span class="rm-eng andres">Andres</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 23 dic</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:68.75%;width:18.75%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">AC-18</span>Solicitudes de servicios<span class="rm-eng gerardo">Gerardo</span><span class="rm-dates">1 nov → entrega 23 dic · dev 30d</span></div>
+          <div class="rm-label"><span class="rm-num">AC-18</span>Solicitudes de servicios<span class="rm-eng gerardo">Gerardo</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 23 dic</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:43.75%">Backlog</div></div>
         </div>
-        <div class="rm-phase app">📱 App Bolívar</div>
-        <div class="rm-substate">🟢 Entregado</div>
+        </details>
+      </details>
+      <details class="rm-group-phase app" open>
+        <summary class="rm-phase app">📱 App Bolívar</summary>
+        <details class="rm-group-state">
+          <summary class="rm-substate">🟢 Entregado</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">APP-1</span>Compra interna (home transversal)<span class="rm-dates">🚀 29 sep</span></div>
           <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
         </div>
-        <div class="rm-substate">🟡 En curso</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🟡 En curso</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">APP-2</span>Pagos en línea<span class="rm-dates">⚠️ bloqueado · ajustada 22 oct (WebView + reglas botón deuda)</span></div>
           <div class="rm-track"><div class="rm-cell alert" style="left:0%;width:50%">⚠️ Alertado</div></div>
@@ -485,19 +513,23 @@ details.item-acc .item-detail{margin-top:.4rem}
           <div class="rm-label"><span class="rm-num">APP-3</span>Arreglar experiencia / vitrina de seguros<span class="rm-dates">entrega 19 oct</span></div>
           <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
         </div>
-        <div class="rm-substate">🔵 Backlog</div>
+        </details>
+        <details class="rm-group-state" open>
+          <summary class="rm-substate">🔵 Backlog</summary>
         <div class="rm-row">
           <div class="rm-label"><span class="rm-num">APP-4</span>Cambio de marca<span class="rm-eng sergio">Sergio</span><span class="rm-dates">entrega 31 oct · dev 3d</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">APP-5</span>Check legal y comercial - App<span class="rm-eng andres">Andres</span><span class="rm-dates">entrega 11 nov · dev 5d</span></div>
+          <div class="rm-label"><span class="rm-num">APP-5</span>Check legal y comercial - App<span class="rm-eng andres">Andres</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 11 nov</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
         </div>
         <div class="rm-row">
-          <div class="rm-label"><span class="rm-num">APP-6</span>Hannu (cambio proveedor de bienestar)<span class="rm-eng sergio">Sergio</span><span class="rm-dates">entrega 18 dic · dev 30d</span></div>
+          <div class="rm-label"><span class="rm-num">APP-6</span>Hannu (cambio proveedor de bienestar)<span class="rm-eng sergio">Sergio</span><span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 18 dic</span></div>
           <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:31.25%">Backlog</div></div>
         </div>
+        </details>
+      </details>
         <div class="rm-row" style="border-bottom:0;min-height:8px">
           <div class="rm-label"></div>
           <div class="rm-track"><div class="rm-today" style="left:30.6%"></div></div>
