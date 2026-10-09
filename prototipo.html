@@ -266,8 +266,30 @@ h1,h2,.exec-summary h2,.kpi-mini .v,.acc-head h2,.channel-head h2{letter-spacing
   .impact-tag{white-space:normal}
   .impact-tag .tip{right:auto;left:50%;transform:translateX(-50%);width:min(220px,80vw);max-width:80vw}
   .impact-tag .tip::after{right:auto;left:50%;transform:translateX(-50%)}
-  .rm-years{grid-template-columns:120px 1fr}
-  .rm-months,.rm-row{grid-template-columns:120px repeat(4,1fr)}
+  .rm-years{grid-template-columns:140px 1fr}
+  .rm-months,.rm-row{grid-template-columns:140px repeat(4,1fr)}
+  /* ── Hardening anti-overflow móvil ── */
+  html,body{overflow-x:hidden}
+  .container{padding:1rem}
+  *{overflow-wrap:break-word;word-break:break-word}
+  .exec-summary,.channel,.roadmap,.feedback-box{max-width:100%}
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .kpi-mini .v{font-size:1.3rem}
+  .avance-box .a-pct{font-size:1.35rem}
+  .avance-note{font-size:.72rem}
+  .kpi-grid{grid-template-columns:1fr}
+  .kpi-card{min-width:0}
+  .kpi-card .k-name{min-height:0}
+  .kpi-tag,.jira-tag,.badge,.impact-tag,.measured-tag{white-space:normal;word-break:break-word}
+  .acc-mini{white-space:normal}
+  .rm-label{font-size:.66rem;padding:.3rem .3rem .3rem .5rem;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
+  .rm-dates{display:block;margin-top:.1rem;white-space:normal}
+  .rm-eng{display:inline-block;margin:.1rem 0 0 0;font-size:.56rem}
+  .rm-cell{font-size:.54rem}
+  .rm-group-phase>summary{padding:.5rem .4rem;font-size:.78rem;white-space:normal}
+  .rm-group-state>summary{padding:.4rem .4rem;font-size:.7rem;white-space:normal}
+  .rm-scroll{-webkit-overflow-scrolling:touch}
+  .info-i .tip{width:min(210px,78vw);max-width:78vw;left:50%;right:auto;transform:translateX(-50%)}
 }
 /* ===== Roadmap (Gantt 2026) ===== */
 .roadmap{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-bottom:2rem}
