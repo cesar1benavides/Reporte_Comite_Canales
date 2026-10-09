@@ -154,8 +154,8 @@ details.item-acc .item-detail{margin-top:.4rem}
 .k-win .w-val.crit{color:var(--danger)}
 .k-trend{font-size:.72rem;font-weight:600;display:inline-block;margin-top:.15rem}
 .k-trend.up{color:var(--success)}
-.k-trend.down{color:var(--warning)}
-.k-trend.flat{color:var(--warning)}
+.k-trend.down{color:var(--danger)}
+.k-trend.flat{color:var(--neutral)}
 .fecha-ok{color:var(--success);font-size:.75rem}
 .fecha-ajustada{color:var(--warning);font-weight:600}
 /* Tabla de funcionalidades */
@@ -172,21 +172,22 @@ details.item-acc .item-detail{margin-top:.4rem}
 .badge-hecho{background:var(--success-bg);color:var(--success)}
 .badge-progreso{background:var(--warning-bg);color:var(--warning)}
 .badge-alerta{background:var(--danger-bg);color:var(--danger)}
-.badge-cancelado{background:var(--gray-200);color:var(--gray-600);text-decoration:line-through}
+.badge-cancelado{background:var(--neutral-bg);color:var(--neutral);text-decoration:line-through}
 .badge-backlog{background:var(--info-bg);color:var(--info)}
 .badge-congelado{background:var(--neutral-bg);color:var(--neutral)}
+.jira-tag{display:inline-block;padding:.18rem .5rem;border-radius:6px;font-size:.68rem;font-weight:700;font-family:ui-monospace,"Cascadia Code","Source Code Pro",monospace;background:var(--neutral-bg);color:var(--neutral);white-space:nowrap;margin:.1rem .15rem .1rem 0}
 .tag-line{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--gray-500);margin-top:.55rem;margin-bottom:.15rem}
 .tag-line.seg{color:var(--info)}
 .seguimiento{font-size:.8rem;color:var(--gray-800);background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.4rem .6rem;margin-top:.15rem}
 .kpi-tag{display:inline-block;padding:.22rem .55rem;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--primary);color:var(--white);white-space:nowrap;margin:.1rem .15rem .1rem 0}
-.impact-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .6rem;border-radius:6px;font-size:.7rem;font-weight:700;background:var(--success-bg,#e6f6ec);color:var(--success,#1b8a4b);white-space:normal;line-height:1.3;margin:.3rem 0 0;position:relative;cursor:help}
+.impact-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .6rem;border-radius:6px;font-size:.7rem;font-weight:700;background:var(--success-bg);color:var(--success);white-space:normal;line-height:1.3;margin:.3rem 0 0;position:relative;cursor:help}
 .impact-tag .tip{visibility:hidden;opacity:0;position:absolute;top:135%;right:0;background:var(--gray-800);color:var(--white);padding:.45rem .55rem;border-radius:6px;font-size:.64rem;font-weight:400;line-height:1.3;width:180px;max-width:min(180px,60vw);z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:opacity .15s;text-transform:none;letter-spacing:0;white-space:normal;overflow-wrap:break-word;word-break:break-word}
 .impact-tag .tip::after{content:"";position:absolute;bottom:100%;right:12px;border:5px solid transparent;border-bottom-color:var(--gray-800)}
 .impact-tag:hover .tip{visibility:visible;opacity:1}
-.impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;min-width:14px;flex:0 0 14px;border-radius:50%;background:var(--success,#1b8a4b);color:var(--white);font-size:.6rem;font-weight:700}
-.measured-tag{background:var(--warning-bg,#fff4e0);color:var(--warning,#9a6700)}
-.measured-tag .impact-i{background:var(--warning,#9a6700)}
-.impact-note{font-size:.72rem;color:var(--gray-600);background:var(--success-bg,#e6f6ec);border-radius:6px;padding:.45rem .7rem;margin:.5rem 0 .2rem}
+.impact-tag .impact-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;min-width:14px;flex:0 0 14px;border-radius:50%;background:var(--success);color:var(--white);font-size:.6rem;font-weight:700}
+.measured-tag{background:var(--warning-bg);color:var(--warning)}
+.measured-tag .impact-i{background:var(--warning)}
+.impact-note{font-size:.72rem;color:var(--gray-600);background:var(--success-bg);border-radius:6px;padding:.45rem .7rem;margin:.5rem 0 .2rem}
 .fecha{font-size:.8rem;color:var(--gray-800);white-space:nowrap}
 .fecha.tbd{color:var(--gray-500);font-style:italic}
 .sub-list{list-style:none;font-size:.8rem;margin-top:.3rem}
@@ -220,8 +221,33 @@ details.item-acc .item-detail{margin-top:.4rem}
   .impact-tag{white-space:normal}
   .impact-tag .tip{right:auto;left:50%;transform:translateX(-50%);width:min(220px,80vw);max-width:80vw}
   .impact-tag .tip::after{right:auto;left:50%;transform:translateX(-50%)}
-  .rm-years{grid-template-columns:120px 1fr}
-  .rm-months,.rm-row{grid-template-columns:120px repeat(4,1fr)}
+  .rm-years{grid-template-columns:140px 1fr}
+  .rm-months,.rm-row{grid-template-columns:140px repeat(4,1fr)}
+  /* ── Hardening anti-overflow móvil ── */
+  html,body{overflow-x:hidden}
+  .container{padding:1rem}
+  *{overflow-wrap:break-word;word-break:break-word}
+  .exec-summary,.channel,.roadmap,.feedback-box{max-width:100%}
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .kpi-mini .v{font-size:1.3rem}
+  .avance-box .a-pct{font-size:1.35rem}
+  .avance-note{font-size:.72rem}
+  .kpi-grid{grid-template-columns:1fr}
+  .kpi-card{min-width:0}
+  .kpi-card .k-name{min-height:0}
+  .kpi-tag,.jira-tag,.badge,.impact-tag,.measured-tag{white-space:normal;word-break:break-word}
+  .acc-mini{white-space:normal}
+  .rm-label{font-size:.66rem;padding:.3rem .3rem .3rem .5rem;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
+  .rm-dates{display:block;margin-top:.1rem;white-space:normal}
+  .rm-eng{display:inline-block;margin:.1rem 0 0 0;font-size:.56rem}
+  .rm-cell{font-size:.54rem}
+  .rm-group-phase>summary{padding:.5rem .4rem;font-size:.78rem;white-space:normal}
+  .rm-group-state>summary{padding:.4rem .4rem;font-size:.7rem;white-space:normal}
+  .rm-scroll{-webkit-overflow-scrolling:touch;position:relative}
+  /* Pista de scroll: desvanecido en el borde derecho + etiqueta "desliza" */
+  .rm-scroll::after{content:"Desliza para ver el cronograma →";position:sticky;left:0;bottom:0;display:block;font-size:.66rem;font-weight:700;color:var(--primary);background:linear-gradient(90deg,transparent,var(--white) 30%);padding:.3rem .4rem;text-align:right;pointer-events:none}
+  .rm-scroll.scrolled::after{opacity:0;transition:opacity .4s}
+  .info-i .tip{width:min(210px,78vw);max-width:78vw;left:50%;right:auto;transform:translateX(-50%)}
 }
 /* ===== Roadmap (Gantt 2026) ===== */
 .roadmap{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-bottom:2rem}
@@ -244,6 +270,15 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-phase.pub{color:var(--pub);border-left-color:var(--pub)}
 .rm-phase.priv{color:var(--priv);border-left-color:var(--priv)}
 .rm-phase.app{color:var(--app);border-left-color:var(--app)}
+.rm-group-phase{margin-bottom:.3rem}
+.rm-group-state{margin:.1rem 0}
+.rm-group-phase>summary,.rm-group-state>summary{list-style:none;cursor:pointer}
+.rm-group-phase>summary::-webkit-details-marker,.rm-group-state>summary::-webkit-details-marker{display:none}
+.rm-group-phase>summary::before{content:"▾ ";font-size:.7rem}
+.rm-group-phase:not([open])>summary::before{content:"▸ "}
+.rm-group-state>summary::before{content:"▾ ";font-size:.62rem;color:var(--gray-500)}
+.rm-group-state:not([open])>summary::before{content:"▸ "}
+.rm-substate{grid-column:1/-1;font-size:.66rem;font-weight:700;color:var(--gray-600);background:var(--white);padding:.3rem .6rem .1rem;margin-top:.2rem}
 .rm-row{display:grid;grid-template-columns:220px repeat(4,1fr);gap:0;align-items:center;border-bottom:1px solid var(--gray-100);min-height:34px}
 .rm-row:hover{background:var(--gray-50)}
 .rm-label{font-size:.76rem;font-weight:600;color:var(--gray-800);padding:.3rem .5rem .3rem .7rem;line-height:1.25}
@@ -256,10 +291,96 @@ details.item-acc .item-detail{margin-top:.4rem}
 .rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
 .rm-cell.bl{background:var(--info)}
 .rm-cell.alert{background:var(--danger)}
+.rm-cell.canc{background:var(--gray-500);text-decoration:line-through;opacity:.75}
 .rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
 .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
 .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
 .rm-note{font-size:.72rem;color:var(--gray-600);margin-top:.9rem;background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.5rem .7rem}
+.rm-eng{display:inline-block;font-size:.6rem;font-weight:700;padding:.08rem .4rem;border-radius:8px;margin-left:.4rem;color:#fff;vertical-align:middle;letter-spacing:.2px}
+.rm-eng.brayan{background:#5e35b1}
+.rm-eng.andres{background:#00897b}
+.rm-eng.sergio{background:#e65100}
+.rm-eng.gerardo{background:#1565c0}
+.rm-eng.laura{background:#c2185b}
+
+/* ===== Modal de tendencia de KPI ===== */
+.kpi-card.has-trend{cursor:pointer;position:relative;padding-bottom:1.6rem}
+.kpi-card.has-trend:hover{box-shadow:var(--shadow-lg)}
+.kpi-card.has-trend .trend-hint{position:absolute;bottom:.45rem;right:.6rem;font-size:.6rem;font-weight:700;color:var(--primary);opacity:.7;background:var(--gray-50);padding:.1rem .4rem;border-radius:999px;line-height:1.3}
+.kpi-card.has-trend:hover .trend-hint{opacity:1}
+.kpi-modal-ov{position:fixed;inset:0;background:rgba(10,30,20,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.kpi-modal-ov.open{display:flex}
+.kpi-modal{background:var(--white);border-radius:16px;box-shadow:var(--shadow-lg);max-width:620px;width:100%;max-height:90vh;overflow:auto;border-top:5px solid var(--accent)}
+.kpi-modal .km-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.2rem 1.4rem .4rem}
+.kpi-modal .km-title{font-size:1.1rem;font-weight:800;color:var(--primary);letter-spacing:-.01em}
+.kpi-modal .km-sub{font-size:.8rem;color:var(--gray-600);margin-top:.15rem}
+.kpi-modal .km-close{background:var(--gray-100);border:0;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;color:var(--gray-600);flex:none;line-height:1}
+.kpi-modal .km-close:hover{background:var(--gray-200)}
+.kpi-modal .km-body{padding:.4rem 1.4rem 1.4rem}
+.kpi-modal .km-chart{width:100%;height:auto;display:block}
+.kpi-modal .km-legend{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.74rem;color:var(--gray-600);margin-top:.6rem}
+.kpi-modal .km-legend span{display:inline-flex;align-items:center;gap:.4rem}
+.kpi-modal .km-legend i{width:16px;height:3px;border-radius:2px;display:inline-block}
+.kpi-modal .km-legend i.l-serie{background:var(--primary)}
+.kpi-modal .km-legend i.l-meta{background:var(--accent);height:0;border-top:2px dashed var(--accent)}
+.kpi-modal .km-foot{font-size:.72rem;color:var(--gray-500);margin-top:.7rem}
+@media(max-width:768px){.kpi-modal .km-title{font-size:1rem}}
+
+/* ===== Portal Intermediarios (embebido, scoped) ===== */
+.im-scope{display:block}
+.im-scope .entregable .e-title{font-size:.95rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.5rem;margin-bottom:.2rem}
+.im-scope .entregable .e-sub{font-size:.76rem;color:var(--gray-600);margin-bottom:.8rem}
+.im-scope .pipe-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin-bottom:.9rem}
+.im-scope .pipe-step{background:var(--white);border:1px solid var(--gray-200);border-radius:8px;padding:.5rem .6rem;text-align:center}
+.im-scope .pipe-step .ps-name{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--gray-600)}
+.im-scope .pipe-step .ps-val{font-size:.9rem;font-weight:700;margin-top:.2rem}
+.im-scope .pipe-step.done .ps-val{color:var(--success)}
+.im-scope .pipe-step.curso .ps-val{color:var(--warning)}
+.im-scope .pipe-step.pend .ps-val{color:var(--gray-500)}
+.im-scope .e-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.im-scope .e-col h4{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:.4rem}
+.im-scope .e-col.ok h4{color:var(--success)}
+.im-scope .e-col.curso h4{color:var(--warning)}
+.im-scope .e-col.pend h4{color:var(--gray-600)}
+.im-scope .e-list{list-style:none;font-size:.8rem}
+.im-scope .e-list li{padding:.2rem 0 .2rem 1.1rem;position:relative;color:var(--gray-800)}
+.im-scope .e-list li::before{content:"•";position:absolute;left:.2rem;color:var(--gray-400)}
+.im-scope .roadmap h2{font-size:1.15rem;color:var(--primary);margin-bottom:.3rem}
+.im-scope .roadmap .rm-sub{font-size:.8rem;color:var(--gray-600);margin-bottom:1.1rem}
+.im-scope .rm-legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem;font-size:.72rem;color:var(--gray-600)}
+.im-scope .rm-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.im-scope .rm-legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+.im-scope .rm-fin{background:var(--success)}
+.im-scope .rm-cur{background:var(--warning)}
+.im-scope .rm-tbd{background:var(--gray-400)}
+.im-scope .rm-scroll{overflow-x:auto}
+.im-scope .rm-grid{min-width:760px}
+.im-scope .rm-years{display:grid;grid-template-columns:220px 1fr 1fr;gap:0;font-size:.74rem;font-weight:700;color:var(--white)}
+.im-scope .rm-years .rm-corner{background:transparent}
+.im-scope .rm-years .rm-y{text-align:center;padding:.35rem 0;background:var(--primary-dark);border-left:2px solid var(--white)}
+.im-scope .rm-months{display:grid;grid-template-columns:220px repeat(24,1fr);gap:0;font-size:.56rem;font-weight:700;color:var(--gray-600);border-bottom:1px solid var(--gray-200)}
+.im-scope .rm-months .rm-corner{background:var(--gray-50)}
+.im-scope .rm-months .rm-m{text-align:center;padding:.3rem 0;border-left:1px solid var(--gray-100)}
+.im-scope .rm-months .rm-m.q{border-left:1px solid var(--gray-300)}
+.im-scope .rm-phase{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--priv);background:var(--gray-50);padding:.35rem .6rem;border-left:3px solid var(--priv);margin:.6rem 0 .1rem}
+.im-scope .rm-row{display:grid;grid-template-columns:220px repeat(24,1fr);gap:0;align-items:center;border-bottom:1px solid var(--gray-100);min-height:34px}
+.im-scope .rm-row:hover{background:var(--gray-50)}
+.im-scope .rm-label{font-size:.76rem;font-weight:600;color:var(--gray-800);padding:.3rem .5rem .3rem .7rem;line-height:1.25}
+.im-scope .rm-label .rm-num{color:var(--gray-400);font-weight:700;margin-right:.3rem}
+.im-scope .rm-label .rm-dates{display:block;font-size:.64rem;font-weight:400;color:var(--gray-500);margin-top:.1rem}
+.im-scope .rm-track{grid-column:2 / span 24;position:relative;height:100%;display:flex;align-items:center}
+.im-scope .rm-cell{position:absolute;top:50%;transform:translateY(-50%);height:14px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--white);white-space:nowrap;overflow:hidden;padding:0 .4rem;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.im-scope .rm-cell.fin{background:var(--success)}
+.im-scope .rm-cell.cur{background:var(--warning)}
+.im-scope .rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
+.im-scope .rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
+.im-scope .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
+.im-scope .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
+.im-scope .rm-note{font-size:.72rem;color:var(--gray-600);margin-top:.9rem;background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.5rem .7rem}
+ @media(max-width:768px){
+ .im-scope .rm-years{grid-template-columns:140px 1fr 1fr}
+ .im-scope .rm-months,.im-scope .rm-row{grid-template-columns:140px repeat(24,1fr)}
+}
 </style>
 </head>
 <body>
@@ -267,7 +388,7 @@ details.item-acc .item-detail{margin-top:.4rem}
   <h1>Estatus de Canales Digitales</h1>
   <div class="sub">Comité de Canales · Zona Pública, Zona Privada y App Bolívar</div>
   <div class="date">Corte: 8 de octubre de 2026</div>
-  <div class="badge-comite">Versión 1.5 · Actualizado: 8 de octubre de 2026</div>
+  <div class="badge-comite">Versión 1.5 (TEST) · Actualizado: 8 de octubre de 2026</div>
 </header>
 <div class="container">
   <!-- Navegación entre canales -->
@@ -275,35 +396,35 @@ details.item-acc .item-detail{margin-top:.4rem}
     <a href="#web" class="pub">🌐 Zona Pública</a>
     <a href="#privada" class="priv">🔐 Zona Privada</a>
     <a href="#app" class="app">📱 App Bolívar</a>
+    <a href="#portal" class="priv">🌐 Intermediarios</a>
   </nav>
   <!-- Resumen ejecutivo -->
   <section class="exec-summary">
     <h2>Resumen Ejecutivo</h2>
     <div class="kpi-strip">
-      <div class="kpi-mini ok"><div class="v">🟢 13</div><div class="l">Entregado</div></div>
-      <div class="kpi-mini warn"><div class="v">🟡 9</div><div class="l">En curso</div></div>
-      <div class="kpi-mini"><div class="v">⚠️ 1</div><div class="l">Alertado</div></div>
-      <div class="kpi-mini"><div class="v">⛔ 1</div><div class="l">Cancelado</div></div>
-      <div class="kpi-mini"><div class="v">24</div><div class="l">Total en seguimiento</div></div>
+      <div class="kpi-mini ok"><div class="v">🟢 9</div><div class="l">Entregado</div></div>
+      <div class="kpi-mini warn"><div class="v">🟡 10</div><div class="l">En curso</div></div>
+      <div class="kpi-mini info"><div class="v">🔵 15</div><div class="l">Backlog</div></div>
+      <div class="kpi-mini"><div class="v">34</div><div class="l">Total comprometido Q4</div></div>
     </div>
     <div class="avance-box">
       <div class="a-top">
-        <span class="a-label">📈 Avance de compromisos (todos los frentes)</span>
-        <span class="a-pct">56.5% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 52% esperado</span></span>
+        <span class="a-label">📈 Avance de compromisos (todos los frentes · Q4 2026)</span>
+        <span class="a-pct">26.5% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 35.3% esperado</span></span>
       </div>
       <div class="avance-bar">
-        <div class="avance-fill" style="width:56.5%"></div>
-        <div class="avance-marker" style="left:52%"></div>
+        <div class="avance-fill" style="width:26.5%"></div>
+        <div class="avance-marker" style="left:35.3%"></div>
       </div>
-      <div class="avance-note">Real vs. esperado a la fecha de corte (8 oct). Base comprometida: 23 ítems (se excluye 1 cancelado) · 🟢 13 entregados · 🟡 9 en curso · ⚠️ 1 alertado. <strong>Vamos ligeramente por encima de lo esperado.</strong> Pendientes clave: nueva versión AC, coberturas con IA y versión mobile (reprogramadas 1→8→13 oct por hallazgos de la pruebatón; coberturas IA al 23 oct por latencia). En App Bolívar, Pagos en línea está alertado (bloqueo por WebView y reglas del botón de deuda), ajustado al 22 oct.</div>
+      <div class="avance-note">Real vs. esperado a la fecha de corte (9 oct), sobre el total comprometido del trimestre (34 iniciativas: 🟢 9 entregadas · 🟡 10 en curso · 🔵 15 en backlog). <strong>Desviación de ~9 pp por debajo de lo esperado</strong>, concentrada en Acceso a Clientes y Pagos de App (bloqueado). El resto del backlog arranca según el cronograma por ingeniero.</div>
     </div>
   </section>
-  <!-- ============ WEB — segurosbolivar.com ============ -->
+<!-- ============ WEB — segurosbolivar.com ============ -->
   <details class="channel" id="web">
     <summary>
       <div class="acc-head pub">
         <h2><span class="icon">🌐</span> Zona Pública</h2>
-        <div class="acc-right"><span class="acc-mini">🟢 5 · 🟡 1 · ⛔ 1</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-right"><span class="acc-mini">🟢 5 · 🟡 1</span><span class="acc-chevron">▼</span></div>
       </div>
     </summary>
     <div class="channel-head pub">
@@ -312,7 +433,7 @@ details.item-acc .item-detail{margin-top:.4rem}
         <div class="status-badges">
           <span class="status-badge"><span class="dot fin"></span>5 entregadas</span>
           <span class="status-badge"><span class="dot cur"></span>1 en curso</span>
-          <span class="status-badge"><span class="dot canc"></span>1 cancelada</span>
+          
         </div>
       </div>
       <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
@@ -400,7 +521,81 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
       </details>
 
-      <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
+            
+      <details class="kpi-collapse">
+        <summary><span>🗺️ Roadmap · Zona Pública</span><span class="kpi-toggle">Ver roadmap</span></summary>
+        <div class="kpi-inner">
+        <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
+        <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
+      <span><i style="background:var(--danger)"></i> Alertado / bloqueado</span>
+      <span><i style="background:var(--gray-500)"></i> Cancelado</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+        <div class="rm-scroll"><div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
+        </div>
+        <div class="rm-substate">🟢 Entregado</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-1</span>Certificaciones Olivia<span class="rm-dates">🚀 9 sep · en monitoreo</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-2</span>Banner certificaciones<span class="rm-dates">🚀 7 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-3</span>Carrusel del banner<span class="rm-dates">🚀 2 oct</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:25%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-4</span>Integración páginas Salesforce al dominio<span class="rm-dates">🚀 5 oct · entregado</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:37.5%">Entregado</div></div>
+        </div>
+        <div class="rm-substate">🟡 En curso</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-5</span>Diccionario de términos<span class="rm-dates">entrega 9 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-6</span>SEO (fase 1)<span class="rm-dates">en curso desde 29 sep · dev 10d</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:18.75%;width:12.5%">En curso</div></div>
+        </div>
+        <div class="rm-substate">🔵 Backlog</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-7</span>Ajustar URLs rotas<span class="rm-dates">entrega tentativa 24 oct · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-8</span>SOAT<span class="rm-dates">entrega tentativa 3 nov · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-9</span>Menú (mejorar el menú)<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 18 nov</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:37.5%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">ZP-10</span>Check legal y comercial - Zona Pública<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 10 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:62.5%;width:12.5%">Backlog</div></div>
+        </div>
+        </div></div>
+        </div>
+        </div>
+      </details>
+
+      <details class="kpi-collapse">
+        <summary><span>📋 Iniciativas en curso · Zona Pública</span><span class="kpi-toggle">Ver iniciativas en curso</span></summary>
+        <div class="kpi-inner">
+        <div class="subgroup-label">🎯 Priorizadas (comité · 4 sep)</div>
       <div class="tw">
       <table class="func-table">
         <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
@@ -441,32 +636,16 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="func-desc">Diccionario de términos — lenguaje común para términos de seguros. Lo lidera Camilo Gálvez.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado en INS: +0.1 a +0.2pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 34 dijeron que la información no era clara. Con un lenguaje más sencillo esperamos recuperar como mínimo 2 de ellos, lo que equivale a subir el INS entre 0.1 y 0.2 puntos.</span></span></td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Inspirar y Facilitar: lenguaje claro para "hacer fácil entender" los productos.</div></td>
             <td><span class="badge badge-progreso">🟡 En curso</span></td>
             <td><span class="fecha">1 oct</span></td>
             <td><span class="fecha-ajustada">9 oct</span></td>
           </tr>
-          <tr>
-            <td>
-              <div class="func-name"><span class="func-num">4.</span>Venta de SOAT con Proyectiva</div>
-              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
-              <div class="func-desc">Venta de SOAT en la zona pública con Proyectiva.</div>
-              <div class="tag-line seg">Seguimiento</div>
-              <div class="seguimiento">Cancelado. Se revisa enviar a los clientes a Fasecolda; experiencia por confirmar.</div>
-              </div></details>
-            </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado en INS: +0.4 a +0.8pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 96 se quejaron por temas de SOAT. Con la venta de SOAT desde la página esperamos recuperar como mínimo 8 de ellos, lo que equivale a subir el INS entre 0.4 y 0.8 puntos.</span></span></td>
-            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Transformar y Oportunidad de venta: venta y renovación de SOAT = leads/ventas.</div></td>
-            <td><span class="badge badge-cancelado">⛔ Cancelado</span></td>
-            <td><span class="fecha tbd">—</span></td>
-            <td><span class="fecha tbd">por confirmar</span></td>
-          </tr>
         </tbody>
       </table>
       </div>
       <div class="impact-note">💡 <strong>Cómo leer el impacto esperado:</strong> en septiembre respondieron 2.059 clientes la encuesta. Cada 21 clientes que pasan de calificar mal a bien suben el INS en 1 punto. Partimos de los 441 clientes que nos dijeron qué buscaban: según cuántos resuelve cada iniciativa, estimamos los puntos que podría sumar al INS (ej. +0.8 a +1.3pp). Es una estimación; el INS es un indicador neto y puede moverse por otros factores.</div>
-      <div class="impact-note">📏 <strong>Cómo medimos el resultado real:</strong> para cada iniciativa ya en producción comparamos el dolor que debía resolver en una ventana de días iguales antes vs. después del despliegue (excluyendo el día de salida). El badge ámbar <em>"Cumplido / Impacto medido"</em> muestra cuántas quejas por ese motivo bajaron. Con bases pequeñas el dato es indicativo, no concluyente.</div>
       <div class="subgroup-label">➕ Otros temas priorizados</div>
       <div class="tw">
       <table class="func-table">
@@ -495,7 +674,7 @@ details.item-acc .item-detail{margin-top:.4rem}
               <div class="seguimiento">Se hizo el despliegue, pero no pasó el sanity check por un tema de nivelación de ambiente. Ya se está resolviendo; se espera liberar con corrección el 2 de octubre.</div>
               </div></details>
             </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto esperado en INS: +0.2 a +0.3pp<span class="tip">De los 441 clientes que nos dijeron qué buscaban, 47 se quejaron porque la información no era clara o les costó encontrarla. Al mostrar más contenido en el banner esperamos recuperar entre 4 y 7 de ellos, lo que equivale a subir el INS entre 0.2 y 0.3 puntos.</span></span></td>
+            <td><span class="kpi-tag">INS</span></td>
             <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Conectar y Facilitar: más contenido visible reduce el esfuerzo para encontrar información.</div></td>
             <td><span class="badge badge-hecho">🟢 Entregado</span></td>
             <td><span class="fecha">23 sep</span></td>
@@ -520,6 +699,9 @@ details.item-acc .item-detail{margin-top:.4rem}
         </tbody>
       </table>
       </div>
+        </div>
+      </details>
+
       <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
     </div>
   </details>
@@ -528,7 +710,7 @@ details.item-acc .item-detail{margin-top:.4rem}
     <summary>
       <div class="acc-head priv">
         <h2><span class="icon">🔐</span> Zona Privada</h2>
-        <div class="acc-right"><span class="acc-mini">🟢 6 · 🟡 6</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-right"><span class="acc-mini">🟢 6 · 🟡 5</span><span class="acc-chevron">▼</span></div>
       </div>
     </summary>
     <div class="channel-head priv">
@@ -536,7 +718,7 @@ details.item-acc .item-detail{margin-top:.4rem}
         <div><span class="prop-tag">🎯 Propósito</span></div>
         <div class="status-badges">
           <span class="status-badge"><span class="dot fin"></span>6 entregadas</span>
-          <span class="status-badge"><span class="dot cur"></span>6 en curso</span>
+          <span class="status-badge"><span class="dot cur"></span>5 en curso</span>
         </div>
       </div>
       <div class="prop-main">Espacio para la gestión administrativa de los seguros, donde los clientes consultan, actualizan y utilizan sus pólizas de manera autónoma.</div>
@@ -609,7 +791,113 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
       </details>
 
-      <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
+            
+      <details class="kpi-collapse">
+        <summary><span>🗺️ Roadmap · Zona Privada</span><span class="kpi-toggle">Ver roadmap</span></summary>
+        <div class="kpi-inner">
+        <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
+        <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
+      <span><i style="background:var(--danger)"></i> Alertado / bloqueado</span>
+      <span><i style="background:var(--gray-500)"></i> Cancelado</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+        <div class="rm-scroll"><div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
+        </div>
+        <div class="rm-substate">🟢 Entregado</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-1</span>Botón / menú certificaciones<span class="rm-dates">🚀 7–14 sep · cumplido −11</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-2</span>Trámites salud / Directorio / Coberturas<span class="rm-dates">🚀 9–16 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-3</span>War room certificaciones<span class="rm-dates">🚀 25 sep · cumplido −5</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-4</span>Descarga masiva de documentos<span class="rm-dates">🚀 8 oct · entregado</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:31.25%">Entregado</div></div>
+        </div>
+        <div class="rm-substate">🟡 En curso</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-5</span>Nueva versión AC (home + detalle)<span class="rm-dates">1 oct → 8 oct → 13 oct · hallazgos pruebatón</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-6</span>Coberturas con IA<span class="rm-dates">entrega 23 oct · latencia (trabajo con DAIA)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-7</span>Versión mobile AC<span class="rm-dates">1 oct → 8 oct → 13 oct · hallazgos pruebatón</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-8</span>Pagos en línea mobile (AC)<span class="rm-dates">entrega 9 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-9</span>Mejoras por observabilidad<span class="rm-dates">continuo · meta score &gt;80 · 15 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-10</span>Coberturas IA (nueva)<span class="rm-dates">entrega 28 oct · dev 10d</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:43.75%">En curso</div></div>
+        </div>
+        <div class="rm-substate">🔵 Backlog</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-11</span>Cambio UX Mi Perfil<span class="rm-dates">entrega 27 oct · dev 3d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-12</span>Servicios programados - Salud<span class="rm-dates">entrega 5 nov · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-13</span>Evolucionar Ver Detalle – Salud<span class="rm-dates">entrega 12 nov · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-14</span>Conozca cómo usar su seguro (home)<span class="rm-dates">entrega 5 dic · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-15</span>Precargue de copias de póliza<span class="rm-dates">entrega 23 oct · dev 5d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-16</span>Check legal y comercial - Zona Privada<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 31 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-17</span>Revocar autorización fines comerciales<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 23 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:68.75%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">AC-18</span>Solicitudes de servicios<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 23 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:43.75%">Backlog</div></div>
+        </div>
+        </div></div>
+        </div>
+        </div>
+      </details>
+
+      <details class="kpi-collapse">
+        <summary><span>📋 Iniciativas en curso · Zona Privada</span><span class="kpi-toggle">Ver iniciativas en curso</span></summary>
+        <div class="kpi-inner">
+        <div class="subgroup-label">🎯 Priorizadas (comité · 4 sep)</div>
       <div class="tw">
       <table class="func-table">
         <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
@@ -776,22 +1064,12 @@ details.item-acc .item-detail{margin-top:.4rem}
             <td><span class="fecha">15 oct</span></td>
             <td><span class="fecha tbd">—</span></td>
           </tr>
-          <tr>
-            <td>
-              <div class="func-name"><span class="func-num">12.</span>Imán de la nevera</div>
-              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
-              <div class="func-desc">El equipo de Camilo Gálvez está trabajando con la línea de negocio de salud para planear la estrategia de abordaje del plan.</div>
-              </div></details>
-            </td>
-            <td><span class="kpi-tag">INS</span><span class="impact-tag"><span class="impact-i">i</span>Impacto por dimensionar<span class="tip">La iniciativa está en planeación con la línea de salud; aún no tiene alcance ni fecha definidos. Una vez se concrete qué incluye, estimaremos cuántas calificaciones negativas podría reducir al mes.</span></span></td>
-            <td><span class="badge badge-alineada">✓ Alineada</span><div class="alin-why">Usar la póliza: promueve el uso de coberturas de salud del cliente.</div></td>
-            <td><span class="badge badge-progreso">🟡 En curso</span></td>
-            <td><span class="fecha tbd">Por confirmar</span></td>
-            <td><span class="fecha tbd">—</span></td>
-          </tr>
         </tbody>
       </table>
       </div>
+        </div>
+      </details>
+
       <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
     </div>
   </details>
@@ -800,15 +1078,15 @@ details.item-acc .item-detail{margin-top:.4rem}
     <summary>
       <div class="acc-head app">
         <h2><span class="icon">📱</span> App Bolívar</h2>
-        <div class="acc-right"><span class="acc-mini">🟢 2 · 🟡 2 · ⚠️ 1</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-right"><span class="acc-mini">🟢 1 · 🟡 1 · ⚠️ 1</span><span class="acc-chevron">▼</span></div>
       </div>
     </summary>
     <div class="channel-head app">
       <div class="prop-head">
         <div><span class="prop-tag">🎯 Propósito</span></div>
         <div class="status-badges">
-          <span class="status-badge"><span class="dot fin"></span>2 entregadas</span>
-          <span class="status-badge"><span class="dot cur"></span>2 en curso</span>
+          <span class="status-badge"><span class="dot fin"></span>1 entregada</span>
+          <span class="status-badge"><span class="dot cur"></span>1 en curso</span>
           <span class="status-badge"><span class="dot alert"></span>1 alertada</span>
         </div>
       </div>
@@ -876,7 +1154,65 @@ details.item-acc .item-detail{margin-top:.4rem}
         </div>
       </details>
 
-      <div class="subgroup-label">🎯 Priorizados en comité · 4 de septiembre</div>
+            
+      <details class="kpi-collapse">
+        <summary><span>🗺️ Roadmap · App Bolívar</span><span class="kpi-toggle">Ver roadmap</span></summary>
+        <div class="kpi-inner">
+        <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
+        <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
+      <span><i style="background:var(--danger)"></i> Alertado / bloqueado</span>
+      <span><i style="background:var(--gray-500)"></i> Cancelado</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+        <div class="rm-scroll"><div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
+        </div>
+        <div class="rm-substate">🟢 Entregado</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-1</span>Compra interna (home transversal)<span class="rm-dates">🚀 29 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-substate">🟡 En curso</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-2</span>Pagos en línea<span class="rm-dates">⚠️ bloqueado · ajustada 22 oct (WebView + reglas botón deuda)</span></div>
+          <div class="rm-track"><div class="rm-cell alert" style="left:0%;width:50%">⚠️ Alertado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-3</span>Arreglar experiencia / vitrina de seguros<span class="rm-dates">entrega 19 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+        <div class="rm-substate">🔵 Backlog</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-4</span>Cambio de marca<span class="rm-dates">entrega 31 oct · dev 3d</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-5</span>Check legal y comercial - App<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 11 nov</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">APP-6</span>Hannu (cambio proveedor de bienestar)<span class="rm-dates">📌 Estimación alto nivel · fecha tentativa 18 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:43.75%;width:31.25%">Backlog</div></div>
+        </div>
+        </div></div>
+        </div>
+        </div>
+      </details>
+
+      <details class="kpi-collapse">
+        <summary><span>📋 Iniciativas en curso · App Bolívar</span><span class="kpi-toggle">Ver iniciativas en curso</span></summary>
+        <div class="kpi-inner">
+        <div class="subgroup-label">🎯 Priorizadas (comité · 4 sep)</div>
       <div class="tw">
       <table class="func-table">
         <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
@@ -925,9 +1261,291 @@ details.item-acc .item-detail{margin-top:.4rem}
         </tbody>
       </table>
       </div>
+        </div>
+      </details>
+
       <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
     </div>
   </details>
+<div class="im-scope">
+<details class="channel" id="portal">
+    <summary>
+      <div class="acc-head priv">
+        <h2><span class="icon">🌐</span> Portal Intermediarios</h2>
+        <div class="acc-right"><span class="acc-mini">🟢 14 · 🟡 9 · 🔵 3</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
+    <div class="channel-head priv">
+      <div class="prop-tag">🎯 Propósito</div>
+      <div class="prop-main">Ser la plataforma única de autogestión para los intermediarios, donde consultan información, gestionan trámites, descargan documentos y operan su negocio con la compañía de forma autónoma, ágil y confiable — reduciendo la dependencia de canales manuales como el correo.</div>
+      <div class="prop-pillars">
+        <div class="prop-pillar">
+          <span class="p-verb">🤝 Unificar</span>
+          <span class="p-def">Consolidar en un solo portal las herramientas y servicios dispersos del intermediario.</span>
+          <span class="p-res">💚 Un único punto de acceso</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">✅ Facilitar</span>
+          <span class="p-def">Simplificar trámites, consultas y descargas para que el intermediario resuelva solo.</span>
+          <span class="p-res">✅ Autogestión sin fricción</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🚀 Transformar</span>
+          <span class="p-def">Migrar la operación del correo y la intranet hacia el portal digital.</span>
+          <span class="p-res">🚀 Adopción y cobertura</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🛡️ Sostener</span>
+          <span class="p-def">Garantizar un servicio disponible, rápido y seguro para operar el negocio.</span>
+          <span class="p-res">❤️ Confiabilidad del canal</span>
+        </div>
+      </div>
+    </div>
+    <div class="channel-body">
+      <div class="section-label">📊 KPIs de Portal Intermediarios <span style="font-weight:400;font-size:.8rem;color:var(--gray-600)">· último dato disponible: septiembre (octubre pendiente de cargue)</span></div>
+
+      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Cobertura<i class="info-i">i<span class="tip">Cantidad de servicios / solicitudes que se gestionan en el portal sobre el total. Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real warn">67%</span><span class="k-meta">/ meta 90% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:74%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Autogestión<i class="info-i">i<span class="tip">% de transacciones realizadas por el portal vs. otros canales (correo). Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real ok">98%</span><span class="k-meta">/ meta 90% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Adopción<i class="info-i">i<span class="tip">Cantidad de usuarios únicos del portal vs. cantidad de usuarios con acceso. Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real warn">77%</span><span class="k-meta">/ meta 80% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:96%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico / Sesiones (mes)<i class="info-i">i<span class="tip">Total de sesiones de usuarios en el portal durante el mes.</span></i></div>
+          <div class="k-values"><span class="k-real ok">70.015</span><span class="k-meta">/ meta 60.000</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tasa de rebote<i class="info-i">i<span class="tip">Porcentaje de visitas que abandonan sin interactuar. Meta: 20% o menos.</span></i></div>
+          <div class="k-values"><span class="k-real ok">18%</span><span class="k-meta">/ meta ≤ 20%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo en sitio (min)<i class="info-i">i<span class="tip">Tiempo promedio que el usuario permanece en el portal, en minutos. Meta: 3 minutos o más.</span></i></div>
+          <div class="k-values"><span class="k-real ok">12</span><span class="k-meta">/ meta ≥ 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Satisfacción del usuario (INS)<i class="info-i">i<span class="tip">Índice de satisfacción del usuario según la encuesta del portal. Valor de la fuente de KPIs del comité (sin conteo manual). Meta: 70%.</span></i></div>
+          <div class="k-values"><span class="k-real warn">60%</span><span class="k-meta">/ meta 70%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🛡️ Confiabilidad <span style="font-weight:400;font-size:.72rem;color:var(--gray-600);text-transform:none;letter-spacing:0">· fuente: tablero Datadog "Observabilidad Portal Intermediarios"</span></div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">SLO General del servicio<i class="info-i">i<span class="tip">Score de cumplimiento de los SLO de confiabilidad del portal según el presupuesto de error de los últimos 30 y 7 días. Un SLO bajo refleja consumo de presupuesto de error, no necesariamente indisponibilidad al usuario final. Meta: &gt; 80.</span></i></div>
+          <div class="k-windows">
+            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">67.3</span></div>
+            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val warn">74.8</span></div>
+          </div>
+          <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
+          <div class="k-trend up">▲ Está subiendo (54.9 ago → 67.3 sep a 30d)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Servicios administrados<i class="info-i">i<span class="tip">Score de los SLO de los servicios administrados directamente por el Portal Intermediarios. Corte del tablero 23–25 sep. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real warn">72.5</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:91%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Latencia<i class="info-i">i<span class="tip">Score del SLO de latencia del portal. Es el componente más rezagado; en seguimiento con FileNet, Protección de Créditos y Lago de Datos. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real crit">65.3</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:82%;background:var(--danger)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Errores<i class="info-i">i<span class="tip">Score del SLO de errores del portal (tasa de errores 5xx y controlados). Corte del tablero 23–25 sep. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real warn">67.7</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:85%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Incidentes críticos<i class="info-i">i<span class="tip">Número de incidentes críticos registrados en el periodo (fuente KPIs del comité). Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre). Meta: 0.</span></i></div>
+          <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0 · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+      </div>
+      <div class="kpi-meta-note">Nota: el SLO bajo refleja consumo de presupuesto de error de activos del portal; no implica necesariamente afectación de disponibilidad al usuario final. Acciones de recuperación en curso (FileNet, Protección de Créditos, Precobros, Lago de Datos) con acompañamiento del equipo SRE.</div>
+
+      <!-- ===== Entregables de Valor (Fase III y IV) ===== -->
+
+      <details class="kpi-collapse">
+        <summary><span>🗺️ Roadmap · Portal Intermediarios</span><span class="kpi-toggle">Ver roadmap</span></summary>
+        <div class="kpi-inner">
+        <section class="roadmap" id="roadmap-portal">
+    <h2>🗺️ Roadmap del proyecto · Portal Intermediarios</h2>
+    <div class="rm-sub">Unificación de Plataformas · Fases I a IV (2025–2026). Fuente: seguimiento del Comité + "Estimaciones Squad Apoyo Comercial - Roadmap Unificación".</div>
+    <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+    <div class="rm-scroll">
+      <div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2025</div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">E</div><div class="rm-m">F</div><div class="rm-m">M</div><div class="rm-m">A</div><div class="rm-m">M</div><div class="rm-m">J</div><div class="rm-m">J</div><div class="rm-m">A</div><div class="rm-m">S</div><div class="rm-m">O</div><div class="rm-m">N</div><div class="rm-m">D</div>
+          <div class="rm-m q">E</div><div class="rm-m">F</div><div class="rm-m">M</div><div class="rm-m">A</div><div class="rm-m">M</div><div class="rm-m">J</div><div class="rm-m">J</div><div class="rm-m">A</div><div class="rm-m">S</div><div class="rm-m">O</div><div class="rm-m">N</div><div class="rm-m">D</div>
+        </div>
+
+        <div class="rm-phase">Fase I y II · 2025</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">1.</span>Home Unificación de Plataformas<span class="rm-dates">05 may – 04 ago 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:16.67%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">2.</span>Creación perfiles FCA<span class="rm-dates">05 may – 04 ago 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:16.67%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">3.</span>Migración Funcionalidades Simón Servicio<span class="rm-dates">04 ago – 25 oct 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:29.17%;width:12.5%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+
+        <div class="rm-phase">Fase III · 2026</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">4.</span>Autoservicio creación/eliminación de empleados<span class="rm-dates">05 ene – 30 abr 2026 · 🚀 22 jul</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:50%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:79.17%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">5.</span>Autogestión actualización de datos<span class="rm-dates">20 mar – 30 abr 2026 · 🚀 22 jul</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:58.33%;width:8.33%">Finalizado</div><div class="rm-milestone" style="left:79.17%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">6.</span>Gestión Humana (Entregable 6)<span class="rm-dates">04 may 2026 – PAP (Certificado negocio) · posible 🚀 22 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:66.67%;width:25%">PAP · Certificado negocio</div><div class="rm-milestone" style="left:91.67%">🚀</div></div>
+        </div>
+
+        <div class="rm-phase">Fase IV · 2026</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">7.</span>Cartera (Entregable 7)<span class="rm-dates">Validación UX con intermediarios (hasta 15 oct) · desarrollo TBD</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:70.83%;width:16.67%">Validación UX Intermediarios</div><div class="rm-cell tbd" style="left:87.5%;width:12.5%">Desarrollo TBD</div></div>
+        </div>
+
+        <div class="rm-row" style="border-bottom:0;min-height:8px">
+          <div class="rm-label"></div>
+          <div class="rm-track"><div class="rm-today" style="left:88.33%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rm-note">Entregables 1–5 finalizados y en producción. Entregable 6 (Gestión Humana) en PAP con certificación por partes (Pt1 24 sep · Pt2 02 oct · Módulo Admin en UAT). Entregable 7 (Cartera) en validación UX de prototipo con intermediarios (hasta el 15 oct).</div>
+  </section>
+        </div>
+      </details>
+
+      <div class="section-label" style="margin-top:2rem">🗂️ Entregables de valor · estado del proyecto</div>
+
+      <div class="entregable">
+        <div class="e-title">📦 Entregable 6 · Migración Funcionalidades Gestión Humana <span class="jira-tag">GD907-664</span></div>
+        <div class="e-sub">Fase III · Migración de las funcionalidades de Gestión Humana (Intranet → Portal Intermediarios).</div>
+        <div class="pipe-row">
+          <div class="pipe-step done"><div class="ps-name">Diseño UX/UI</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">HUs y Refinamiento</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Refinamiento técnico</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Desarrollo y código</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Pruebas UAT</div><div class="ps-val">100%</div></div>
+        </div>
+        <div class="e-cols">
+          <div class="e-col curso">
+            <h4>🟡 En curso</h4>
+            <ul class="e-list">
+              <li>Creación de Casos del Módulo Gestión Humana</li>
+            </ul>
+          </div>
+          <div class="e-col pend">
+            <h4>⏳ Por iniciar</h4>
+            <ul class="e-list">
+              <li>Despliegues a producción; después del corte de nómina (1.ª quincena de octubre)</li>
+            </ul>
+          </div>
+          <div class="e-col ok">
+            <h4>✅ Avanzamos con (PAP / UAT)</h4>
+            <ul class="e-list">
+              <li>Menú Lateral · PAP</li>
+              <li>Calendario Intermediarios · PAP</li>
+              <li>Ajustes Perfil · Pruebas PAP</li>
+              <li>Módulo Idoneidad · PAP</li>
+              <li>Módulo Certificados · PAP</li>
+              <li>Actualización Datos Independientes · PAP</li>
+              <li>Módulo Comisiones (a cobrar · extracto · historial) · PAP</li>
+              <li>Planilla PILA · PAP</li>
+              <li>Módulo Admin carga de documentos (Certificados y Calendario) · PAP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="entregable">
+        <div class="e-title">📦 Entregable 7 · Módulo Cartera</div>
+        <div class="e-sub">Fase IV · Nuevo módulo de Cartera (en etapa temprana; desarrollo con aliado TCS, fechas por confirmar).</div>
+        <div class="pipe-row">
+          <div class="pipe-step curso"><div class="ps-name">Diseño UX/UI</div><div class="ps-val">Diseño 100% · Validación 50% En Curso</div></div>
+          <div class="pipe-step pend"><div class="ps-name">HUs y Refinamiento</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Refinamiento técnico</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Desarrollo y código</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Pruebas UAT</div><div class="ps-val">Sin iniciar</div></div>
+        </div>
+        <div class="e-cols">
+          <div class="e-col curso">
+            <h4>🟡 En curso</h4>
+            <ul class="e-list">
+              <li>Mesas técnicas: definición de productos de datos insumo del módulo (Analítica · Negocio · PO Portal)</li>
+            </ul>
+          </div>
+          <div class="e-col pend">
+            <h4>⏳ Por iniciar</h4>
+            <ul class="e-list">
+              <li>Desarrollo insumo "Pagos a Clientes" (trabajo articulado con Squad Cartera)</li>
+            </ul>
+          </div>
+          <div class="e-col ok">
+            <h4>✅ Avanzamos con</h4>
+            <ul class="e-list">
+              <li>Cierre de la experiencia y alcance funcional</li>
+              <li>Protocolo de Validación con Intermediarios</li>
+              <li>Validaciones con intermediarios (UX · Eq. Servicio)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subgroup-label">📋 Iniciativas en curso</div>
+      <div class="tw">
+      <table class="func-table">
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Punto">
+              <div class="func-name"><span class="func-num">1.</span>Migración módulo Gestión Humana (Entregable 6)</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
+              <div class="tag-line">Descripción</div>
+              <div class="func-desc">Migración de las funcionalidades de Gestión Humana desde la intranet al Portal Intermediarios (menú lateral, calendario, perfil, idoneidad, certificados, datos independientes, comisiones y planilla PILA).</div>
+              <div class="tag-line seg">Seguimiento</div>
+              <div class="seguimiento">Diseño, HUs, refinamiento, desarrollo y pruebas UAT <strong>100% completados</strong>. Certificación de negocio en PAP. En curso: Creación de Casos del módulo GH. Despliegues a producción tras el corte de nómina (1.ª quincena de octubre).</div>
+              <span class="jira-tag">GD907-664</span>
+              </div></details>
+            
+</div>
   <div class="footer">
     <p><strong>Estatus de Canales Digitales</strong> · Seguros Bolívar</p>
     <p style="margin-top:.4rem;color:var(--gray-400)">Leyenda de estados: <span class="badge badge-hecho">🟢 Entregado</span> <span class="badge badge-progreso">🟡 En curso</span> <span class="badge badge-congelado">⏸️ Congelado</span> <span class="badge badge-backlog">🔵 Backlog</span></p>
@@ -944,6 +1562,126 @@ details.item-acc .item-detail{margin-top:.4rem}
       });
     });
   });
+})();
+</script>
+<script>
+(function(){
+  function isMobile(){return window.matchMedia("(max-width:768px)").matches}
+  function peek(sc){
+    if(!sc||sc.scrollWidth<=sc.clientWidth+8)return;
+    var max=Math.min(90,sc.scrollWidth-sc.clientWidth);
+    var t0=null,dur=1400;
+    function step(ts){
+      if(!t0)t0=ts;var p=(ts-t0)/dur;
+      if(p>=1){sc.scrollLeft=0;return}
+      // ida y vuelta suave (seno)
+      sc.scrollLeft=max*Math.sin(p*Math.PI);
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function arm(sc){
+    sc.addEventListener("scroll",function(){sc.classList.add("scrolled")},{once:true,passive:true});
+  }
+  function run(){
+    if(!isMobile())return;
+    document.querySelectorAll(".rm-scroll").forEach(function(sc){
+      arm(sc);
+      if("IntersectionObserver" in window){
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){setTimeout(function(){peek(sc)},350);io.disconnect()}})},{threshold:.4});
+        io.observe(sc);
+      }else{setTimeout(function(){peek(sc)},600)}
+    });
+  }
+  if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);
+})();
+</script>
+
+<div class="kpi-modal-ov" id="kpiOv"><div class="kpi-modal" role="dialog" aria-modal="true">
+  <div class="km-head"><div><div class="km-title" id="kmTitle"></div><div class="km-sub" id="kmSub"></div></div>
+  <button class="km-close" id="kmClose" aria-label="Cerrar">&times;</button></div>
+  <div class="km-body"><div id="kmChart"></div>
+  <div class="km-legend"><span><i class="l-serie"></i>Valor mensual</span></div>
+  <div class="km-foot" id="kmFoot"></div></div>
+</div></div>
+<script>
+(function(){
+  var KPI={"COM-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,68.4],[2,74.0],[3,88.5],[4,90.0],[5,91.2],[6,96.5],[7,91.0],[8,84.8],[9,96.0],[10,73.1]]},"COM-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,3.88],[2,3.76],[3,3.76],[4,4.32],[5,4.32],[6,3.82],[7,3.42],[8,2.98],[9,3.12],[10,3.22]]},"COM-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,0.0],[2,0.0],[3,0.0],[4,0.0],[5,0.0],[6,0.0],[7,0.0],[8,1.0],[9,0.0],[10,0.0]]},"COM-UX-001":{"n":"Tráfico/Sesiones (Mes)","meta":1200000.0,"u":"","better":"up","s":[[1,721228.0],[2,763465.0],[3,721044.0],[4,736268.0],[5,868346.0],[6,846435.0],[7,972855.0],[8,987232.0],[9,980909.0]]},"COM-UX-002":{"n":"Tasa de rebote","meta":20.0,"u":"%","better":"down","s":[[1,25.83],[2,26.93],[3,33.6],[4,29.9],[5,30.4],[6,36.5],[7,35.2],[8,32.7],[9,32.6]]},"COM-UX-003":{"n":"Tiempo en sitio","meta":4.0,"u":"","better":"up","s":[[1,6.0],[2,6.0],[3,5.0],[4,5.0],[5,5.0],[6,5.0],[7,5.0],[8,5.0],[9,6.0]]},"COM-UX-004":{"n":"Satisfacción del usuario (INS)","meta":20.0,"u":"%","better":"up","s":[[1,-17.41],[2,-1.67],[3,-4.98],[4,2.7],[5,-5.0],[6,-7.1],[7,-7.6],[8,-14.3],[9,-6.7]]},"COM-UX-005":{"n":"Clicks en funciones priorizadas vs Trafico","meta":12.0,"u":"","better":"up","s":[[1,8.0],[2,8.0],[3,8.0],[4,8.0],[5,8.0],[6,8.0]]},"COM-NEG-001":{"n":"Tráfico Páginas de Productos","meta":80000.0,"u":"","better":"up","s":[[1,84972.0],[2,85936.0],[3,89833.0],[4,65834.0]]},"COM-NEG-002":{"n":"# Leads","meta":5553.0,"u":"","better":"up","s":[[1,3166.0],[2,3631.0],[3,5454.0],[4,5127.0]]},"COM-NEG-003":{"n":"% Ventas","meta":5.7,"u":"%","better":"up","s":[[1,6.54],[2,6.17],[3,5.43],[4,5.79]]},"COM-NEG-004":{"n":"Authority Score","meta":55.0,"u":"","better":"up","s":[[1,46.0],[2,46.0],[3,46.0],[4,46.0],[5,46.0],[6,46.0],[7,46.0],[8,46.0],[9,46.0]]},"COM-NEG-005":{"n":"Market Share","meta":14.0,"u":"%","better":"up","s":[[1,10.84],[2,10.84],[3,10.84],[4,10.84],[5,10.84],[6,10.84],[7,10.84],[8,10.84],[9,10.84]]},"ACC-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,81.6],[2,92.5],[3,82.7],[4,87.0],[5,86.9],[6,88.1],[7,62.4],[8,64.8],[9,59.4],[10,76.3]]},"ACC-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,3.0],[2,3.0],[3,4.9],[4,4.9],[5,4.67],[6,3.82],[7,4.39],[8,5.04],[9,4.19],[10,3.7]]},"ACC-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,1.0],[2,1.0],[3,1.0],[4,0.0],[5,1.0],[6,0.0],[7,1.0],[8,1.0],[9,2.0]]},"ACC-UX-001":{"n":"Tráfico/Sesiones","meta":69520.0,"u":"","better":"up","s":[[1,68677.0],[2,66996.0],[3,67232.0],[4,57049.0],[5,54627.0],[6,36366.0],[7,39642.0],[8,50448.0],[9,47329.0]]},"ACC-UX-002":{"n":"Tasa de rebote","meta":20.0,"u":"%","better":"down","s":[[1,11.99],[2,13.9],[3,22.9],[4,16.21],[5,13.16],[6,14.14],[7,1.46],[8,1.61],[9,2.35]]},"ACC-UX-003":{"n":"Tiempo en sitio","meta":3.0,"u":"","better":"up","s":[[1,5.0],[2,5.0],[3,5.0],[4,5.0],[5,3.18],[6,3.12],[7,3.0],[8,3.0],[9,3.0]]},"ACC-UX-004":{"n":"Satisfacción del usuario (INS)","meta":50.0,"u":"%","better":"up","s":[[1,25.0],[2,29.58],[3,35.57],[4,34.6],[5,18.0],[6,37.0],[7,25.0],[8,25.2],[9,24.07]]},"ACC-NEG-001":{"n":"Cobertura","meta":1.0,"u":"%","better":"up","s":[[1,2.0],[2,1.0],[3,1.0],[4,1.0],[5,2.0],[6,1.0],[7,1.0],[8,1.0],[9,1.0]]},"ACC-NEG-002":{"n":"Autogestión","meta":90.0,"u":"%","better":"up","s":[[1,95.0],[2,96.0],[3,98.0],[4,96.0],[5,96.0],[6,95.0],[7,94.0],[8,93.0],[9,86.0]]},"ACC-NEG-003":{"n":"Adopción","meta":50.0,"u":"%","better":"up","s":[[1,43.0],[2,44.0],[3,39.0],[4,43.0],[5,41.0],[6,41.0],[7,38.0],[8,53.0],[9,56.0]]},"APP-CONF-001":{"n":"Confiabilidad del servicio","meta":99.9,"u":"%","better":"up","s":[[1,78.1],[2,85.8],[3,83.5],[4,76.0],[5,76.1],[6,92.5],[7,93.0],[8,73.0],[9,82.5],[10,85.0]]},"APP-CONF-002":{"n":"Tiempo de respuesta","meta":3.0,"u":"","better":"down","s":[[1,2.98],[2,3.27],[3,3.22],[4,3.17],[5,3.12],[6,3.07],[7,2.76],[8,2.67],[9,3.22],[10,3.07]]},"APP-CONF-003":{"n":"Incidentes críticos","meta":0.0,"u":"","better":"down","s":[[1,0.0],[2,0.0],[3,0.0],[4,0.0],[6,0.0],[7,0.0],[8,0.0],[9,0.0],[10,0.0]]},"APP-UX-001":{"n":"Tráfico/Sesiones","meta":163039.0,"u":"","better":"up","s":[[1,102000.0],[2,114000.0],[3,118000.0],[4,81000.0],[5,118000.0],[6,67000.0]]},"APP-UX-002":{"n":"Tiempo en sitio","meta":3.0,"u":"","better":"down","s":[[1,3.0],[2,3.0]]},"APP-UX-003":{"n":"Satisfacción del usuario (INS)","meta":75.0,"u":"%","better":"up","s":[[1,62.12],[2,64.67],[3,54.98],[4,59.15],[6,67.0]]},"APP-NEG-001":{"n":"Cobertura","meta":1.0,"u":"%","better":"up","s":[[1,1.0],[2,0.0],[3,0.0],[4,0.0],[5,1.0],[6,0.0],[7,0.0],[8,0.0],[9,1.0]]},"APP-NEG-002":{"n":"Autogestión","meta":90.0,"u":"%","better":"up","s":[[1,9.0],[2,10.0],[3,9.0],[4,8.14],[5,10.0],[6,11.0],[7,9.0],[8,8.0],[9,9.0]]},"APP-NEG-003":{"n":"Adopción","meta":5.0,"u":"%","better":"up","s":[[1,5.0],[2,30.0],[3,5.0],[4,5.0],[5,5.0],[6,4.0],[7,4.0],[8,4.0],[9,5.0]]}};
+  var MES=["","Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+  // normaliza nombre para emparejar card <-> kpi
+  function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();}
+  // prefijo por activo
+  function prefFor(ch){var h=ch.querySelector(".acc-head h2,.channel-head h2");var tx=h?norm(h.textContent):"";
+    if(tx.indexOf("publica")>=0||tx.indexOf("segurosbolivar")>=0)return "COM";
+    if(tx.indexOf("privada")>=0||tx.indexOf("acceso")>=0)return "ACC";
+    if(tx.indexOf("app")>=0||tx.indexOf("bolivar")>=0)return "APP";return null;}
+  function findId(pref,name){var n=norm(name);
+    for(var k in KPI){if(k.indexOf(pref)!==0)continue;var kn=norm(KPI[k].n);
+      if(kn===n||kn.indexOf(n)>=0||n.indexOf(kn)>=0)return k;}
+    // match flexible por palabras clave
+    var map=[["confiabilidad","CONF-001"],["tiempo de respuesta","CONF-002"],["incidentes","CONF-003"],
+      ["trafico","UX-001"],["sesiones","UX-001"],["rebote","UX-002"],["tiempo en sitio","UX-003"],
+      ["satisfaccion","UX-004"],["ins","UX-004"],["clicks","UX-005"],["productos","NEG-001"],
+      ["leads","NEG-002"],["ventas","NEG-003"],["authority","NEG-004"],["market","NEG-005"],
+      ["cobertura","NEG-001"],["autogestion","NEG-002"],["adopcion","NEG-003"]];
+    for(var i=0;i<map.length;i++){if(n.indexOf(map[i][0])>=0){var id=pref+"-"+map[i][1];if(KPI[id])return id;}}
+    return null;}
+  function svg(kpi){
+    var s=kpi.s,W=560,H=240,pl=44,pr=16,pt=18,pb=28;
+    var xs=s.map(function(p){return p[0];}),ys=s.map(function(p){return p[1];});
+    var vals=ys.slice();
+    var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
+    if(mn===mx){mn-=1;mx+=1;}var pad=(mx-mn)*0.12;mn-=pad;mx+=pad;
+    var x0=Math.min.apply(null,xs),x1=Math.max.apply(null,xs);if(x0===x1)x1=x0+1;
+    function X(m){return pl+(m-x0)/(x1-x0)*(W-pl-pr);}
+    function Y(v){return pt+(1-(v-mn)/(mx-mn))*(H-pt-pb);}
+    var g='';
+    // grid horizontal (4 lineas)
+    for(var i=0;i<=4;i++){var yy=pt+i/4*(H-pt-pb);var vv=(mx-(mx-mn)*i/4);
+      g+='<line x1="'+pl+'" y1="'+yy+'" x2="'+(W-pr)+'" y2="'+yy+'" stroke="#E2E8E4" stroke-width="1"/>';
+      g+='<text x="'+(pl-6)+'" y="'+(yy+3)+'" text-anchor="end" font-size="9" fill="#83908A">'+vv.toFixed(vv>=100?0:1)+'</text>';}
+    // linea serie
+    var d='';s.forEach(function(p,i){d+=(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)+' ';});
+    // area
+    var area=d+'L'+X(s[s.length-1][0]).toFixed(1)+' '+(H-pb)+' L'+X(s[0][0]).toFixed(1)+' '+(H-pb)+' Z';
+    g+='<path d="'+area+'" fill="rgba(1,109,56,.08)"/>';
+    g+='<path d="'+d+'" fill="none" stroke="#016D38" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+    // puntos + labels de mes
+    s.forEach(function(p){var cx=X(p[0]),cy=Y(p[1]);g+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="3.2" fill="#016D38"/>';
+      g+='<text x="'+cx.toFixed(1)+'" y="'+(H-pb+16)+'" text-anchor="middle" font-size="9" fill="#526158">'+MES[p[0]]+'</text>';});
+    // ultimo valor destacado
+    var last=s[s.length-1];g+='<text x="'+X(last[0]).toFixed(1)+'" y="'+(Y(last[1])-8).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#016D38">'+last[1]+(kpi.u||'')+'</text>';
+    return '<svg class="km-chart" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
+  }
+  function open(id){var k=KPI[id];if(!k)return;
+    document.getElementById("kmTitle").textContent=k.n;
+    var last=k.s[k.s.length-1];
+    document.getElementById("kmSub").textContent="Evolución mensual 2026 · "+(k.better==='up'?'mejor hacia arriba':'mejor hacia abajo');
+    document.getElementById("kmChart").innerHTML=svg(k);
+    document.getElementById("kmFoot").textContent="Fuente: tablero de KPIs del Comité de Canales. Último dato "+MES[last[0]]+": "+last[1]+(k.u||'')+".";
+    document.getElementById("kpiOv").classList.add("open");
+  }
+  function close(){document.getElementById("kpiOv").classList.remove("open");}
+  function run(){
+    document.querySelectorAll(".channel").forEach(function(ch){var pref=prefFor(ch);if(!pref)return;
+      ch.querySelectorAll(".kpi-card").forEach(function(card){
+        var nm=card.querySelector(".k-name");if(!nm)return;
+        // tomar SOLO el texto del nombre (primer nodo de texto), sin el icono ni el tooltip
+        var name="";
+        for(var j=0;j<nm.childNodes.length;j++){var cn=nm.childNodes[j];
+          if(cn.nodeType===3){name+=cn.textContent;} else if(cn.nodeType===1 && cn.tagName!=="I"){name+=cn.textContent;}}
+        name=name.trim();
+        var id=findId(pref,name);if(!id||!KPI[id]||!KPI[id].s.length)return;
+        card.classList.add("has-trend");
+        var h=document.createElement("span");h.className="trend-hint";h.textContent="📈 tendencia";card.appendChild(h);
+        card.addEventListener("click",function(e){if(e.target.closest(".info-i"))return;open(id);});
+      });
+    });
+    document.getElementById("kmClose").addEventListener("click",close);
+    document.getElementById("kpiOv").addEventListener("click",function(e){if(e.target.id==="kpiOv")close();});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+  }
+  if(document.readyState!=="loading")run();else document.addEventListener("DOMContentLoaded",run);
 })();
 </script>
 </body>
