@@ -328,6 +328,61 @@ details.item-acc .item-detail{margin-top:.4rem}
 .kpi-modal .km-foot{font-size:.72rem;color:var(--gray-500);margin-top:.7rem}
 @media(max-width:768px){.kpi-modal .km-title{font-size:1rem}}
 
+/* ===== Portal Intermediarios (embebido, scoped) ===== */
+.im-scope{display:block}
+.im-scope .entregable .e-title{font-size:.95rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.5rem;margin-bottom:.2rem}
+.im-scope .entregable .e-sub{font-size:.76rem;color:var(--gray-600);margin-bottom:.8rem}
+.im-scope .pipe-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin-bottom:.9rem}
+.im-scope .pipe-step{background:var(--white);border:1px solid var(--gray-200);border-radius:8px;padding:.5rem .6rem;text-align:center}
+.im-scope .pipe-step .ps-name{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--gray-600)}
+.im-scope .pipe-step .ps-val{font-size:.9rem;font-weight:700;margin-top:.2rem}
+.im-scope .pipe-step.done .ps-val{color:var(--success)}
+.im-scope .pipe-step.curso .ps-val{color:var(--warning)}
+.im-scope .pipe-step.pend .ps-val{color:var(--gray-500)}
+.im-scope .e-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.im-scope .e-col h4{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:.4rem}
+.im-scope .e-col.ok h4{color:var(--success)}
+.im-scope .e-col.curso h4{color:var(--warning)}
+.im-scope .e-col.pend h4{color:var(--gray-600)}
+.im-scope .e-list{list-style:none;font-size:.8rem}
+.im-scope .e-list li{padding:.2rem 0 .2rem 1.1rem;position:relative;color:var(--gray-800)}
+.im-scope .e-list li::before{content:"•";position:absolute;left:.2rem;color:var(--gray-400)}
+.im-scope .roadmap h2{font-size:1.15rem;color:var(--primary);margin-bottom:.3rem}
+.im-scope .roadmap .rm-sub{font-size:.8rem;color:var(--gray-600);margin-bottom:1.1rem}
+.im-scope .rm-legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem;font-size:.72rem;color:var(--gray-600)}
+.im-scope .rm-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.im-scope .rm-legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+.im-scope .rm-fin{background:var(--success)}
+.im-scope .rm-cur{background:var(--warning)}
+.im-scope .rm-tbd{background:var(--gray-400)}
+.im-scope .rm-scroll{overflow-x:auto}
+.im-scope .rm-grid{min-width:760px}
+.im-scope .rm-years{display:grid;grid-template-columns:220px 1fr 1fr;gap:0;font-size:.74rem;font-weight:700;color:var(--white)}
+.im-scope .rm-years .rm-corner{background:transparent}
+.im-scope .rm-years .rm-y{text-align:center;padding:.35rem 0;background:var(--primary-dark);border-left:2px solid var(--white)}
+.im-scope .rm-months{display:grid;grid-template-columns:220px repeat(24,1fr);gap:0;font-size:.56rem;font-weight:700;color:var(--gray-600);border-bottom:1px solid var(--gray-200)}
+.im-scope .rm-months .rm-corner{background:var(--gray-50)}
+.im-scope .rm-months .rm-m{text-align:center;padding:.3rem 0;border-left:1px solid var(--gray-100)}
+.im-scope .rm-months .rm-m.q{border-left:1px solid var(--gray-300)}
+.im-scope .rm-phase{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--priv);background:var(--gray-50);padding:.35rem .6rem;border-left:3px solid var(--priv);margin:.6rem 0 .1rem}
+.im-scope .rm-row{display:grid;grid-template-columns:220px repeat(24,1fr);gap:0;align-items:center;border-bottom:1px solid var(--gray-100);min-height:34px}
+.im-scope .rm-row:hover{background:var(--gray-50)}
+.im-scope .rm-label{font-size:.76rem;font-weight:600;color:var(--gray-800);padding:.3rem .5rem .3rem .7rem;line-height:1.25}
+.im-scope .rm-label .rm-num{color:var(--gray-400);font-weight:700;margin-right:.3rem}
+.im-scope .rm-label .rm-dates{display:block;font-size:.64rem;font-weight:400;color:var(--gray-500);margin-top:.1rem}
+.im-scope .rm-track{grid-column:2 / span 24;position:relative;height:100%;display:flex;align-items:center}
+.im-scope .rm-cell{position:absolute;top:50%;transform:translateY(-50%);height:14px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--white);white-space:nowrap;overflow:hidden;padding:0 .4rem;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.im-scope .rm-cell.fin{background:var(--success)}
+.im-scope .rm-cell.cur{background:var(--warning)}
+.im-scope .rm-cell.tbd{background:var(--gray-400);background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.35) 4px,rgba(255,255,255,.35) 8px)}
+.im-scope .rm-milestone{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:.8rem;z-index:2}
+.im-scope .rm-today{position:absolute;top:0;bottom:0;width:2px;background:var(--danger);z-index:3}
+.im-scope .rm-today::after{content:"hoy";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:.56rem;color:var(--danger);background:var(--danger-bg);padding:0 4px;border-radius:3px;white-space:nowrap}
+.im-scope .rm-note{font-size:.72rem;color:var(--gray-600);margin-top:.9rem;background:var(--info-bg);border-left:3px solid var(--info);border-radius:4px;padding:.5rem .7rem}
+ @media(max-width:768px){
+ .im-scope .rm-years{grid-template-columns:140px 1fr 1fr}
+ .im-scope .rm-months,.im-scope .rm-row{grid-template-columns:140px repeat(24,1fr)}
+}
 </style>
 </head>
 <body>
@@ -345,6 +400,7 @@ details.item-acc .item-detail{margin-top:.4rem}
     <a href="#privada" class="priv">🔐 Zona Privada</a>
     <a href="#app" class="app">📱 App Bolívar</a>
     <a href="#roadmap" class="otros">🗺️ Roadmap 2026</a>
+    <a href="#portal" class="priv">🌐 Intermediarios</a>
   </nav>
   <!-- Resumen ejecutivo -->
   <section class="exec-summary">
@@ -1181,6 +1237,278 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
     </div>
   </details>
+<div class="im-scope">
+<section class="roadmap" id="roadmap-portal">
+    <h2>🗺️ Roadmap del proyecto · Portal Intermediarios</h2>
+    <div class="rm-sub">Unificación de Plataformas · Fases I a IV (2025–2026). Fuente: seguimiento del Comité + "Estimaciones Squad Apoyo Comercial - Roadmap Unificación".</div>
+    <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+    <div class="rm-scroll">
+      <div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2025</div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">E</div><div class="rm-m">F</div><div class="rm-m">M</div><div class="rm-m">A</div><div class="rm-m">M</div><div class="rm-m">J</div><div class="rm-m">J</div><div class="rm-m">A</div><div class="rm-m">S</div><div class="rm-m">O</div><div class="rm-m">N</div><div class="rm-m">D</div>
+          <div class="rm-m q">E</div><div class="rm-m">F</div><div class="rm-m">M</div><div class="rm-m">A</div><div class="rm-m">M</div><div class="rm-m">J</div><div class="rm-m">J</div><div class="rm-m">A</div><div class="rm-m">S</div><div class="rm-m">O</div><div class="rm-m">N</div><div class="rm-m">D</div>
+        </div>
+
+        <div class="rm-phase">Fase I y II · 2025</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">1.</span>Home Unificación de Plataformas<span class="rm-dates">05 may – 04 ago 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:16.67%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">2.</span>Creación perfiles FCA<span class="rm-dates">05 may – 04 ago 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:16.67%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">3.</span>Migración Funcionalidades Simón Servicio<span class="rm-dates">04 ago – 25 oct 2025 · 🚀 19 nov</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:29.17%;width:12.5%">Finalizado</div><div class="rm-milestone" style="left:45.83%">🚀</div></div>
+        </div>
+
+        <div class="rm-phase">Fase III · 2026</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">4.</span>Autoservicio creación/eliminación de empleados<span class="rm-dates">05 ene – 30 abr 2026 · 🚀 22 jul</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:50%;width:16.67%">Finalizado</div><div class="rm-milestone" style="left:79.17%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">5.</span>Autogestión actualización de datos<span class="rm-dates">20 mar – 30 abr 2026 · 🚀 22 jul</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:58.33%;width:8.33%">Finalizado</div><div class="rm-milestone" style="left:79.17%">🚀</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">6.</span>Gestión Humana (Entregable 6)<span class="rm-dates">04 may 2026 – PAP (Certificado negocio) · posible 🚀 22 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:66.67%;width:25%">PAP · Certificado negocio</div><div class="rm-milestone" style="left:91.67%">🚀</div></div>
+        </div>
+
+        <div class="rm-phase">Fase IV · 2026</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">7.</span>Cartera (Entregable 7)<span class="rm-dates">Validación UX con intermediarios (hasta 15 oct) · desarrollo TBD</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:70.83%;width:16.67%">Validación UX Intermediarios</div><div class="rm-cell tbd" style="left:87.5%;width:12.5%">Desarrollo TBD</div></div>
+        </div>
+
+        <div class="rm-row" style="border-bottom:0;min-height:8px">
+          <div class="rm-label"></div>
+          <div class="rm-track"><div class="rm-today" style="left:88.33%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rm-note">Entregables 1–5 finalizados y en producción. Entregable 6 (Gestión Humana) en PAP con certificación por partes (Pt1 24 sep · Pt2 02 oct · Módulo Admin en UAT). Entregable 7 (Cartera) en validación UX de prototipo con intermediarios (hasta el 15 oct).</div>
+  </section>
+<details class="channel" id="portal">
+    <summary>
+      <div class="acc-head priv">
+        <h2><span class="icon">🌐</span> Portal Intermediarios</h2>
+        <div class="acc-right"><span class="acc-mini">🟢 14 · 🟡 9 · 🔵 3</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
+    <div class="channel-head priv">
+      <div class="prop-tag">🎯 Propósito</div>
+      <div class="prop-main">Ser la plataforma única de autogestión para los intermediarios, donde consultan información, gestionan trámites, descargan documentos y operan su negocio con la compañía de forma autónoma, ágil y confiable — reduciendo la dependencia de canales manuales como el correo.</div>
+      <div class="prop-pillars">
+        <div class="prop-pillar">
+          <span class="p-verb">🤝 Unificar</span>
+          <span class="p-def">Consolidar en un solo portal las herramientas y servicios dispersos del intermediario.</span>
+          <span class="p-res">💚 Un único punto de acceso</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">✅ Facilitar</span>
+          <span class="p-def">Simplificar trámites, consultas y descargas para que el intermediario resuelva solo.</span>
+          <span class="p-res">✅ Autogestión sin fricción</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🚀 Transformar</span>
+          <span class="p-def">Migrar la operación del correo y la intranet hacia el portal digital.</span>
+          <span class="p-res">🚀 Adopción y cobertura</span>
+        </div>
+        <div class="prop-pillar">
+          <span class="p-verb">🛡️ Sostener</span>
+          <span class="p-def">Garantizar un servicio disponible, rápido y seguro para operar el negocio.</span>
+          <span class="p-res">❤️ Confiabilidad del canal</span>
+        </div>
+      </div>
+    </div>
+    <div class="channel-body">
+      <div class="section-label">📊 KPIs de Portal Intermediarios <span style="font-weight:400;font-size:.8rem;color:var(--gray-600)">· último dato disponible: septiembre (octubre pendiente de cargue)</span></div>
+
+      <div class="kpi-cat">💼 Negocio</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Cobertura<i class="info-i">i<span class="tip">Cantidad de servicios / solicitudes que se gestionan en el portal sobre el total. Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real warn">67%</span><span class="k-meta">/ meta 90% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:74%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Autogestión<i class="info-i">i<span class="tip">% de transacciones realizadas por el portal vs. otros canales (correo). Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real ok">98%</span><span class="k-meta">/ meta 90% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Adopción<i class="info-i">i<span class="tip">Cantidad de usuarios únicos del portal vs. cantidad de usuarios con acceso. Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre).</span></i></div>
+          <div class="k-values"><span class="k-real warn">77%</span><span class="k-meta">/ meta 80% · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:96%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🎨 Experiencia de usuario (UX)</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">Tráfico / Sesiones (mes)<i class="info-i">i<span class="tip">Total de sesiones de usuarios en el portal durante el mes.</span></i></div>
+          <div class="k-values"><span class="k-real ok">70.015</span><span class="k-meta">/ meta 60.000</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tasa de rebote<i class="info-i">i<span class="tip">Porcentaje de visitas que abandonan sin interactuar. Meta: 20% o menos.</span></i></div>
+          <div class="k-values"><span class="k-real ok">18%</span><span class="k-meta">/ meta ≤ 20%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Tiempo en sitio (min)<i class="info-i">i<span class="tip">Tiempo promedio que el usuario permanece en el portal, en minutos. Meta: 3 minutos o más.</span></i></div>
+          <div class="k-values"><span class="k-real ok">12</span><span class="k-meta">/ meta ≥ 3</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Satisfacción del usuario (INS)<i class="info-i">i<span class="tip">Índice de satisfacción del usuario según la encuesta del portal. Valor de la fuente de KPIs del comité (sin conteo manual). Meta: 70%.</span></i></div>
+          <div class="k-values"><span class="k-real warn">60%</span><span class="k-meta">/ meta 70%</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:86%;background:var(--warning)"></div></div>
+        </div>
+      </div>
+
+      <div class="kpi-cat">🛡️ Confiabilidad <span style="font-weight:400;font-size:.72rem;color:var(--gray-600);text-transform:none;letter-spacing:0">· fuente: tablero Datadog "Observabilidad Portal Intermediarios"</span></div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="k-name">SLO General del servicio<i class="info-i">i<span class="tip">Score de cumplimiento de los SLO de confiabilidad del portal según el presupuesto de error de los últimos 30 y 7 días. Un SLO bajo refleja consumo de presupuesto de error, no necesariamente indisponibilidad al usuario final. Meta: &gt; 80.</span></i></div>
+          <div class="k-windows">
+            <div class="k-win"><span class="w-lbl">30 días</span><span class="w-val warn">67.3</span></div>
+            <div class="k-win"><span class="w-lbl">7 días</span><span class="w-val warn">74.8</span></div>
+          </div>
+          <div class="k-bar"><div class="k-fill" style="width:84%;background:var(--warning)"></div></div>
+          <div class="k-trend up">▲ Está subiendo (54.9 ago → 67.3 sep a 30d)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Servicios administrados<i class="info-i">i<span class="tip">Score de los SLO de los servicios administrados directamente por el Portal Intermediarios. Corte del tablero 23–25 sep. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real warn">72.5</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:91%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Latencia<i class="info-i">i<span class="tip">Score del SLO de latencia del portal. Es el componente más rezagado; en seguimiento con FileNet, Protección de Créditos y Lago de Datos. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real crit">65.3</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:82%;background:var(--danger)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">SLO Errores<i class="info-i">i<span class="tip">Score del SLO de errores del portal (tasa de errores 5xx y controlados). Corte del tablero 23–25 sep. Meta: &gt; 80.</span></i></div>
+          <div class="k-values"><span class="k-real warn">67.7</span><span class="k-meta">/ meta &gt; 80</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:85%;background:var(--warning)"></div></div>
+        </div>
+        <div class="kpi-card">
+          <div class="k-name">Incidentes críticos<i class="info-i">i<span class="tip">Número de incidentes críticos registrados en el periodo (fuente KPIs del comité). Dato de octubre pendiente de cargue; se muestra el último disponible (septiembre). Meta: 0.</span></i></div>
+          <div class="k-values"><span class="k-real ok">0</span><span class="k-meta">/ meta 0 · sep</span></div>
+          <div class="k-bar"><div class="k-fill" style="width:100%;background:var(--success)"></div></div>
+        </div>
+      </div>
+      <div class="kpi-meta-note">Nota: el SLO bajo refleja consumo de presupuesto de error de activos del portal; no implica necesariamente afectación de disponibilidad al usuario final. Acciones de recuperación en curso (FileNet, Protección de Créditos, Precobros, Lago de Datos) con acompañamiento del equipo SRE.</div>
+
+      <!-- ===== Entregables de Valor (Fase III y IV) ===== -->
+      <div class="section-label" style="margin-top:2rem">🗂️ Entregables de valor · estado del proyecto</div>
+
+      <div class="entregable">
+        <div class="e-title">📦 Entregable 6 · Migración Funcionalidades Gestión Humana <span class="jira-tag">GD907-664</span></div>
+        <div class="e-sub">Fase III · Migración de las funcionalidades de Gestión Humana (Intranet → Portal Intermediarios).</div>
+        <div class="pipe-row">
+          <div class="pipe-step done"><div class="ps-name">Diseño UX/UI</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">HUs y Refinamiento</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Refinamiento técnico</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Desarrollo y código</div><div class="ps-val">100%</div></div>
+          <div class="pipe-step done"><div class="ps-name">Pruebas UAT</div><div class="ps-val">100%</div></div>
+        </div>
+        <div class="e-cols">
+          <div class="e-col curso">
+            <h4>🟡 En curso</h4>
+            <ul class="e-list">
+              <li>Creación de Casos del Módulo Gestión Humana</li>
+            </ul>
+          </div>
+          <div class="e-col pend">
+            <h4>⏳ Por iniciar</h4>
+            <ul class="e-list">
+              <li>Despliegues a producción; después del corte de nómina (1.ª quincena de octubre)</li>
+            </ul>
+          </div>
+          <div class="e-col ok">
+            <h4>✅ Avanzamos con (PAP / UAT)</h4>
+            <ul class="e-list">
+              <li>Menú Lateral · PAP</li>
+              <li>Calendario Intermediarios · PAP</li>
+              <li>Ajustes Perfil · Pruebas PAP</li>
+              <li>Módulo Idoneidad · PAP</li>
+              <li>Módulo Certificados · PAP</li>
+              <li>Actualización Datos Independientes · PAP</li>
+              <li>Módulo Comisiones (a cobrar · extracto · historial) · PAP</li>
+              <li>Planilla PILA · PAP</li>
+              <li>Módulo Admin carga de documentos (Certificados y Calendario) · PAP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="entregable">
+        <div class="e-title">📦 Entregable 7 · Módulo Cartera</div>
+        <div class="e-sub">Fase IV · Nuevo módulo de Cartera (en etapa temprana; desarrollo con aliado TCS, fechas por confirmar).</div>
+        <div class="pipe-row">
+          <div class="pipe-step curso"><div class="ps-name">Diseño UX/UI</div><div class="ps-val">Diseño 100% · Validación 50% En Curso</div></div>
+          <div class="pipe-step pend"><div class="ps-name">HUs y Refinamiento</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Refinamiento técnico</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Desarrollo y código</div><div class="ps-val">Sin iniciar</div></div>
+          <div class="pipe-step pend"><div class="ps-name">Pruebas UAT</div><div class="ps-val">Sin iniciar</div></div>
+        </div>
+        <div class="e-cols">
+          <div class="e-col curso">
+            <h4>🟡 En curso</h4>
+            <ul class="e-list">
+              <li>Mesas técnicas: definición de productos de datos insumo del módulo (Analítica · Negocio · PO Portal)</li>
+            </ul>
+          </div>
+          <div class="e-col pend">
+            <h4>⏳ Por iniciar</h4>
+            <ul class="e-list">
+              <li>Desarrollo insumo "Pagos a Clientes" (trabajo articulado con Squad Cartera)</li>
+            </ul>
+          </div>
+          <div class="e-col ok">
+            <h4>✅ Avanzamos con</h4>
+            <ul class="e-list">
+              <li>Cierre de la experiencia y alcance funcional</li>
+              <li>Protocolo de Validación con Intermediarios</li>
+              <li>Validaciones con intermediarios (UX · Eq. Servicio)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subgroup-label">🎯 Priorizados en comité</div>
+      <div class="tw">
+      <table class="func-table">
+        <thead><tr><th>Punto / Corresponde a</th><th>KPI que impacta</th><th>Alineación al propósito</th><th>Estado</th><th>Fecha entrega</th><th>Fecha entrega ajustada</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Punto">
+              <div class="func-name"><span class="func-num">1.</span>Migración módulo Gestión Humana (Entregable 6)</div>
+              <details class="item-acc"><summary>Ver detalle</summary><div class="item-detail">
+              <div class="tag-line">Descripción</div>
+              <div class="func-desc">Migración de las funcionalidades de Gestión Humana desde la intranet al Portal Intermediarios (menú lateral, calendario, perfil, idoneidad, certificados, datos independientes, comisiones y planilla PILA).</div>
+              <div class="tag-line seg">Seguimiento</div>
+              <div class="seguimiento">Diseño, HUs, refinamiento, desarrollo y pruebas UAT <strong>100% completados</strong>. Certificación de negocio en PAP. En curso: Creación de Casos del módulo GH. Despliegues a producción tras el corte de nómina (1.ª quincena de octubre).</div>
+              <span class="jira-tag">GD907-664</span>
+              </div></details>
+            
+</div>
   <div class="footer">
     <p><strong>Estatus de Canales Digitales</strong> · Seguros Bolívar</p>
     <p style="margin-top:.4rem;color:var(--gray-400)">Leyenda de estados: <span class="badge badge-hecho">🟢 Entregado</span> <span class="badge badge-progreso">🟡 En curso</span> <span class="badge badge-congelado">⏸️ Congelado</span> <span class="badge badge-backlog">🔵 Backlog</span></p>
