@@ -81,6 +81,8 @@ details.channel[open] .acc-chevron{transform:rotate(180deg)}
 .status-badge .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 .status-badge .dot.fin{background:#8bc34a}
 .status-badge .dot.cur{background:#ffd54f}
+.status-badge .dot.alert{background:#ef5350}
+.status-badge .dot.canc{background:#bdbdbd}
 .prop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 /* KPIs colapsables (Ver KPIs) */
 details.kpi-collapse{border:1px solid var(--info-bg);border-radius:var(--radius);background:var(--info-bg);margin-bottom:1rem}
@@ -283,23 +285,22 @@ details.item-acc .item-detail{margin-top:.4rem}
   <section class="exec-summary">
     <h2>Resumen Ejecutivo</h2>
     <div class="kpi-strip">
-      <div class="kpi-mini ok"><div class="v">🟢 11</div><div class="l">Entregado</div></div>
-      <div class="kpi-mini warn"><div class="v">🟡 11</div><div class="l">En curso</div></div>
-      <div class="kpi-mini"><div class="v">⏸️ 0</div><div class="l">Congelado</div></div>
-      <div class="kpi-mini"><div class="v">13</div><div class="l">Priorizados en comité</div></div>
-      <div class="kpi-mini"><div class="v">9</div><div class="l">Otros temas</div></div>
-      <div class="kpi-mini"><div class="v">22</div><div class="l">Total en seguimiento</div></div>
+      <div class="kpi-mini ok"><div class="v">🟢 13</div><div class="l">Entregado</div></div>
+      <div class="kpi-mini warn"><div class="v">🟡 9</div><div class="l">En curso</div></div>
+      <div class="kpi-mini"><div class="v">⚠️ 1</div><div class="l">Alertado</div></div>
+      <div class="kpi-mini"><div class="v">⛔ 1</div><div class="l">Cancelado</div></div>
+      <div class="kpi-mini"><div class="v">24</div><div class="l">Total en seguimiento</div></div>
     </div>
     <div class="avance-box">
       <div class="a-top">
         <span class="a-label">📈 Avance de compromisos (todos los frentes)</span>
-        <span class="a-pct">50.0% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 59.1% esperado</span></span>
+        <span class="a-pct">56.5% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 52% esperado</span></span>
       </div>
       <div class="avance-bar">
-        <div class="avance-fill" style="width:50.0%"></div>
-        <div class="avance-marker" style="left:59.1%"></div>
+        <div class="avance-fill" style="width:56.5%"></div>
+        <div class="avance-marker" style="left:52%"></div>
       </div>
-      <div class="avance-note">Real vs. esperado a la fecha de corte (8 oct), según fechas inicialmente pactadas. Base: 22 ítems · 🟢 11 entregados · 🟡 11 en curso. <strong>Vamos ligeramente por debajo de lo esperado (~9 pp).</strong> El rezago se concentra en 3 iniciativas de Zona Privada (nuevo home, coberturas con IA y versión mobile) que se reprogramaron del 1 al 8 de octubre, más el diccionario. El resto de compromisos avanza al día.</div>
+      <div class="avance-note">Real vs. esperado a la fecha de corte (8 oct). Base comprometida: 23 ítems (se excluye 1 cancelado) · 🟢 13 entregados · 🟡 9 en curso · ⚠️ 1 alertado. <strong>Vamos ligeramente por encima de lo esperado.</strong> Pendientes clave: nueva versión AC, coberturas con IA y versión mobile (reprogramadas 1→8→13 oct por hallazgos de la pruebatón; coberturas IA al 23 oct por latencia). En App Bolívar, Pagos en línea está alertado (bloqueo por WebView y reglas del botón de deuda), ajustado al 22 oct.</div>
     </div>
   </section>
   <!-- ============ ROADMAP 2026 ============ -->
@@ -500,15 +501,16 @@ details.item-acc .item-detail{margin-top:.4rem}
     <summary>
       <div class="acc-head pub">
         <h2><span class="icon">🌐</span> Zona Pública</h2>
-        <div class="acc-right"><span class="acc-mini">🟢 4 · 🟡 3</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-right"><span class="acc-mini">🟢 5 · 🟡 1 · ⛔ 1</span><span class="acc-chevron">▼</span></div>
       </div>
     </summary>
     <div class="channel-head pub">
       <div class="prop-head">
         <div><span class="prop-tag">🎯 Propósito</span></div>
         <div class="status-badges">
-          <span class="status-badge"><span class="dot fin"></span>4 entregadas</span>
-          <span class="status-badge"><span class="dot cur"></span>3 en curso</span>
+          <span class="status-badge"><span class="dot fin"></span>5 entregadas</span>
+          <span class="status-badge"><span class="dot cur"></span>1 en curso</span>
+          <span class="status-badge"><span class="dot canc"></span>1 cancelada</span>
         </div>
       </div>
       <div class="prop-main">Ser el corazón digital de la compañía, el canal de confianza que conecta, inspira, educa, facilita y acompaña al cliente en todo su ciclo asegurador. Transformando cada visita en una oportunidad de informar, asesorar y vender de manera ágil, transparente y confiable.</div>
@@ -1004,15 +1006,16 @@ details.item-acc .item-detail{margin-top:.4rem}
     <summary>
       <div class="acc-head app">
         <h2><span class="icon">📱</span> App Bolívar</h2>
-        <div class="acc-right"><span class="acc-mini">🟢 1 · 🟡 2</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-right"><span class="acc-mini">🟢 2 · 🟡 2 · ⚠️ 1</span><span class="acc-chevron">▼</span></div>
       </div>
     </summary>
     <div class="channel-head app">
       <div class="prop-head">
         <div><span class="prop-tag">🎯 Propósito</span></div>
         <div class="status-badges">
-          <span class="status-badge"><span class="dot fin"></span>1 entregada</span>
+          <span class="status-badge"><span class="dot fin"></span>2 entregadas</span>
           <span class="status-badge"><span class="dot cur"></span>2 en curso</span>
+          <span class="status-badge"><span class="dot alert"></span>1 alertada</span>
         </div>
       </div>
       <div class="prop-main">Nuestra aplicación móvil es la herramienta integral para que los clientes gestionen su póliza de forma ágil y segura. Permite consultar información detallada del seguro, realizar transacciones, gestionar trámites y acceder a servicios adicionales.</div>
