@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Estatus de Canales Digitales · Seguros Bolívar</title>
+<title>[TEST] Estatus de Canales Digitales · Seguros Bolívar</title>
 <style>
 :root{
   --primary:#1a237e;--primary-light:#283593;--primary-dark:#0d1642;
@@ -26,6 +26,8 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .header .sub{font-size:1.05rem;opacity:.9}
 .header .date{font-size:.85rem;opacity:.7;margin-top:.6rem}
 .header .badge-comite{display:inline-block;background:rgba(255,255,255,.15);padding:.3rem .8rem;border-radius:14px;font-size:.78rem;margin-top:.8rem;backdrop-filter:blur(4px)}
+.badge-test{display:inline-block;background:#c62828;color:#fff;font-weight:800;letter-spacing:1px;padding:.2rem .7rem;border-radius:8px;font-size:.8rem;vertical-align:middle;margin-left:.6rem}
+.test-banner{background:repeating-linear-gradient(45deg,#c62828,#c62828 12px,#a01f1f 12px,#a01f1f 24px);color:#fff;text-align:center;font-weight:700;font-size:.82rem;letter-spacing:.5px;padding:.5rem 1rem}
 .container{max-width:1280px;margin:0 auto;padding:1.5rem}
 /* Contexto / intro banner */
 .feedback-box{background:var(--info-bg);border-left:4px solid var(--info);border-radius:var(--radius);padding:1.1rem 1.4rem;margin-bottom:2rem}
@@ -260,11 +262,12 @@ details.item-acc .item-detail{margin-top:.4rem}
 </style>
 </head>
 <body>
+<div class="test-banner">🧪 AMBIENTE DE PRUEBA (TEST) · versión interna de trabajo — no distribuir al comité</div>
 <header class="header">
-  <h1>Estatus de Canales Digitales</h1>
+  <h1>Estatus de Canales Digitales <span class="badge-test">TEST</span></h1>
   <div class="sub">Comité de Canales · Zona Pública, Zona Privada y App Bolívar</div>
   <div class="date">Corte: 8 de octubre de 2026</div>
-  <div class="badge-comite">Versión 1.5 · Actualizado: 8 de octubre de 2026</div>
+  <div class="badge-comite">Versión 1.5 (TEST) · Actualizado: 8 de octubre de 2026</div>
 </header>
 <div class="container">
   <!-- Navegación entre canales -->
@@ -272,6 +275,7 @@ details.item-acc .item-detail{margin-top:.4rem}
     <a href="#web" class="pub">🌐 Zona Pública</a>
     <a href="#privada" class="priv">🔐 Zona Privada</a>
     <a href="#app" class="app">📱 App Bolívar</a>
+    <a href="#roadmap" class="otros">🗺️ Roadmap 2026</a>
   </nav>
   <!-- Resumen ejecutivo -->
   <section class="exec-summary">
@@ -296,6 +300,198 @@ details.item-acc .item-detail{margin-top:.4rem}
       <div class="avance-note">Real vs. esperado a la fecha de corte (8 oct), según fechas inicialmente pactadas. Base: 22 ítems · 🟢 11 entregados · 🟡 11 en curso. <strong>Vamos ligeramente por debajo de lo esperado (~9 pp).</strong> El rezago se concentra en 3 iniciativas de Zona Privada (nuevo home, coberturas con IA y versión mobile) que se reprogramaron del 1 al 8 de octubre, más el diccionario. El resto de compromisos avanza al día.</div>
     </div>
   </section>
+  <!-- ============ ROADMAP 2026 ============ -->
+  <details class="channel" id="roadmap">
+    <summary>
+      <div class="acc-head otros">
+        <h2><span class="icon">🗺️</span> Roadmap 2026</h2>
+        <div class="acc-right"><span class="acc-mini">36 iniciativas · click para ver</span><span class="acc-chevron">▼</span></div>
+      </div>
+    </summary>
+    <div class="roadmap" style="box-shadow:none;margin-bottom:0">
+    <h2 style="margin-top:.2rem">🗺️ Roadmap del proyecto · Canales Digitales</h2>
+    <div class="rm-sub">Iniciativas priorizadas en comité (4 sep) y otros frentes, por activo. Fuente: seguimiento del Comité de Canales. Corte: 8 de octubre de 2026.</div>
+    <div class="rm-legend">
+      <span><i class="rm-fin"></i> Finalizado</span>
+      <span><i class="rm-cur"></i> En curso</span>
+      <span><i class="rm-bl" style="background:var(--info)"></i> Backlog (planeación Q4)</span>
+      <span><i style="background:var(--danger)"></i> Alertado / bloqueado</span>
+      <span><i class="rm-tbd"></i> Por definir (TBD)</span>
+      <span>🚀 Paso a producción</span>
+    </div>
+    <div class="rm-scroll">
+      <div class="rm-grid">
+        <div class="rm-years">
+          <div class="rm-corner"></div>
+          <div class="rm-y">2026</div>
+        </div>
+        <div class="rm-months">
+          <div class="rm-corner"></div>
+          <div class="rm-m q">Sep</div><div class="rm-m q">Oct</div><div class="rm-m q">Nov</div><div class="rm-m q">Dic</div>
+        </div>
+
+        <div class="rm-phase pub">🌐 Zona Pública · segurosbolivar.com</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">1.</span>Certificaciones Olivia<span class="rm-dates">🚀 9 sep · en monitoreo</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">2.</span>Banner certificaciones<span class="rm-dates">🚀 7 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">3.</span>Carrusel del banner<span class="rm-dates">🚀 2 oct</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:25%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">4.</span>Integración páginas Salesforce al dominio<span class="rm-dates">🚀 5 oct · entregado</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:37.5%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">5.</span>Diccionario de términos<span class="rm-dates">entrega 9 oct (reprog. de 1 oct)</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">6.</span>Disponibilizar link para venta de SOAT<span class="rm-dates">entrega 8 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">19.</span>SOAT (modal 2 redirecciones)<span class="rm-dates">entrega tentativa 17 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">20.</span>Unificación de marcas – ARL<span class="rm-dates">entrega tentativa 31 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">21.</span>SEO<span class="rm-dates">transversal · continuo</span></div>
+          <div class="rm-track"><div class="rm-cell tbd" style="left:25%;width:75%">Transversal</div></div>
+        </div>
+
+        <div class="rm-phase priv">🔐 Zona Privada · Acceso a Clientes</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">7.</span>Botón / menú certificaciones<span class="rm-dates">🚀 7–14 sep · cumplido −11</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">8.</span>Trámites salud / Directorio / Coberturas<span class="rm-dates">🚀 9–16 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">9.</span>War room certificaciones<span class="rm-dates">🚀 25 sep · cumplido −5</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">10.</span>Descarga masiva de documentos<span class="rm-dates">🚀 8 oct · entregado</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:31.25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">11.</span>Nueva versión AC (home + detalle)<span class="rm-dates">entrega 13 oct · ajustada 23 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">12.</span>Coberturas con IA<span class="rm-dates">entrega 13 oct · ajustada 23 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">13.</span>Versión mobile AC<span class="rm-dates">entrega 13 oct · ajustada 23 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">14.</span>Pagos en línea mobile (AC)<span class="rm-dates">entrega 9 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:37.5%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">15.</span>Mejoras por observabilidad<span class="rm-dates">continuo · meta score &gt;80 · 15 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:0%;width:50%">En curso</div></div>
+        </div>
+
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">22.</span>Cambio UX Mi Perfil<span class="rm-dates">entrega tentativa 15 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:6.25%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">23.</span>Precargue de copias de póliza<span class="rm-dates">entrega tentativa 17 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">24.</span>Unif. check tratamiento datos + comercial<span class="rm-dates">entrega tentativa 24 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">25.</span>Coberturas IA<span class="rm-dates">entrega tentativa 27 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">26.</span>Servicios programados<span class="rm-dates">entrega tentativa 10 nov</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:25%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">27.</span>Cancelación (medios y experiencia)<span class="rm-dates">entrega tentativa 26 nov</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">28.</span>Conozca cómo usar su seguro (home)<span class="rm-dates">entrega tentativa 4 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">29.</span>Revocar autorización fines comerciales<span class="rm-dates">entrega tentativa 4 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:50%;width:25%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">30.</span>Evolucionar Ver Detalle (banner y accesos)<span class="rm-dates">entrega tentativa 5 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:56.25%;width:25%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">31.</span>Solicitudes de servicios<span class="rm-dates">se corre a Q1 2026</span></div>
+          <div class="rm-track"><div class="rm-cell tbd" style="left:75%;width:25%">Q1 2026</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">32.</span>Botón redirección asistencia movilidad<span class="rm-dates">se corre a Q1 2026</span></div>
+          <div class="rm-track"><div class="rm-cell tbd" style="left:75%;width:25%">Q1 2026</div></div>
+        </div>
+
+        <div class="rm-phase app">📱 App Bolívar</div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">16.</span>Compra interna (home transversal)<span class="rm-dates">🚀 29 sep</span></div>
+          <div class="rm-track"><div class="rm-cell fin" style="left:0%;width:25%">Entregado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">17.</span>Pagos en línea<span class="rm-dates">⚠️ bloqueado · en revisión por Pagos en Línea</span></div>
+          <div class="rm-track"><div class="rm-cell alert" style="left:0%;width:50%">⚠️ Alertado</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">18.</span>Arreglar experiencia / vitrina de seguros<span class="rm-dates">entrega 19 oct</span></div>
+          <div class="rm-track"><div class="rm-cell cur" style="left:25%;width:25%">En curso</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">33.</span>Valkey (reemplazo de caché)<span class="rm-dates">entrega tentativa 16 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:6.25%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">34.</span>Cambio de marca<span class="rm-dates">entrega tentativa 30 oct</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:25%;width:18.75%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">35.</span>Unificación de marcas<span class="rm-dates">entrega tentativa 7 nov</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:37.5%;width:12.5%">Backlog</div></div>
+        </div>
+        <div class="rm-row">
+          <div class="rm-label"><span class="rm-num">36.</span>Hanru (cambio proveedor de bienestar)<span class="rm-dates">entrega tentativa 16 dic</span></div>
+          <div class="rm-track"><div class="rm-cell bl" style="left:31.25%;width:56.25%">Backlog</div></div>
+        </div>
+
+        <div class="rm-row" style="border-bottom:0;min-height:8px">
+          <div class="rm-label"></div>
+          <div class="rm-track"><div class="rm-today" style="left:30.6%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rm-note">11 iniciativas entregadas y en producción (varias en monitoreo de impacto). Se incorpora la planeación Q4 2026 (ítems 19–36, en Backlog) con fechas tentativas de entrega que incluyen desarrollo, pruebas y despliegue. Dos iniciativas de mayor esfuerzo (Solicitudes de servicios y Botón de redirección de movilidad) se corren a Q1 2026 por capacidad del equipo en el trimestre.</div>
+    </div>
+    <div class="collapse-bar"><button class="collapse-btn" onclick="this.closest('details.channel').removeAttribute('open');window.scrollTo({top:this.closest('details.channel').offsetTop-10,behavior:'smooth'})">▲ Contraer</button></div>
+  </details>
   <!-- ============ WEB — segurosbolivar.com ============ -->
   <details class="channel" id="web">
     <summary>
