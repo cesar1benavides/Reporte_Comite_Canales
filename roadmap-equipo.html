@@ -42,9 +42,6 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .channel-nav a.app{border-top-color:var(--app)}
 .channel-nav a.otros{border-top-color:var(--otros)}
 .channel-nav a.iman{border-top-color:var(--iman)}
-/* Resumen ejecutivo global */
-.exec-summary{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-bottom:2rem}
-.exec-summary h2{font-size:1.15rem;color:var(--primary);margin-bottom:1rem}
 .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
 .kpi-mini{text-align:center;padding:.8rem;background:var(--gray-50);border-radius:8px}
 .kpi-mini .v{font-size:1.7rem;font-weight:700;color:var(--primary)}
@@ -52,15 +49,6 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 .kpi-mini.ok .v{color:var(--success)}
 .kpi-mini.warn .v{color:var(--warning)}
 .kpi-mini.info .v{color:var(--info)}
-.avance-box{margin-top:1.2rem;padding:1.1rem 1.3rem;background:linear-gradient(120deg,var(--primary-dark),var(--primary));border-radius:8px;color:var(--white)}
-.avance-box .a-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
-.avance-box .a-label{font-size:.85rem;font-weight:600;opacity:.95}
-.avance-box .a-pct{font-size:1.9rem;font-weight:700;line-height:1}
-.avance-bar{position:relative;height:10px;background:rgba(255,255,255,.22);border-radius:6px;margin-top:1.6rem}
-.avance-fill{height:100%;background:#7cb342;border-radius:6px}
-.avance-marker{position:absolute;top:-3px;bottom:-3px;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
-.avance-marker::after{content:"esperado";position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:.6rem;white-space:nowrap;opacity:.9;background:rgba(0,0,0,.25);padding:1px 5px;border-radius:4px}
-.avance-note{font-size:.72rem;opacity:.8;margin-top:.5rem}
 /* Acordeón de activos */
 .channel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);margin-bottom:1.2rem;overflow:hidden}
 details.channel>summary{list-style:none;cursor:pointer}
@@ -229,11 +217,8 @@ details.item-acc .item-detail{margin-top:.4rem}
   html,body{overflow-x:hidden}
   .container{padding:1rem}
   *{overflow-wrap:break-word;word-break:break-word}
-  .exec-summary,.channel,.roadmap,.feedback-box{max-width:100%}
   .kpi-strip{grid-template-columns:repeat(2,1fr)}
   .kpi-mini .v{font-size:1.3rem}
-  .avance-box .a-pct{font-size:1.35rem}
-  .avance-note{font-size:.72rem}
   .kpi-grid{grid-template-columns:1fr}
   .kpi-card{min-width:0}
   .kpi-card .k-name{min-height:0}
@@ -322,27 +307,6 @@ details.item-acc .item-detail{margin-top:.4rem}
     <a href="#app" class="app">📱 App Bolívar</a>
     <a href="#roadmap" class="otros">🗺️ Roadmap 2026</a>
   </nav>
-  <!-- Resumen ejecutivo -->
-  <section class="exec-summary">
-    <h2>Resumen Ejecutivo</h2>
-    <div class="kpi-strip">
-      <div class="kpi-mini ok"><div class="v">🟢 9</div><div class="l">Entregado</div></div>
-      <div class="kpi-mini warn"><div class="v">🟡 10</div><div class="l">En curso</div></div>
-      <div class="kpi-mini info"><div class="v">🔵 15</div><div class="l">Backlog</div></div>
-      <div class="kpi-mini"><div class="v">34</div><div class="l">Total comprometido Q4</div></div>
-    </div>
-    <div class="avance-box">
-      <div class="a-top">
-        <span class="a-label">📈 Avance de compromisos (todos los frentes · Q4 2026)</span>
-        <span class="a-pct">26.5% <span style="font-size:.9rem;font-weight:400;opacity:.8">real / 35.3% esperado</span></span>
-      </div>
-      <div class="avance-bar">
-        <div class="avance-fill" style="width:26.5%"></div>
-        <div class="avance-marker" style="left:35.3%"></div>
-      </div>
-      <div class="avance-note">Real vs. esperado a la fecha de corte (9 oct), sobre el total comprometido del trimestre (34 iniciativas: 🟢 9 entregadas · 🟡 10 en curso · 🔵 15 en backlog). <strong>Desviación de ~9 pp por debajo de lo esperado</strong>, concentrada en Acceso a Clientes: nueva versión AC, coberturas con IA y versión mobile se reprogramaron (1→8→13 oct por hallazgos de la pruebatón; coberturas IA al 23 oct por latencia, en trabajo con DAIA). En App Bolívar, Pagos en línea está alertado (bloqueo por WebView y reglas del botón de deuda), ajustado al 22 oct. El resto del backlog arranca según el cronograma por ingeniero.</div>
-    </div>
-  </section>
   <!-- ============ ROADMAP 2026 ============ -->
   <details class="channel" id="roadmap">
     <summary>
