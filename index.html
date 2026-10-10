@@ -81,6 +81,8 @@ details.kpi-collapse>summary .kpi-toggle{background:var(--info);color:var(--whit
 details.kpi-collapse>summary .kpi-toggle::after{content:" ▾"}
 details.kpi-collapse[open]>summary .kpi-toggle::after{content:" ▴"}
 details.kpi-collapse .kpi-inner{padding:0 1.2rem 1.2rem}
+/* Roadmap oculto en el reporte formal (se mantiene en el ambiente de pruebas) */
+details.kpi-collapse.rm-hidden{display:none !important}
 /* Mini-acordeón de detalle por ítem */
 details.item-acc{margin-top:.4rem}
 details.item-acc>summary{list-style:none;cursor:pointer;font-size:.72rem;font-weight:700;color:var(--info);display:inline-flex;align-items:center;gap:.3rem}
@@ -507,7 +509,7 @@ details.item-acc .item-detail{margin-top:.4rem}
 
       <!-- ===== Entregables de Valor (Fase III y IV) ===== -->
 
-      <details class="kpi-collapse">
+      <details class="kpi-collapse rm-hidden">
         <summary><span>🗺️ Roadmap · Portal Intermediarios</span><span class="kpi-toggle">Ver roadmap</span></summary>
         <div class="kpi-inner">
         <section class="roadmap" id="roadmap-portal">
@@ -1148,7 +1150,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       </details>
 
             
-      <details class="kpi-collapse">
+      <details class="kpi-collapse rm-hidden">
         <summary><span>🗺️ Roadmap · Zona Privada</span><span class="kpi-toggle">Ver roadmap</span></summary>
         <div class="kpi-inner">
         <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
@@ -1532,7 +1534,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       </details>
 
             
-      <details class="kpi-collapse">
+      <details class="kpi-collapse rm-hidden">
         <summary><span>🗺️ Roadmap · Zona Pública</span><span class="kpi-toggle">Ver roadmap</span></summary>
         <div class="kpi-inner">
         <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
@@ -1797,7 +1799,7 @@ details.item-acc .item-detail{margin-top:.4rem}
       </details>
 
             
-      <details class="kpi-collapse">
+      <details class="kpi-collapse rm-hidden">
         <summary><span>🗺️ Roadmap · App Bolívar</span><span class="kpi-toggle">Ver roadmap</span></summary>
         <div class="kpi-inner">
         <div class="roadmap" style="box-shadow:none;margin:0 0 1.2rem;padding:0">
