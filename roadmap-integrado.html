@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap Integrado · Canales Digitales · Q4 2026</title>
+<style>
+  :root{
+    --bg:#0f1420; --panel:#161d2e; --panel2:#1c2538; --line:#2a344c;
+    --txt:#e8edf6; --muted:#97a3bd; --accent:#4f8cff;
+    --dev:#3b82f6; --dev2:#2563eb;
+    --test:#f59e0b; --test2:#d97706;
+    --deploy:#22c55e; --deploy2:#16a34a;
+    --vac:#ef4444;
+    --priv:#a855f7; --pub:#14b8a6; --app:#ec4899;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;padding:28px 20px 60px}
+  .wrap{max-width:1500px;margin:0 auto}
+  header h1{font-size:1.7rem;font-weight:700;letter-spacing:-.3px}
+  header p.sub{color:var(--muted);margin-top:6px;font-size:.95rem;max-width:960px}
+  .badge{display:inline-block;background:#3a2020;color:#ff8f8f;border:1px solid #6b2b2b;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;margin-left:10px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:16px 22px;margin:22px 0 10px;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .legend .grp{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--muted)}
+  .sw{width:26px;height:13px;border-radius:3px;display:inline-block}
+  .sw.dev{background:linear-gradient(90deg,var(--dev),var(--dev2))}
+  .sw.test{background:linear-gradient(90deg,var(--test),var(--test2))}
+  .sw.deploy{background:linear-gradient(90deg,var(--deploy),var(--deploy2))}
+  .sw.vac{background:repeating-linear-gradient(45deg,var(--vac),var(--vac) 4px,#b91c1c 4px,#b91c1c 8px)}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;align-items:center}
+  .toolbar .lbl{color:var(--muted);font-size:.8rem;margin-right:4px}
+  .chip{background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:5px 12px;border-radius:20px;font-size:.8rem;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--accent)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+
+  /* Gantt */
+  /* Sin overflow: el Gantt es responsivo y NO crea contenedor de scroll,
+     así el sticky de la cabecera funciona de forma nativa contra la ventana. */
+  .gantt{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;position:relative;overflow:visible}
+  .gantt-inner{width:100%}
+  .grow{display:grid;grid-template-columns:260px 1fr;border-bottom:1px solid var(--line)}
+  .grow:last-child{border-bottom:none}
+  /* CABECERA FIJA: se pega arriba al hacer scroll por la lista de ingenieros */
+  .grow-head{position:sticky;top:0;z-index:50;border-bottom:2px solid var(--line);box-shadow:0 5px 14px rgba(0,0,0,.45)}
+  .grow-head .gcell-name{background:var(--panel2)}
+  .gcell-name{padding:10px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:3px;justify-content:center;background:var(--panel)}
+  .gcell-name .ini{font-size:.9rem;font-weight:600}
+  .gcell-name .eta{font-size:.72rem;color:#8ee7b5}
+  .gcell-name .eta b{color:#c6f6da}
+  .gcell-name .eta.eta-trans{color:var(--muted)}
+  .gcell-name .meta{font-size:.72rem;color:var(--muted)}
+  .tag{display:inline-block;font-size:.64rem;font-weight:700;padding:1px 7px;border-radius:10px;letter-spacing:.3px;width:fit-content}
+  .tag.priv{background:#2d1f40;color:#d8b4fe;border:1px solid #512d7a}
+  .tag.pub{background:#07322f;color:#5eead4;border:1px solid #0d5e58}
+  .tag.app{background:#3b1026;color:#f9a8d4;border:1px solid #7a2049}
+
+  .track{position:relative;height:100%}
+  .months{display:grid;background:var(--panel2);border-bottom:1px solid var(--line)}
+  .months .mo{text-align:center;font-size:.74rem;font-weight:700;color:var(--muted);padding:6px 0;border-right:1px solid var(--line);text-transform:uppercase;letter-spacing:.6px}
+  .weeks{display:grid;background:var(--panel2);border-bottom:2px solid var(--line)}
+  .weeks .wk{text-align:center;font-size:.64rem;color:var(--muted);padding:4px 0;border-right:1px solid var(--line)}
+  .weeks .wk-fest{color:#f0b5c4;background:rgba(236,72,153,.10)}
+  .weeks .wk-fest .festmark{margin-left:3px;font-size:.7rem}
+
+  .lane{position:relative;height:46px}
+  .gridlines{position:absolute;inset:0;display:grid;pointer-events:none}
+  .gridlines .gl{border-right:1px solid rgba(255,255,255,.04)}
+  .gridlines .gl.mo{border-right:1px solid rgba(255,255,255,.10)}
+  .gridlines .gl-fest{background:repeating-linear-gradient(135deg,rgba(236,72,153,.07),rgba(236,72,153,.07) 6px,transparent 6px,transparent 12px)}
+
+  .seg{position:absolute;top:9px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;color:#fff;overflow:hidden;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .seg.dev{background:linear-gradient(90deg,var(--dev),var(--dev2))}
+  .seg.test{background:linear-gradient(90deg,var(--test),var(--test2))}
+  .seg.deploy{background:linear-gradient(90deg,var(--deploy),var(--deploy2))}
+  .seg span{padding:0 5px;text-shadow:0 1px 1px rgba(0,0,0,.4)}
+
+  .vacband{position:absolute;top:0;bottom:0;background:rgba(239,68,68,.14);border-left:2px dashed var(--vac);border-right:2px dashed var(--vac);z-index:0}
+  .vaclane{position:absolute;top:6px;height:34px;border-radius:5px;background:repeating-linear-gradient(45deg,rgba(239,68,68,.55),rgba(239,68,68,.55) 5px,rgba(185,28,28,.55) 5px,rgba(185,28,28,.55) 10px);border:1px solid var(--vac);display:flex;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#fff;z-index:1}
+
+  .eng-row{display:grid;grid-template-columns:260px 1fr;border-bottom:1px solid var(--line);background:#121a2b;position:sticky;top:51px;z-index:40}
+  .eng-row .eng-name{padding:10px 14px;border-right:1px solid var(--line);font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px;background:#121a2b}
+  .dot{width:9px;height:9px;border-radius:50%}
+
+  .note{margin-top:14px;font-size:.8rem;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 15px}
+  .note b{color:var(--txt)}
+  footer{margin-top:26px;color:var(--muted);font-size:.76rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🗺️ Roadmap Integrado · Canales Digitales <span class="badge">Q4 2026</span></h1>
+    <p class="sub">Planeación por ingeniero con tiempo de <b style="color:var(--dev)">desarrollo</b>, <b style="color:var(--test)">pruebas</b> y <b style="color:var(--deploy)">despliegue</b> diferenciados en cada barra. Premisa de capacidad: el ingeniero se libera al <b>terminar el desarrollo</b> y puede empezar la siguiente iniciativa mientras la anterior sigue en certificación y despliegue (pruebas + despliegue corren en paralelo). Los bloques rojos marcan vacaciones/ausencias y desplazan el trabajo.</p>
+  </header>
+
+  <div class="legend">
+    <div class="grp"><span class="sw dev"></span> Desarrollo</div>
+    <div class="grp"><span class="sw test"></span> Pruebas</div>
+    <div class="grp"><span class="sw deploy"></span> Despliegue / post</div>
+    <div class="grp"><span class="sw vac"></span> Vacaciones / ausencia</div>
+    <div class="grp">🎌 Semana con festivo (CO)</div>
+    <div class="grp"><span class="tag priv">🔐 Zona Privada</span></div>
+    <div class="grp"><span class="tag pub">🌐 Zona Pública</span></div>
+    <div class="grp"><span class="tag app">📱 App Bolívar</span></div>
+  </div>
+
+  <div class="toolbar">
+    <span class="lbl">Filtrar por ingeniero:</span>
+    <span class="chip active" data-eng="all">Todos</span>
+    <span class="chip" data-eng="Brayan">Brayan</span>
+    <span class="chip" data-eng="Andres">Andres</span>
+    <span class="chip" data-eng="Gerardo">Gerardo</span>
+    <span class="chip" data-eng="Sergio">Sergio</span>
+    <span class="chip" data-eng="Laura">Laura</span>
+  </div>
+
+  <div class="gantt" id="gantt">
+    <div class="gantt-inner">
+      <div class="grow grow-head" id="headRow">
+        <div class="gcell-name" style="justify-content:flex-end"><span class="meta">🗺️ Roadmap Q4 2026 · Iniciativa · ingeniero · días (dev/prueba/desp)</span></div>
+        <div class="track">
+          <div class="months" id="months"></div>
+          <div class="weeks" id="weeks"></div>
+        </div>
+      </div>
+      <div id="rows"></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Cómo leer las barras:</b> cada iniciativa es una sola barra dividida en tres tramos — azul (desarrollo), ámbar (pruebas) y verde (despliegue/post). La longitud es proporcional a los días hábiles estimados. El ingeniero se libera al terminar el <b>desarrollo</b>: la siguiente iniciativa arranca ahí, de modo que la certificación (QA) y el despliegue de la iniciativa anterior pueden solaparse con el desarrollo de la siguiente.
+    <br><br>
+    <b>Vacaciones / ausencias consideradas:</b> Sergio 13–19 oct · Brayan 17–27 nov · Andres por confirmar (17–30 nov) · Gerardo y Dario con bloque a fin de diciembre. Durante esos periodos el ingeniero no avanza y su trabajo se desplaza.
+    <br><br>
+    <b>Festivos de Colombia considerados (fuente Min. Hacienda):</b> 2 nov (Todos los Santos) · 16 nov (Independencia de Cartagena) · 8 dic (Inmaculada Concepción) · 25 dic (Navidad). No cuentan como días hábiles, por lo que las fechas tentativas de entrega los saltan. Las semanas con festivo van marcadas con 🎌.
+    <br><br>
+    <b>Nota:</b> "SEO" de Laura es transversal (sin barra de duración fija). "Hannu" (30 días dev) y "Cambio método de pago" (15 días dev) son las iniciativas más largas y dominan la capacidad de Sergio y Brayan respectivamente. "Cambio de home" corre <b>en paralelo</b> con Hannu (⇄), por eso no desplaza el resto de la cola de Sergio.
+  </div>
+
+  <footer>Roadmap integrado · fuente: tablero de estimaciones y calendario de ausencias del equipo · corte 21 oct 2026</footer>
+</div>
+
+<script>
+// ---------- Configuración de la línea de tiempo ----------
+// Semanas hábiles (lun) desde 13 oct 2026 hasta fin diciembre.
+const WEEKS = [
+  {label:"13-17", mo:"OCT"},
+  {label:"20-24", mo:"OCT"},
+  {label:"27-31", mo:"OCT"},
+  {label:"3-7",   mo:"NOV", fest:"2 nov · Todos los Santos"},
+  {label:"10-14", mo:"NOV"},
+  {label:"17-21", mo:"NOV", fest:"16 nov · Indep. Cartagena"},
+  {label:"24-28", mo:"NOV"},
+  {label:"1-5",   mo:"DIC"},
+  {label:"8-12",  mo:"DIC", fest:"8 dic · Inmaculada"},
+  {label:"15-19", mo:"DIC"},
+  {label:"22-26", mo:"DIC", fest:"25 dic · Navidad"},
+  {label:"29-31", mo:"DIC"}
+];
+const DAYS_PER_WEEK = 5;            // días hábiles por semana
+const TOTAL_DAYS = WEEKS.length * DAYS_PER_WEEK; // unidades de la escala
+
+// ---------- Vacaciones/ausencias (en días hábiles desde el inicio = 13 oct) ----------
+// Semana 0 = 13 oct. Cada semana = 5 días.
+// Sergio: 13-19 oct -> toda la semana 0 (5 días desde el día 0)
+// Brayan: 17-27 nov -> semanas 5 y 6 (día 25 al 35 aprox)
+// Andres: 17-30 nov (por confirmar) -> semanas 5 y 6 (día 25 al 35)
+const VAC = {
+  Sergio: [{start:0,  len:5,  label:"Vacaciones"}],
+  Brayan: [{start:25, len:10, label:"Vacaciones"}],
+  Andres: [{start:25, len:10, label:"Ausencia (por confirmar)"}]
+};
+
+// ---------- Iniciativas por ingeniero ----------
+// dev / test / deploy en días hábiles. zone: priv|pub|app
+const ENGINEERS = [
+  {name:"Brayan", color:"#3b82f6", items:[
+    {ini:"Cambio ex mi perfil", zone:"priv", dev:3, test:2, deploy:1},
+    {ini:"Coberturas IA", zone:"priv", dev:10, test:2, deploy:1},
+    {ini:"Evolucionar UX ver detalle (banner/accesos)", zone:"priv", dev:5, test:2, deploy:1},
+    {ini:"Servicios programados (salud)", zone:"priv", dev:5, test:4, deploy:2},
+    {ini:"Cambio método de pago", zone:"priv", dev:15, test:4, deploy:3}
+  ]},
+  {name:"Gerardo", color:"#f97316", items:[
+    {ini:"Servicios programados autos y vida", zone:"priv", dev:8, test:4, deploy:3, startDay:16}
+  ]},
+  {name:"Andres", color:"#a855f7", items:[
+    {ini:"Unificación de marcas", zone:"priv", label:"Zona Privada", dev:5, test:2, deploy:0, startDay:10},
+    {ini:"Unificación de marcas", zone:"app", label:"App Bolívar", dev:5, test:2, deploy:0},
+    {ini:"Unificación de marcas", zone:"pub", label:"ARL · Zona Pública", dev:5, test:2, deploy:1},
+    {ini:"Revocar autorización con fines comerciales", zone:"priv", dev:5, test:2, deploy:1},
+    {ini:"Conozca cómo usar su seguro (home)", zone:"priv", dev:5, test:2, deploy:1}
+  ]},
+  {name:"Sergio", color:"#ec4899", items:[
+    {ini:"Pagos", zone:"app", dev:2, test:2, deploy:0},
+    {ini:"Vitrina", zone:"app", dev:3, test:2, deploy:0},
+    {ini:"Cambio logos de app", zone:"app", dev:5, test:2, deploy:0},
+    {ini:"Hannu (cambio proveedor bienestar)", zone:"app", dev:30, test:4, deploy:0, anchor:"hannu"},
+    {ini:"Cambio de home", zone:"app", dev:30, test:2, deploy:0, parallelTo:"hannu"},
+    {ini:"Apagado lessmils", zone:"app", dev:5, test:2, deploy:0},
+    {ini:"Valkey (reemplazar CPU por Valkey)", zone:"app", dev:5, test:2, deploy:0}
+  ]},
+  {name:"Laura", color:"#14b8a6", items:[
+    {ini:"SOAT", zone:"pub", dev:5, test:2, deploy:1},
+    {ini:"Menú (mejorar el menú)", zone:"pub", dev:15, test:2, deploy:0},
+    {ini:"SEO (transversal)", zone:"pub", dev:0, test:0, deploy:0, transversal:true}
+  ]}
+];
+
+const ZONE = {priv:{tag:"priv",emo:"🔐"}, pub:{tag:"pub",emo:"🌐"}, app:{tag:"app",emo:"📱"}};
+
+function pct(days){ return (days / TOTAL_DAYS) * 100; }
+
+// ---------- Conversión día hábil -> fecha calendario ----------
+// Día 0 = lunes 13 oct 2026. Suma solo días hábiles (salta sáb/dom y festivos CO).
+const START_DATE = new Date(2026,9,13); // 13 oct 2026 (mes 9 = octubre)
+const MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+// Festivos Colombia en el rango (fuente: Min. Hacienda). Formato 'YYYY-MM-DD'.
+const FESTIVOS_CO = new Set([
+  "2026-11-02", // Todos los Santos
+  "2026-11-16", // Independencia de Cartagena
+  "2026-12-08", // Inmaculada Concepción
+  "2026-12-25"  // Navidad
+]);
+function isoDate(d){
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+function esHabil(d){
+  const dow = d.getDay();
+  if(dow===0 || dow===6) return false;      // fin de semana
+  if(FESTIVOS_CO.has(isoDate(d))) return false; // festivo CO
+  return true;
+}
+function workdayToDate(workdayIndex){
+  // workdayIndex en días hábiles. Avanza saltando findes y festivos.
+  let remaining = Math.max(0, Math.round(workdayIndex));
+  const d = new Date(START_DATE);
+  while(remaining > 0){
+    d.setDate(d.getDate()+1);
+    if(esHabil(d)) remaining--;
+  }
+  // si cae en día no hábil, mover al siguiente hábil
+  while(!esHabil(d)){ d.setDate(d.getDate()+1); }
+  return d;
+}
+function fmtDate(d){ return `${d.getDate()} ${MESES[d.getMonth()]}`; }
+
+// ---------- Render cabecera (meses + semanas) ----------
+(function(){
+  const months = document.getElementById('months');
+  const weeks  = document.getElementById('weeks');
+  // agrupar meses
+  const moGroups = [];
+  WEEKS.forEach(w=>{
+    const last = moGroups[moGroups.length-1];
+    if(last && last.mo===w.mo){ last.count++; } else { moGroups.push({mo:w.mo,count:1}); }
+  });
+  months.style.gridTemplateColumns = moGroups.map(g=>g.count+"fr").join(" ");
+  moGroups.forEach(g=>{ const d=document.createElement('div'); d.className='mo'; d.textContent=g.mo; months.appendChild(d); });
+  weeks.style.gridTemplateColumns = WEEKS.map(()=>"1fr").join(" ");
+  WEEKS.forEach(w=>{
+    const d=document.createElement('div');
+    d.className='wk'+(w.fest?' wk-fest':'');
+    d.innerHTML = w.fest
+      ? `${w.label}<span class="festmark" title="${w.fest}">🎌</span>`
+      : w.label;
+    if(w.fest) d.title = 'Festivo: '+w.fest;
+    weeks.appendChild(d);
+  });
+})();
+
+// ---------- Render filas ----------
+const rowsEl = document.getElementById('rows');
+
+function gridlines(){
+  const g = document.createElement('div');
+  g.className='gridlines';
+  g.style.gridTemplateColumns = WEEKS.map(()=>"1fr").join(" ");
+  WEEKS.forEach((w,i)=>{
+    const c=document.createElement('div');
+    c.className='gl'+(w.mo!==(WEEKS[i-1]&&WEEKS[i-1].mo)?' mo':'')+(w.fest?' gl-fest':'');
+    g.appendChild(c);
+  });
+  return g;
+}
+
+ENGINEERS.forEach(eng=>{
+  // fila de encabezado del ingeniero
+  const head = document.createElement('div');
+  head.className='eng-row';
+  head.dataset.eng = eng.name;
+  head.innerHTML = `<div class="eng-name"><span class="dot" style="background:${eng.color}"></span>${eng.name}</div>
+    <div class="track"><div class="lane" style="height:40px"></div></div>`;
+  // pintar banda de vacaciones en la fila del ingeniero
+  const lane = head.querySelector('.lane');
+  lane.appendChild(gridlines());
+  (VAC[eng.name]||[]).forEach(v=>{
+    const band=document.createElement('div');
+    band.className='vaclane';
+    band.style.left = pct(v.start)+'%';
+    band.style.width = pct(v.len)+'%';
+    band.textContent = v.label;
+    lane.appendChild(band);
+  });
+  rowsEl.appendChild(head);
+
+  // cursor de tiempo acumulado por ingeniero (en días)
+  let cursor = 0;
+  const anchors = {}; // día de inicio de iniciativas ancla (para correr otras en paralelo)
+  const vacs = VAC[eng.name] || [];
+
+  function advancePastVacations(startDay, lenDays){
+    // si el bloque de trabajo cae sobre una vacación, lo desplaza
+    let s = startDay;
+    vacs.forEach(v=>{
+      const vEnd = v.start + v.len;
+      // si empieza dentro de la vacación -> mover al final
+      if(s >= v.start && s < vEnd){ s = vEnd; }
+      // si el trabajo cruza la vacación -> empujar después
+      else if(s < v.start && (s+lenDays) > v.start){ s = vEnd; }
+    });
+    return s;
+  }
+
+  eng.items.forEach(it=>{
+    const row = document.createElement('div');
+    row.className='grow';
+    row.dataset.eng = eng.name;
+    const z = ZONE[it.zone];
+    const total = it.dev+it.test+it.deploy;
+
+    // ----- Calcular inicio de desarrollo y fecha de entrega ANTES de pintar -----
+    let start = null, startDate = null, deliveryDate = null;
+    if(!it.transversal){
+      let base;
+      const isParallel = (it.parallelTo!=null && anchors[it.parallelTo]!=null);
+      if(isParallel){
+        base = anchors[it.parallelTo];
+      } else {
+        base = (it.startDay!=null) ? Math.max(cursor, it.startDay) : cursor;
+      }
+      start = isParallel ? base : advancePastVacations(base, it.dev);
+      if(it.anchor){ anchors[it.anchor] = start; }
+      // inicio de desarrollo = primer día hábil del tramo dev
+      startDate = workdayToDate(start);
+      // entrega = último día hábil del despliegue (o QA si no hay despliegue).
+      // total días - 1 porque el día de inicio ya es el primer día trabajado.
+      const total = it.dev + it.test + it.deploy;
+      const endDay = start + Math.max(1, total) - 1;
+      deliveryDate = workdayToDate(endDay);
+    }
+
+    const paralMark = it.parallelTo ? ` · ⇄ en paralelo con ${it.parallelTo === 'hannu' ? 'Hannu' : it.parallelTo}` : '';
+    const meta = it.transversal ? "Transversal · sin duración fija"
+      : `${eng.name} · ${it.dev}d dev · ${it.test}d prueba${it.deploy?` · ${it.deploy}d desp`:''}${paralMark}`;
+    const tagTxt = it.label ? `${z.emo} ${it.label}` : z.emo;
+    const dateHtml = deliveryDate
+      ? `<span class="eta">🛠️ Inicio dev: <b>${fmtDate(startDate)}</b> · 🎯 Entrega: <b>${fmtDate(deliveryDate)}</b></span>`
+      : `<span class="eta eta-trans">Sin fecha fija (transversal)</span>`;
+    row.innerHTML = `<div class="gcell-name">
+        <span class="ini">${it.ini}</span>
+        ${dateHtml}
+        <span class="meta"><span class="tag ${z.tag}">${tagTxt}</span> ${meta}</span>
+      </div>
+      <div class="track"><div class="lane"></div></div>`;
+    const lane = row.querySelector('.lane');
+    lane.appendChild(gridlines());
+
+    if(!it.transversal){
+      let x = start;
+      const isParallel = (it.parallelTo!=null);
+      const parts = [
+        {cls:'dev', len:it.dev, txt:'Dev'},
+        {cls:'test', len:it.test, txt:'QA'},
+        {cls:'deploy', len:it.deploy, txt:'Desp'}
+      ];
+      parts.forEach(p=>{
+        if(p.len<=0) return;
+        const seg=document.createElement('div');
+        seg.className='seg '+p.cls;
+        seg.style.left = pct(x)+'%';
+        seg.style.width = pct(p.len)+'%';
+        seg.innerHTML = `<span>${p.txt} ${p.len}d</span>`;
+        lane.appendChild(seg);
+        x += p.len;
+      });
+      // Las iniciativas en paralelo no mueven la cola del ingeniero.
+      // El resto libera capacidad al terminar el DESARROLLO.
+      if(!isParallel){ cursor = start + it.dev; }
+    }
+    rowsEl.appendChild(row);
+  });
+});
+
+// ---------- Filtro por ingeniero ----------
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const eng = chip.dataset.eng;
+    document.querySelectorAll('[data-eng]').forEach(el=>{
+      el.style.display = (eng==='all'||el.dataset.eng===eng) ? '' : 'none';
+    });
+  });
+});
+
+</script>
+</body>
+</html>
